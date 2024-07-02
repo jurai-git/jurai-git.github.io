@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-main: #606482;
+    --color-background: #39659b;
+    --color-login: #1a233d;
+    --color-input-underline: #385e9d;
+}

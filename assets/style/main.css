@@ -1,0 +1,61 @@
+@import url(./reset.css);
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+#logo{
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+#home{
+    flex-direction: column;
+}
+
+h1{
+    color:white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#divlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+    background-color: var(--color-login);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+input[type="email"], [type="password"]{
+    width: 100%;
+    background: none;
+    border: 2px solid var(--color-input-underline);
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin: 5% 0 5% 0;  
+}
+
+input[type="submit"]{
+    width: 75%;
+    margin: 15% 12% 2% 12%;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+input[type="checkbox"]{
+    accent-color: var(--color-input-underline);
+}
+

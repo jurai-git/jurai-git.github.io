@@ -1,0 +1,20 @@
+@import url(./reset.css);
+
+.navcenter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-main);
+    padding: 0 20px 0 20px;
+}
+
+li{
+    display: inline;
+}
+
+.navanchor{
+    color:white;
+    text-decoration: none;
+    padding: 0 20px 0 20px;
+}
