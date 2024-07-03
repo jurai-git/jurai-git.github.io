@@ -62,3 +62,15 @@ input[type="checkbox"]{
 .formanchors{
     color: var(--color-input-underline);
 }
+
+.dashboard{
+    background-color: var(--color-login);
+}
+
+table, td{
+    border: 2px solid var(--color-input-underline);
+}
+
+td{
+    color: rgba(255, 255, 255, 0.7)
+}
