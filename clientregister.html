@@ -18,35 +18,41 @@
                 <li><a href="index.html" class="navanchor">Início</a></li>
                 <li><a href="#" class="navanchor">Consulta Rápida</a></li>
                 <li><a href="#" class="navanchor">Planos</a></li>
-                <li><a href="#" class="navanchor">Cadastro/Entrar</a></li>
+                <li><a href="#" class="navanchor">p</a></li>
             </ul>
         </div>
     </nav>
     
     <main>
         <section>
-            <img src="./assets/img/juraiicon.png" width="20%">
             <div class="divlogin">
-                <h1>Bem Vindo de Volta!</h1>
-                <form action="./dashboard.html" id="formlogin">
-                    <input type="email" id="inpemail" name="inpemail" placeholder="Email" required>
-                    <input type="password" id="inppassword" name="password" placeholder="Senha" required>
+                <h1>Cadastro</h1>
+                <h4 style="color: rgba(255, 255, 255, 0.7)">Informações Pessoais</h4>
+                <form id="formclireg" action="clientregister2temp.html">
+                    <input type="text" id="inpcliname" name="inpcliname" placeholder="Nome" required>
+                    <input type="text" id="inpclisocialname" name="inpclisocialname" placeholder="Nome Social (Opcional)">
+                    <input type="email" id="inpcliemail" name="inpcliemail" placeholder="Email">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span style="color: white;">Mantenha-me conectado</span></label>
+                            <input type="date" id="inpclibirth" name="inpclibirth" required>
                         </div>
                         <div>
-                            <a href="#" class="formanchors">Esqueci minha senha</a>
+                            <input type="checkbox" id="inpcliolder" name="inpcliolder"><label for="inpcliolder">Idoso</label>
                         </div>
                     </div>
+                    <h2 style="color: white;">Gênero</h2>
+                        <div>
+                            <input type="checkbox" id="inpcligendermasc" name="inpcligendermasc" value="M"><label for="inpcligender">Masculino</label>
+                            <input type="checkbox" id="inpcligenderfem" name="inpcligenderfem" value="F"><label for="inpcligender">Feminino</label>
+                        </div>
+                    <input type="text" id="inpclialtgender" name="inpclialtgender" placeholder="Outro">
                     <div style="display: flex; justify-content: center; align-items: center;">
-                        <input type="submit" value="Entrar">
+                        <input type="submit" value="Continuar">
                     </div>
                 </form>
-                <span style="color: white;">Não possui uma conta? <a href="register.html" class="formanchors">Registre-se agora!</a></span>
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+
 </body>
 </html>

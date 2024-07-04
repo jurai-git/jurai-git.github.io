@@ -19,12 +19,7 @@ h1{
     color:white;
 }
 
-a{
-    color: white;
-    text-decoration: none;
-}
-
-#divlogin{
+.divlogin{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +30,7 @@ a{
     border-radius: 20px;
 }
 
-input[type="email"], [type="password"]{
+#formlogin > input[type="email"], #formlogin > [type="password"]{
     width: 100%;
     background: none;
     border: 2px solid var(--color-input-underline);
@@ -48,6 +43,18 @@ input[type="email"], [type="password"]{
     margin: 5% 0 5% 0;  
 }
 
+#formclireg > input{
+    width: 100%;
+    background: none;
+    border: 2px solid var(--color-input-underline);
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    color: white;
+    font-size: large;
+    margin: 5% 0 5% 0;  
+}
+
 input[type="submit"]{
     width: 75%;
     margin: 10% 0 2% 0;
@@ -57,6 +64,10 @@ input[type="submit"]{
 
 input[type="checkbox"]{
     accent-color: var(--color-input-underline);
+}
+
+label{
+    color: white;
 }
 
 .formanchors{
@@ -74,6 +85,7 @@ input[type="checkbox"]{
 
 table{
     width: 100%;
+    
 }
 
 td{
@@ -113,12 +125,15 @@ td{
 
 .noborder{
     border: 0 solid;
+    color: white;
+    font-size:x-large;
 }
 
 aside{
     width: 20%;
 }
 
-#btnregclient{
+a > #btnregclient{
     margin: 1% 1% 0 1%;
+    cursor: pointer;
 }

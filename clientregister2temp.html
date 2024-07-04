@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #39659b;">
+    <nav>
+        <div class="navcenter">
+            <img src="./assets/img/juraitext.png" width="15%">
+
+            <ul>
+                <li><a href="index.html" class="navanchor">Início</a></li>
+                <li><a href="#" class="navanchor">Consulta Rápida</a></li>
+                <li><a href="#" class="navanchor">Planos</a></li>
+                <li><a href="#" class="navanchor">p</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section>
+            <div class="divlogin">
+                <h1>Cadastro</h1>
+                <h4 style="color: rgba(255, 255, 255, 0.7)">Informações Gerais</h4>
+                <form id="formclireg">
+                    <div>
+                        <h2 style="color: white;">Pessoa:</h2>
+                        <input type="checkbox" id="inpclipssjur" name="inpclipssjur" value="Juridica"><label for="inpclipssjur">Jurídica</label>
+                        <input type="checkbox" id="inpclipssfis" name="inpclipssfis" value="Fisica"><label for="inpclipssfis">Física</label>
+                    </div>
+                    <div>
+                        <input type="text" id="inpclicpfcnpj" name="inpclicpfcnpj" placeholder="CPF/CNPJ" required>
+                        <input type="checkbox" id="inpclicpfcnpjnot" name="inpclicpfcnpjnot" value="NaoCpfCnpj"><label for="inpclicpfcnpjnot">Declaro que a parte não possui CPF/CNPJ</label>
+                    </div>
+                    <input type="text" id="inpclirg" name="inpclirg" placeholder="RG" required>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
