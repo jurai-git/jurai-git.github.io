@@ -65,12 +65,60 @@ input[type="checkbox"]{
 
 .dashboard{
     background-color: var(--color-login);
+    width: 75%;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    
 }
 
-table, td{
-    border: 2px solid var(--color-input-underline);
+table{
+    width: 100%;
 }
 
 td{
-    color: rgba(255, 255, 255, 0.7)
+    border: 2px solid var(--color-input-underline);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: large;
+    padding: 1%;
+}
+
+.tdname{
+    width: 35%;
+}
+
+.tdstate{
+    width: 40%;
+}
+
+.tdtools{
+    width: 25%;
+}
+
+.tools{
+    width: 35px;
+    height: 35px;
+    margin: 1.2%;
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.tools:active{
+
+    background:rgba(0, 0, 0, 0.3);
+}
+
+.noborder{
+    border: 0 solid;
+}
+
+aside{
+    width: 20%;
+}
+
+#btnregclient{
+    margin: 1% 1% 0 1%;
 }

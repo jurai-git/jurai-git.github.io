@@ -24,20 +24,60 @@
     </nav>
 
     <main>
-        <article class="dashboard">
-            <h1 style="color: white;">Consulta de Clientes Cadastrados</h1>
-            <div><h1>Nome</h1> <h1>Estado do Processo</h1></div> 
-            <section style="justify-content: flex-start; height: 100%;">
-                <table>
-                    <tr>
-                        <td>Juninho da Silva</td>
-                        <td>Tramitação Prioritária</td>
-                        <td><button>botao</button></td>
-                    </tr>
-                </table>
-            </section>
-        </article>
-        <aside></aside>
+            <article class="dashboard" >
+                <h1 style="color: white;">Consulta de Clientes Cadastrados</h1>
+                    <section style="justify-content: flex-start; flex-direction: column; height: 50vh; overflow-y: scroll;">
+                        <table cellspacing="0px">
+                            <tr>
+                                <td colspan="2" class="noborder"><input type="text" id="txtboxnome" name="txtboxnome" placeholder="Insira os dados a serem buscados" style="width: 100%;"></td>
+                                <td class="noborder"><select style="width: 100%;"><option value="Nome">Nome</option><option value="Estado">Estado do Processo</option></select></td>
+                            </tr>
+                            <tr>
+                                <td class="noborder">Nome</td>
+                                <td class="noborder">Estado do Processo</td>
+                                <td class="noborder">Ferramentas</td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tdname">Juninho da Silva</td>
+                                <td class="tdstate">Tramitação Prioritária</td>
+                                <td class="tdtools"><div style="display: flex; justify-content: space-between; align-items: center;"><img src="./assets/img/personicon.png" class="tools"></img><img src="./assets/img/xicon.png" class="tools"></img></div></td>
+                            </tr>
+                            
+                        </table>
+                        
+                    </section>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <button id="btnregclient">Cadastrar Cliente</button>   
+                    </div>
+                </article>
+            <aside>
+                <h1 style="text-align: center;">Não há informações a serem exibidas</h1>
+            </aside>
     </main>
 </body>
 </html>
