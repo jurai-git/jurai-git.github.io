@@ -28,17 +28,51 @@
             <div class="divlogin">
                 <h1>Cadastro</h1>
                 <h4 style="color: rgba(255, 255, 255, 0.7)">Informações Gerais</h4>
-                <form id="formclireg">
+                <form id="formclireg" action="clientregister3temp.html">
                     <div>
                         <h2 style="color: white;">Pessoa:</h2>
                         <input type="checkbox" id="inpclipssjur" name="inpclipssjur" value="Juridica"><label for="inpclipssjur">Jurídica</label>
                         <input type="checkbox" id="inpclipssfis" name="inpclipssfis" value="Fisica"><label for="inpclipssfis">Física</label>
                     </div>
-                    <div>
                         <input type="text" id="inpclicpfcnpj" name="inpclicpfcnpj" placeholder="CPF/CNPJ" required>
                         <input type="checkbox" id="inpclicpfcnpjnot" name="inpclicpfcnpjnot" value="NaoCpfCnpj"><label for="inpclicpfcnpjnot">Declaro que a parte não possui CPF/CNPJ</label>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <input type="text" id="inpclirg" name="inpclirg" placeholder="RG" required>
+                        <h1>-</h1>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div>
+
+                    <input type="checkbox" id="inpclirgnot" name="inpclirgnot" value="NaoRg"><label for="inpclirgnot">Declaro que a parte não possui RG</label>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <input type="text" id="inpcliestcivil" name="inpcliestcivil" placeholder="Estado Civil" readonly>
+                        </div>
+                        <div>
+                            <select>
+                                <option value="solteiro">Solteiro</option>
+                                <option value="casado">Casado</option>
+                                <option value="separado">Separado</option>
+                                <option value="divorciado">Divorciado</option>
+                                <option value="viuvo">Viúvo</option>
+                            </select>
+                        </div>
                     </div>
-                    <input type="text" id="inpclirg" name="inpclirg" placeholder="RG" required>
+                    <input type="text" id="inpclinacio" name="inpclinacio" placeholder="Nacionalidade">
+                    <input type="text" id="inpcliprofiss" name="inpcliprofiss" placeholder="Profissão">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <input type="submit" value="Continuar">
+                    </div>
                 </form>
             </div>
         </section>

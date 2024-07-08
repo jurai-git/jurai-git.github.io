@@ -1,10 +1,11 @@
 @import url(./reset.css);
 
-section{
+main{
+    margin-top: 1%;
+    min-height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
 }
 
 #logo{
@@ -12,6 +13,9 @@ section{
 }
 
 #home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -24,10 +28,12 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 35%;
+    width: 100%;
+    max-width: 500px;
     background-color: var(--color-login);
-    padding: 3%;
+    padding: 4%;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 #formlogin > input[type="email"], #formlogin > [type="password"]{
@@ -43,7 +49,7 @@ h1{
     margin: 5% 0 5% 0;  
 }
 
-#formclireg > input{
+input[type="text"], input[type="email"]{
     width: 100%;
     background: none;
     border: 2px solid var(--color-input-underline);

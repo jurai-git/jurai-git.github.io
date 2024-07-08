@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #39659b;">
+    <nav>
+        <div class="navcenter">
+            <img src="./assets/img/juraitext.png" width="15%">
+
+            <ul>
+                <li><a href="index.html" class="navanchor">Início</a></li>
+                <li><a href="#" class="navanchor">Consulta Rápida</a></li>
+                <li><a href="#" class="navanchor">Planos</a></li>
+                <li><a href="#" class="navanchor">p</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section>
+            <div class="divlogin">
+                <h1>Cadastro</h1>
+                <h4 style="color: rgba(255, 255, 255, 0.7)">Informações de Endereço</h4>
+                <form id="formclireg">
+                    <div style="width: 50%; display: flex;">
+                        <input type="text" id="inpclicep" name="inpclicep" placeholder="CEP" required>
+                        <img src="./assets/img/personicon.png" class="tools"></img>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="width: 90%; padding-right: 1%;">
+                            <input type="text" id="inpclilogra" name="inpclilogra" placeholder="Logradouro" required>
+                        </div>
+                        <div style="width: 10%; padding-left: 1%;">
+                            <input type="text" id="inpclilognum" name="inpclilognum" placeholder="Nº" required>
+                        </div>    
+                    </div>
+                    <input type="text" id="inpclibairro" name="inpclibairro" placeholder="Bairro" required>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <input type="text" id="inpclicidade" name="inpclicidade" placeholder="Cidade">
+                        <select>
+                            <option value="sp">SP</option>
+                        </select>
+                    </div>    
+                    <input type="text" id="inpclicompl" name="inpclicompl" placeholder="Complemento">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <input type="submit" value="Continuar">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

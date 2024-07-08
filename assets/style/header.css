@@ -1,12 +1,16 @@
 @import url(./reset.css);
 
-.navcenter{
+nav{
     width: 100%;
+    background-color: var(--color-main);
+}
+
+.navcenter{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-main);
     padding: 0 20px 0 20px;
+    margin: 0 auto;
 }
 
 a{
