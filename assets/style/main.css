@@ -1,5 +1,9 @@
 @import url(./reset.css);
 
+body{
+    background-color: var(--color-background);
+}
+
 main{
     margin-top: 1%;
     min-height: calc(100vh - 60px);
@@ -142,4 +146,37 @@ aside{
 a > #btnregclient{
     margin: 1% 1% 0 1%;
     cursor: pointer;
+}
+
+#prevBtn{
+    position: absolute;
+    left: 0;
+    background-color: #2b4a7a;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#continueBtn{
+    margin: 0 auto;
+    background-color: #c0c0c0;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changestep{
+    display: none;
+}
+
+.subtitles{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.titles{
+    color: white;
 }

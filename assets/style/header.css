@@ -3,6 +3,7 @@
 nav{
     width: 100%;
     background-color: var(--color-main);
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
 }
 
 .navcenter{
@@ -26,4 +27,6 @@ li{
     color:white;
     text-decoration: none;
     padding: 0 20px 0 20px;
+    font-weight: bold;
+    font-size: large;
 }

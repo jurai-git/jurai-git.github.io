@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: #39659b;">
+<body>
     <nav>
         <div class="navcenter">
             <img src="./assets/img/juraitext.png" width="15%">
@@ -25,7 +25,7 @@
     
     <main>
         <section style="display: flex; justify-content: center; align-items: center;">
-            <img src="./assets/img/juraiicon.png" width="20%">
+            <img src="./assets/img/juraiicon.png" id="logo" width="20%">
             <div class="divlogin">
                 <h1>Bem Vindo de Volta!</h1>
                 <form action="./dashboard.html" id="formlogin">
@@ -33,7 +33,7 @@
                     <input type="password" id="inppassword" name="password" placeholder="Senha" required>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span style="color: white;">Mantenha-me conectado</span></label>
+                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span class="titles">Mantenha-me conectado</span></label>
                         </div>
                         <div>
                             <a href="#" class="formanchors">Esqueci minha senha</a>
@@ -43,7 +43,7 @@
                         <input type="submit" value="Entrar">
                     </div>
                 </form>
-                <span style="color: white;">Não possui uma conta? <a href="register.html" class="formanchors">Registre-se agora!</a></span>
+                <span class="titles">Não possui uma conta? <a href="register.html" class="formanchors">Registre-se agora!</a></span>
             </div>
         </section>
     </main>
