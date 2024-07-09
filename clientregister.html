@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JurAI</title>
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/juraiicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav>
@@ -26,9 +28,14 @@
     <main>
         <section>
             <div class="divlogin">
-                <h1>Cadastro</h1>
-                <h4 class="subtitles" id="regclisubtitle">Informações Pessoais</h4>
-                <form id="formclireg" action="">    
+                <form id="formclireg" action="">
+                    <div style="position: relative;">
+                        <h4 id="step" class="subtitles">Etapa 1</h4>
+                        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                            <h1>Cadastro</h1>
+                            <h4 class="subtitles" id="regclisubtitle">Informações Pessoais</h4>     
+                        </div>
+                    </div>
                     <div class="changestep">
                         <input type="text" id="inpcliname" name="inpcliname" placeholder="Nome" required>
                         <input type="text" id="inpclisocialname" name="inpclisocialname" placeholder="Nome Social (Opcional)">
@@ -114,6 +121,17 @@
                             </select>
                         </div>    
                         <input type="text" id="inpclicompl" name="inpclicompl" placeholder="Complemento">
+                    </div>
+
+                    <div id="modalregcli" class="modal">
+                        <div class="modalregcliopt">
+                            <h1>Deseja cadastrar a demanda desse cliente?</h1>
+                            <h4 class="subtitles">(Você pode fazer isso depois)</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <button id="hdem" class="dembtns">Cadastrar Agora</button>
+                                <button id="dhdem" class="dembtns">Cadastrar Depois</button>
+                            </div>
+                        </div>
                     </div>
 
                     <div style="position: relative;">

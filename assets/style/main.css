@@ -129,7 +129,6 @@ td{
 }
 
 .tools:active{
-
     background:rgba(0, 0, 0, 0.3);
 }
 
@@ -169,6 +168,11 @@ a > #btnregclient{
     cursor: pointer;
 }
 
+#step{
+    position: absolute;
+    left: 0;
+}
+
 .changestep{
     display: none;
 }
@@ -179,4 +183,48 @@ a > #btnregclient{
 
 .titles{
     color: white;
+}
+
+.modal{
+    display: none;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalregcliopt{
+    margin: 25% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-login);
+    width: 40%;
+    padding: 1%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dembtns{
+    margin: 20px 30px 20px 30px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#registerform{
+    display: none;
+}
+
+#logreganchor{
+    border: none;
+    padding: none;
+    background: none;
+    cursor: pointer;
+    font-size: medium;
 }

@@ -1,7 +1,13 @@
 var currentTab = 0;
-var logregadv = 0;
+var continuBtn = document.getElementById("continueBtn");
+var previousBtn = document.getElementById("prevBtn");
+var modal = document.getElementById("modalregcli");
+var btnUpForm = document.getElementById("dhdem");
+var ancLogReg = document.getElementById("logreganchor");
+var loginForm = document.getElementById("loginform");
+var registerForm = document.getElementById("registerform");
+
 showTab(currentTab);
-showTab(logregadv);
 
 function showTab(n) {
     var x = document.getElementsByClassName("changestep");
@@ -17,18 +23,21 @@ function showTab(n) {
         document.getElementById("continueBtn").value = "Cadastrar";
     }
     else{ 
-        document.getElementById("continueBtn").innerHTML = "Continuar";
+        document.getElementById("continueBtn").value = "Continuar";
     }
 
     switch(n){
         case 0:
             document.getElementById("regclisubtitle").innerHTML = "Informações Pessoais";
+            document.getElementById("step").innerHTML = "Etapa 1";
             break;
         case 1:
             document.getElementById("regclisubtitle").innerHTML = "Informações Gerais";
+            document.getElementById("step").innerHTML = "Etapa 2";
             break;
         case 2:
             document.getElementById("regclisubtitle").innerHTML = "Informações de Endereço";
+            document.getElementById("step").innerHTML = "Etapa 3";
             break;
     }
 }
@@ -40,12 +49,15 @@ function nextPrev(n) {
 
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
-
-    if (currentTab >= x.length) {
-        document.getElementById("formclireg").submit();
-        return false;
+    
+    if(currentTab>2){
+        x[currentTab-1].style.display = "block";
+        modal.style.display = "block";
+        btnUpForm.addEventListener("click",function(){
+            document.getElementById("formclireg").submit();
+        })
+        
     }
-
     showTab(currentTab);
 }
 
@@ -61,3 +73,15 @@ function validateForm() {
     }
     return valid;
 }
+
+function changeLogRegForm(){
+    if(registerForm.style.display == "none"){
+        registerForm.style.display = "flex";
+        loginForm.style.display = "none";
+    }
+    else{
+        registerForm.style.display = "none";
+        loginForm.style.display = "flex";
+    }
+}
+
