@@ -27,6 +27,8 @@ h1{
     color:white;
 }
 
+
+
 .divlogin{
     display: flex;
     justify-content: center;
@@ -90,8 +92,8 @@ label{
     margin: 2%;
     padding: 1%;
     border-radius: 10px;
-    
 }
+
 
 table{
     width: 100%;

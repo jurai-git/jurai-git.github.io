@@ -1,4 +1,5 @@
 var currentTab = 0;
+var loginRegister = 0;
 var continuBtn = document.getElementById("continueBtn");
 var previousBtn = document.getElementById("prevBtn");
 var modal = document.getElementById("modalregcli");
@@ -7,7 +8,11 @@ var ancLogReg = document.getElementById("logreganchor");
 var loginForm = document.getElementById("loginform");
 var registerForm = document.getElementById("registerform");
 
-showTab(currentTab);
+var myAccBtn = document.getElementById("myaccbtn");
+var dropdownAccLogReg = document.getElementById("accmenu1");
+var btnLoginDpDown = document.getElementById("btnddlogin");
+var btnRegisterDpDown = document.getElementById("btnddregister");
+
 
 function showTab(n) {
     var x = document.getElementsByClassName("changestep");
@@ -75,7 +80,7 @@ function validateForm() {
 }
 
 function changeLogRegForm(){
-    if(registerForm.style.display == "none"){
+    if(registerForm.style.display == "none" || registerForm.style.display == ""){
         registerForm.style.display = "flex";
         loginForm.style.display = "none";
     }
@@ -84,4 +89,15 @@ function changeLogRegForm(){
         loginForm.style.display = "flex";
     }
 }
+
+    myAccBtn.addEventListener("click", function() {
+        if(dropdownAccLogReg.style.display == "none" || dropdownAccLogReg.style.display == ""){
+            dropdownAccLogReg.style.display = "block";
+        }
+        else{
+            dropdownAccLogReg.style.display = "none";
+        }
+     });
+
+
 

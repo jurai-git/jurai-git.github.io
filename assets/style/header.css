@@ -26,7 +26,29 @@ li{
 .navanchor{
     color:white;
     text-decoration: none;
-    padding: 0 20px 0 20px;
+    padding: 0 80px 0 80px;
     font-weight: bold;
     font-size: large;
+}
+
+.accountmenu{
+    position: relative;
+    display: inline-block;
+
+}
+
+.accmenu{
+    display: none;
+    background-color: var(--color-login);
+    position: absolute;
+    min-width: 100px;
+    z-index: 1;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+.btndropdown{
+    padding: 10px;
+    margin: 4% 4% 0 4%;
 }
