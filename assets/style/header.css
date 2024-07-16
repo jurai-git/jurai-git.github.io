@@ -41,14 +41,29 @@ li{
     display: none;
     background-color: var(--color-login);
     position: absolute;
-    min-width: 100px;
+    min-width: 215px;
     z-index: 1;
     text-align: center;
     padding: 10px;
-    color: white;
+    color: white; 
 }
 
 .btndropdown{
-    padding: 10px;
-    margin: 4% 4% 0 4%;
+    padding: 2% 5% 2% 5%;
+    border: 1px solid var(--color-input-underline);
+    border-radius: 15px;
+    background-color: var(--color-main);
+}
+
+#btnddexit{
+    border-color: brown;
+    background-color: red;
+}
+
+div > .btndropdown{
+    margin: 2% 0 2% 0;
+}
+
+hr{
+  margin: 1% 0 4% 0;
 }

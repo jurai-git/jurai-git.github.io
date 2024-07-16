@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,24 +19,51 @@
                 <li><a href="index.html" class="navanchor">Início</a></li>
                 <li><a href="#" class="navanchor">Consulta Rápida</a></li>
                 <li><a href="#" class="navanchor">Planos</a></li>
-                <li><a href="#" class="navanchor">Conta</a></li>
+                <li>
+                    <div class="accountmenu">
+                        <a href="#" class="navanchor" id="myaccbtn">Conta</a>
+                        <div class="accmenu" id="dpdownlogin">
+                            <p>Seja Bem-Vindo(a)</p>
+                            <p>NomeDeUsuário</p>
+                            <div style="display: flex; flex-direction: column;">
+                            <a class="btndropdown" id="btnddlogin" href="#">Dashboard</a>
+                            <a class="btndropdown" id="btnddregister" href="#">Sua conta</a>
+                            <hr>
+                            <a class="btndropdown" id="btnddexit" href="index.html">Sair</a>
+                            </div>
+                        </div>  
+                      </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <main>
-            <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; ">
                 <article class="dashboard">
                     <h1 class="titles">Consulta de Clientes Cadastrados</h1>
-                        <section style="justify-content: flex-start; flex-direction: column; height: 50vh; overflow-y: scroll;">
-                            <table cellspacing="0">
-                                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="display: flex; justify-content: center; align-items: center;">
                                     <input type="text" id="txtboxnome" name="txtboxnome" placeholder="Insira os dados a serem buscados" style="width: 100%;">
                                     <select style="width: 50%;"><option value="Nome">Nome</option><option value="Estado">Estado do Processo</option></select>
                                 </div>
+                        <section style="justify-content: flex-start; flex-direction: column; height: 50vh; overflow-y: scroll; overflow-x: hidden;">
+                            <table cellspacing="0">
+                                
                                 <tr>
                                     <td class="noborder">Nome</td>
                                     <td class="noborder">Estado do Processo</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdname">Juninho da Silva</td>
+                                    <td class="tdstate">Tramitação Prioritária</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdname">Juninho da Silva</td>
+                                    <td class="tdstate">Tramitação Prioritária</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdname">Juninho da Silva</td>
+                                    <td class="tdstate">Tramitação Prioritária</td>
                                 </tr>
                                 <tr>
                                     <td class="tdname">Juninho da Silva</td>
@@ -66,15 +93,27 @@
                             </table>
                         </section>
                         <div style="display: flex; justify-content: center; align-items: center;">
-                            <a href="clientregister.html"><button id="btnregclient">Cadastrar Cliente</button></a>   
+                            <a href="clientregister.html"><button class="btns" id="btnregclient">Cadastrar Cliente</button></a>   
                         </div>
                     </article>
-                    <aside>
+                    <aside style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 2% 2% 2% 0;">
+                        <img src="./assets/img/personicon.png" width="100%">
+                        <h3>Nome:</h3>
+                        <h3>Email:</h3>
+                        <h3>CPF/CNPJ:</h3>
+                        <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%;">
+                            <img src="./assets/img/personicon.png" class="tools">
+                            <img src="./assets/img/personicon.png" class="tools">
+                            <img src="./assets/img/personicon.png" class="tools">
+                        </div>
+                        <!--
                         <h1 style="text-align: center;">Não há informações a serem exibidas</h1>
+                        -->
                     </aside>
                 </div>
             
             
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

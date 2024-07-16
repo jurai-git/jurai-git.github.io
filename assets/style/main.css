@@ -88,8 +88,8 @@ label{
 
 .dashboard{
     background-color: var(--color-login);
-    width: 75%;
-    margin: 2%;
+    width: 73%;
+    margin: 2% 0 2% 2%;
     padding: 1%;
     border-radius: 10px;
 }
@@ -97,7 +97,7 @@ label{
 
 table{
     width: 100%;
-    
+    border-collapse: collapse;
 }
 
 td{
@@ -146,6 +146,7 @@ aside{
 
 a > #btnregclient{
     margin: 1% 1% 0 1%;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -195,8 +196,7 @@ a > #btnregclient{
     z-index: 1; 
     width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgb(0,0,0);
+    overflow: auto;
     background-color: rgba(0,0,0,0.4); 
 }
 
@@ -229,4 +229,10 @@ a > #btnregclient{
     background: none;
     cursor: pointer;
     font-size: medium;
+}
+
+.btns{
+    background-color: var(--color-input-underline);
+    border-color: var(--color-login);
+    color: white;
 }

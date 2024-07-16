@@ -9,7 +9,7 @@ var loginForm = document.getElementById("loginform");
 var registerForm = document.getElementById("registerform");
 
 var myAccBtn = document.getElementById("myaccbtn");
-var dropdownAccLogReg = document.getElementById("accmenu1");
+var dpDownLogin = document.getElementById("dpdownlogin");
 var btnLoginDpDown = document.getElementById("btnddlogin");
 var btnRegisterDpDown = document.getElementById("btnddregister");
 
@@ -88,14 +88,16 @@ function changeLogRegForm(){
         registerForm.style.display = "none";
         loginForm.style.display = "flex";
     }
+
+    
 }
 
     myAccBtn.addEventListener("click", function() {
-        if(dropdownAccLogReg.style.display == "none" || dropdownAccLogReg.style.display == ""){
-            dropdownAccLogReg.style.display = "block";
+        if(dpDownLogin.style.display == "none" || dpDownLogin.style.display == ""){
+            dpDownLogin.style.display = "block";
         }
         else{
-            dropdownAccLogReg.style.display = "none";
+            dpDownLogin.style.display = "none";
         }
      });
 
