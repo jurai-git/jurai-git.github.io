@@ -5,31 +5,32 @@ body{
 }
 
 main{
-    margin-top: 1%;
-    min-height: calc(100vh - 60px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#logo{
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-}
-
-#home{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-h1{
-    color:white;
+#logo{
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
+.secdivs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .divlogin{
+    margin-top: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,15 +178,12 @@ a > #btnregclient{
 }
 
 .changestep{
+    
     display: none;
 }
 
 .subtitles{
     color: rgba(255, 255, 255, 0.7);
-}
-
-.titles{
-    color: white;
 }
 
 .modal{
@@ -234,5 +232,16 @@ a > #btnregclient{
 .btns{
     background-color: var(--color-input-underline);
     border-color: var(--color-login);
+    color: white;
+}
+
+.plans-cards{
+    border: 1px solid var(--color-login);
+    border-radius: 10px;
+    background-color: var(--color-input-underline);
+    margin: 1%;
+}
+
+.plans-cards > *{
     color: white;
 }

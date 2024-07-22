@@ -14,17 +14,16 @@
     <nav>
         <div class="navcenter">
             <img src="./assets/img/juraitext.png" width="15%">
-
             <ul>
                 <li><a href="index.html" class="navanchor">Início</a></li>
                 <li><a href="#" class="navanchor">Consulta Rápida</a></li>
-                <li><a href="#" class="navanchor">Planos</a></li>
+                <li><a href="index.html#plans" class="navanchor">Planos</a></li>
                 <li><a href="#" class="navanchor">Cadastro/Entrar</a></li>
             </ul>
         </div>
     </nav>
     
-    <main>
+    <main style="height: calc(100vh - 60px);">
         <section style="display: flex; justify-content: center; align-items: center;">
             <img src="./assets/img/juraiicon.png" id="logo" width="20%">
             <div class="divlogin" id="loginform">
@@ -34,7 +33,7 @@
                     <input type="password" id="inppassword" name="password" placeholder="Senha" required>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span class="titles">Mantenha-me conectado</span></label>
+                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span style="color: white;">Mantenha-me conectado</span></label>
                         </div>
                         <div>
                             <a href="#" class="formanchors">Esqueci minha senha</a>
@@ -44,7 +43,7 @@
                         <input type="submit" value="Entrar" class="btns">
                     </div>
                 </form>
-                <span class="titles">Não possui uma conta? <button onclick="changeLogRegForm()" class="formanchors" id="logreganchor">Registre-se agora!</button></span>
+                <span style="color: white;">Não possui uma conta? <button onclick="changeLogRegForm()" class="formanchors" id="logreganchor">Registre-se agora!</button></span>
             </div>
 
             <div class="divlogin" id="registerform">
@@ -60,7 +59,6 @@
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center;">
                         <input type="submit" value="Cadastrar" class="btns">
-                    
                     </div>
                 </form>
                 <span style="color: white;">Já possui uma conta? <button onclick="changeLogRegForm()" class="formanchors" id="logreganchor">Entre agora!</button></span>

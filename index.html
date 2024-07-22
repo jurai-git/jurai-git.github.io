@@ -1,47 +1,84 @@
-  <!DOCTYPE html>
-  <html lang="pt">
-  <head>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JurAI</title>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/juraiicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-      <nav>
-          <div class="navcenter">
-              <img src="./assets/img/juraitext.png" width="15%">
-            
-              <ul>
-                  <li><a href="#" class="navanchor">Início</a></li>
-                  <li><a href="#" class="navanchor">Consulta Rápida</a></li>
-                  <li><a href="#" class="navanchor">Planos</a></li>
-                  <li>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="navcenter">
+            <img src="./assets/img/juraitext.png" width="15%">          
+            <ul>
+                <li><a href="#" class="navanchor">Início</a></li>
+                <li><a href="#" class="navanchor">Consulta Rápida</a></li>
+                <li><a href="#plans" class="navanchor">Planos</a></li>
+                <li>
                     <div class="accountmenu">
-                      <a href="#" class="navanchor" id="myaccbtn">Minha Conta</a>
-                      <div class="accmenu" id="dpdownlogin">
-                          <p>Seja Bem-Vindo(a)</p>
-                          <p>Cadastre-se ou faça login para desfrutar do site</p>
-                          <hr>
-                          <a class="btndropdown" id="btnddlogin" href="login.html">Login</a>
-                          <a class="btndropdown" id="btnddregister" href="login.html">Cadastre-se</a>
-                      </div>  
+                        <a href="#" class="navanchor" id="myaccbtn">Minha Conta</a>
+                        <div class="accmenu" id="dpdownlogin">
+                            <p>Seja Bem-Vindo(a)</p>
+                            <p>Cadastre-se ou faça login para desfrutar do site</p>
+                            <hr>
+                            <a class="btndropdown" id="btnddlogin" href="login.html">Login</a>
+                            <a class="btndropdown" id="btnddregister" href="login.html">Cadastre-se</a>
+                        </div>  
                     </div>
-                  </li>
-                
-              </ul>
-            
-      </nav>
-      
-      <main>
-        <section id="home">
-          <img src="./assets/img/juraifull.png" width="60%" id="logo">
-          <h1 style="text-align: center;">A Inteligência que Facilita o Processo</h1>  
+                </li>
+            </ul> 
+        </div>       
+    </nav>
+
+    <main>
+        <section id="home" class="secdivs" style="margin: 70px 0 70px 0;">
+            <img src="./assets/img/juraiicon.png" width="30%" id="logo">
+            <img src="./assets/img/juraitext.png" width="60%" id="logo" style="margin-bottom: 20px;">
+            <h1 style="text-align: center;">A Inteligência que Facilita o Processo</h1>  
         </section>
-      </main>
-      <script src="script.js"></script>
-  </body>
-  </html>
+
+        <section id="about" class="secdivs" style="margin: 70px 0 70px 0; width: 80%; flex-direction: row;">
+            <div style="width: 50%;">
+                <h1 style="font-size: xx-large;">O que é o JurAI?</h1>
+                <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_aperto_de_mao_-_anyaberkut5.jpg?quality=70&strip=info&w=960" width="80%">
+            </div>
+            <div style="width: 50%;">
+                <h3 style="text-align: center;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis blanditiis, placeat numquam quidem iure animi ea esse doloremque dignissimos expedita facere, amet modi nulla nostrum voluptatum rerum dolorum mollitia iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iste, eaque libero nihil, hic iure quibusdam sunt non facere quasi dolorum possimus necessitatibus explicabo, ut fugiat voluptate maxime illum rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aperiam aliquid, quae voluptate delectus animi aspernatur eum inventore facilis doloribus, tempore officia nesciunt distinctio id soluta ipsum voluptatum expedita minus.</h3>
+            </div>
+        </section>
+
+        <section id="plans" class="secdivs" style="margin: 70px 0 70px 0; width: 80%; justify-content: space-between; flex-direction: row;">
+            <div class="plans-cards">
+                <h2 style="text-align: center;">Free</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo voluptatem tempora rem eius maxime totam recusandae quis deleniti error, ea aliquam blanditiis corrupti veniam quibusdam quo autem, velit id! Quae.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, alias quasi corporis enim sint dolorum? Natus sunt repellendus modi praesentium laboriosam debitis quidem aliquid dolores recusandae. Earum sequi culpa quaerat.</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam provident quos quo, voluptates impedit voluptate dolore autem optio obcaecati numquam eos esse, officia suscipit. Pariatur totam aspernatur reiciendis repellendus corrupti!</li>
+                </ul>
+            </div>
+            <div class="plans-cards">
+                <h2 style="text-align: center;">Advanced</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo voluptatem tempora rem eius maxime totam recusandae quis deleniti error, ea aliquam blanditiis corrupti veniam quibusdam quo autem, velit id! Quae.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, alias quasi corporis enim sint dolorum? Natus sunt repellendus modi praesentium laboriosam debitis quidem aliquid dolores recusandae. Earum sequi culpa quaerat.</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam provident quos quo, voluptates impedit voluptate dolore autem optio obcaecati numquam eos esse, officia suscipit. Pariatur totam aspernatur reiciendis repellendus corrupti!</li>
+                </ul>
+            </div>
+            <div class="plans-cards">
+                <h2 style="text-align: center;">Premium</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo voluptatem tempora rem eius maxime totam recusandae quis deleniti error, ea aliquam blanditiis corrupti veniam quibusdam quo autem, velit id! Quae.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, alias quasi corporis enim sint dolorum? Natus sunt repellendus modi praesentium laboriosam debitis quidem aliquid dolores recusandae. Earum sequi culpa quaerat.</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam provident quos quo, voluptates impedit voluptate dolore autem optio obcaecati numquam eos esse, officia suscipit. Pariatur totam aspernatur reiciendis repellendus corrupti!</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

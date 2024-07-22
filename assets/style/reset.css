@@ -13,3 +13,7 @@
     --color-login: #1a233d;
     --color-input-underline: #385e9d;
 }
+
+h1, h2, h3, h4, h5, h6{
+    color: white;
+}

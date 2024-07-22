@@ -46,6 +46,20 @@ li{
     text-align: center;
     padding: 10px;
     color: white; 
+    margin-top: 10px;
+}
+
+.accmenu::before{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--color-login) transparent;
 }
 
 .btndropdown{

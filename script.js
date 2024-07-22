@@ -60,8 +60,7 @@ function nextPrev(n) {
         modal.style.display = "block";
         btnUpForm.addEventListener("click",function(){
             document.getElementById("formclireg").submit();
-        })
-        
+        });
     }
     showTab(currentTab);
 }
@@ -95,10 +94,12 @@ function changeLogRegForm(){
     myAccBtn.addEventListener("click", function() {
         if(dpDownLogin.style.display == "none" || dpDownLogin.style.display == ""){
             dpDownLogin.style.display = "block";
+            
         }
         else{
             dpDownLogin.style.display = "none";
         }
+        
      });
 
 
