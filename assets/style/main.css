@@ -240,8 +240,45 @@ a > #btnregclient{
     border-radius: 10px;
     background-color: var(--color-input-underline);
     margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+
+}
+
+.plans-cards > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.plans-cards > ul > li{
+    margin: 3%;
+}
+
+.plans-cards > ul > li > img{
+    margin-right: 2%;
 }
 
 .plans-cards > *{
+    color: white;
+    margin: 5%;
+}
+
+.cards-btn{
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#cards-btn-buy{
+    background-color: white;
+    color: var(--color-background);
+}
+
+#cards-btn-buyed{
+    background-color: var(--color-background);
     color: white;
 }
