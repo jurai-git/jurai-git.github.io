@@ -56,7 +56,7 @@ main{
     margin: 5% 0 5% 0;  
 }
 
-input[type="text"], input[type="email"]{
+input[type="text"], .changestep > input[type="email"]{
     width: 100%;
     background: none;
     border: 2px solid var(--color-input-underline);
@@ -245,7 +245,6 @@ a > #btnregclient{
     align-items: center;
     flex-direction: column;
     width: 30%;
-
 }
 
 .plans-cards > ul{
@@ -263,12 +262,13 @@ a > #btnregclient{
 
 .plans-cards > *{
     color: white;
-    margin: 5%;
+    margin: 3%;
 }
 
 .cards-btn{
     width: 50%;
-    padding: 5px;
+    padding: 10px;
+    font-weight: bold;
     border-radius: 10px;
     border: 1px solid black;
 }
@@ -276,9 +276,11 @@ a > #btnregclient{
 #cards-btn-buy{
     background-color: white;
     color: var(--color-background);
+    border-color: var(--color-background);
 }
 
 #cards-btn-buyed{
     background-color: var(--color-background);
+    border-color: white;
     color: white;
 }
