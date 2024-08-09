@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon(1).ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navcenter">
+            <img src="./assets/img/juraitext.png" width="15%">
+            <ul>
+                <li><a href="index.html" class="navanchor">Início</a></li>
+                <li><a href="#" class="navanchor">Consulta Rápida</a></li>
+                <li><a href="index.html#plans" class="navanchor">Planos</a></li>
+                <li><a href="#" class="navanchor">Cadastro/Entrar</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main style="height: calc(100vh - 60px);">
+        <section style="display: flex; justify-content: center; align-items: center;">
+            <div class="divregister" id="advcliregister">
+                <div style="width: 25%">
+                    <img src="./assets/img/juraiicon.png" id="logo" width="100%">
+                </div>
+                <div class="register-fields">
+                    <h1>Sou um Advogado</h1>
+                    <h4 class="subtitles" style="text-align: center;">Insira suas informações para se registrar como advogado</h4>
+                    <form id="formlogin">
+                        <input type="text" id="advname" name="advname" placeholder="Nome" required>
+                        <input type="text" id="advoab" name="advoab" placeholder="Nº OAB" required>
+                        <input type="email" id="advemail" name="advemail" placeholder="Email" required>
+                        <input type="password" id="advpassword" name="advpassword" placeholder="Senha" required>
+                        <input type="password" id="advconfpassword" name="advconfpassword" placeholder="Confirmar Senha" required>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <input type="submit" value="Cadastrar" class="btns">
+                            </div>
+                    </form>
+                    <span style="color: white;">É um cliente? <button onclick="changePositions()" class="formanchors" id="logreganchor">Cadastre-se agora como cliente!</button></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

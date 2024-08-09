@@ -43,6 +43,25 @@ main{
     box-sizing: border-box;
 }
 
+.divregister{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    padding: 4%;
+    background-color: var(--color-login);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.register-fields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
 #formlogin > input[type="email"], #formlogin > [type="password"]{
     width: 100%;
     background: none;
@@ -66,6 +85,10 @@ input[type="text"], .changestep > input[type="email"]{
     color: white;
     font-size: large;
     margin: 5% 0 5% 0;  
+}
+
+.register-fields > #formlogin > input[type="text"]{
+    text-align: center;
 }
 
 input[type="submit"]{
@@ -215,10 +238,6 @@ a > #btnregclient{
     margin: 20px 30px 20px 30px;
     padding: 20px;
     border-radius: 20px;
-}
-
-#registerform{
-    display: none;
 }
 
 #logreganchor{

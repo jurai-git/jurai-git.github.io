@@ -6,12 +6,13 @@ var modal = document.getElementById("modalregcli");
 var btnUpForm = document.getElementById("dhdem");
 var ancLogReg = document.getElementById("logreganchor");
 var loginForm = document.getElementById("loginform");
-var registerForm = document.getElementById("registerform");
 
 var myAccBtn = document.getElementById("myaccbtn");
 var dpDownLogin = document.getElementById("dpdownlogin");
 var btnLoginDpDown = document.getElementById("btnddlogin");
 var btnRegisterDpDown = document.getElementById("btnddregister");
+
+const registerAdvCli = document.getElementById("advcliregister");
 
 
 function showTab(n) {
@@ -78,19 +79,6 @@ function validateForm() {
     return valid;
 }
 
-function changeLogRegForm(){
-    if(registerForm.style.display == "none" || registerForm.style.display == ""){
-        registerForm.style.display = "flex";
-        loginForm.style.display = "none";
-    }
-    else{
-        registerForm.style.display = "none";
-        loginForm.style.display = "flex";
-    }
-
-    
-}
-
     myAccBtn.addEventListener("click", function() {
         if(dpDownLogin.style.display == "none" || dpDownLogin.style.display == ""){
             dpDownLogin.style.display = "block";
@@ -102,5 +90,10 @@ function changeLogRegForm(){
         
      });
 
-
+function changePositions(){
+    if(registerAdvCli.style.flexDirection == "row")
+        registerAdvCli.style.flexDirection="row-reverse";
+    else
+        registerAdvCli.style.flexDirection="row";
+}
 
