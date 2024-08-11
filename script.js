@@ -12,7 +12,8 @@ var dpDownLogin = document.getElementById("dpdownlogin");
 var btnLoginDpDown = document.getElementById("btnddlogin");
 var btnRegisterDpDown = document.getElementById("btnddregister");
 
-const registerAdvCli = document.getElementById("advcliregister");
+const registerAdvForm = document.getElementById("form-adv");
+const registerCliForm = document.getElementById("form-cli");
 
 
 function showTab(n) {
@@ -91,9 +92,15 @@ function validateForm() {
      });
 
 function changePositions(){
-    if(registerAdvCli.style.flexDirection == "row")
-        registerAdvCli.style.flexDirection="row-reverse";
-    else
-        registerAdvCli.style.flexDirection="row";
+    
+    if(registerCliForm.style.display == "none"){
+        registerAdvForm.style.display = "none";
+        registerCliForm.style.display = "flex";
+    }   
+    else{
+        registerAdvForm.style.display="flex";
+        registerCliForm.style.display="none";
+    }
+        
 }
 

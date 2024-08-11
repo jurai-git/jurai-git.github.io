@@ -52,7 +52,9 @@ main{
     background-color: var(--color-login);
     border-radius: 20px;
     box-sizing: border-box;
+    
 }
+
 
 .register-fields{
     display: flex;
