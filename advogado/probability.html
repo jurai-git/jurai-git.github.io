@@ -11,24 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <style>
         .result-container {
-            border: 1px solid #ddd;
+            border: 2px solid #1a233d;
             border-radius: 8px;
             padding: 16px;
-            background-color: #f9f9f9;
             max-width: 600px;
             margin: 20px auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
         }
         .result-container h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
-            color: #333;
+            color: white;
         }
         .result-class {
             font-size: 1.25em;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #007bff;
+            color: white;
         }
         .probabilities {
             font-size: 1.1em;
@@ -41,7 +41,19 @@
         }
         .probability-value {
             margin-left: 10px;
-            color: #555;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        textarea{
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #1a233d;
+            border-radius: 4px;
+            background-color: #385e9d;
+            font-size: 16px;
+            resize: none;
+            color: white;
         }
     </style>
 </head>
@@ -79,15 +91,19 @@
                 <h1 style="margin: 2%; text-align: center;">Probabilidade de Ganho do Processo</h1>
                 <h3 style="margin: 2%; text-align: center;">Envie o documento processual para que a Inteligência Artificial do JurAI analise e retorne a porcentagem de ganho desse caso</h3>
 
-                <form id="probability-generator">
-                    <label for="text-input">Ementa:</label>
-                    <textarea id="text-input" name="text-input" cols="40" rows="8"></textarea>
-
-                    <label for="pdf-input">Selecionar Documento</label>
-                    <input type="file" id="pdf-input" name="pdf-input">
-
-                    <button type="submit">Generate</button>
-                </form>
+                <div>
+                    <form id="probability-generator">
+                        <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
+                            <label for="text-input">Ementa:</label>
+                            <textarea id="text-input" name="text-input" cols="40" rows="8"></textarea>
+                        </div>
+                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                            <label for="pdf-input" id="pdfname" class="items-prob">Selecionar Documento</label>
+                            <input type="file" id="pdf-input" name="pdf-input">
+                            <button type="submit" class="btndropdown" style="border: 2px solid var(--color-login); font-size: medium; color: white;">Generate</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div id="result"></div>
         </section>
@@ -95,6 +111,7 @@
     <script src="../script.js"></script>
     <script>
         const result = document.getElementById('result');
+        const resultText = document.getElementById('result-class-text');
 
         document.getElementById('probability-generator').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -113,7 +130,7 @@
                 result.innerHTML = `
                     <div class="result-container">
                         <h2>Classe Predita</h2>
-                        <div class="result-class">${data['predicted_class']}</div>
+                        <div class="result-class" id="result-class-text">${data['predicted_class']}</div>
                         <h2>Probabilidades</h2>
                         <div class="probabilities">
                             <div class="probability-item">
@@ -136,6 +153,16 @@
                 console.error('Error:', err);
             });
         });
+
+        if(resultText.innerText == "positive"){
+            resultText.style.color="green";
+        }
+        else if(resultText.innerText == "impartial"){
+            resultText.style.color="yellow";
+        }
+        else{
+            resultText.style.color = "red";
+        }
     </script>
 </body>
 </html>

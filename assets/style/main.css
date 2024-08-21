@@ -112,7 +112,7 @@ label{
 
 .dashboard{
     background-color: var(--color-login);
-    width: 50%;
+    width: 73%;
     margin: 2%;
     padding: 1%;
     border-radius: 10px;
@@ -310,4 +310,11 @@ input[type="file"]{
     background-color: var(--color-input-underline);
     cursor: pointer;
     color: white;
+}
+
+#btnregclient{
+    margin-top: 3%;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
 }

@@ -91,14 +91,28 @@ myAccBtn.addEventListener("click", function() {
     
  });
 
+function changePositions(){
+    if(registerCliForm.style.display == "none"){
+        registerAdvForm.style.display = "none";
+        registerCliForm.style.display = "flex";
+    }   
+    else{
+        registerAdvForm.style.display="flex";
+        registerCliForm.style.display="none";
+    }
+}
+
 
 
 window.onload = function(){
-    document.getElementById("inpdocproc").addEventListener('change',getFileName);
+    document.getElementById("pdf-input").addEventListener('change',getFileName);
 }
 const getFileName = (event) => {
     const files = event.target.files;
     const fileName = files[0].name;
-    document.getElementById("lbldocproc").innerText = fileName;
+    document.getElementById("pdfname").innerText = fileName;
+    document.getElementById("pdfname").classList.remove("items-prob");
+    document.getElementById("pdfname").classList.add("btndropdown");
+    document.getElementById("pdfname").style.border = "2px solid #1a233d";
 }
    
