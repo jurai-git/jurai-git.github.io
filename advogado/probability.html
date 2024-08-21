@@ -93,6 +93,12 @@
 
                 <div>
                     <form id="probability-generator">
+                        <input type="radio" id="ementa" name="option" value="ementa" checked>
+                        <label for="ementa">Ementa</label>
+            
+                        <input type="radio" id="pdf" name="option" value="pdf">
+                        <label for="pdf">PDF</label>
+
                         <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
                             <label for="text-input">Ementa:</label>
                             <textarea id="text-input" name="text-input" cols="40" rows="8"></textarea>
@@ -116,12 +122,22 @@
         document.getElementById('probability-generator').addEventListener('submit', (e) => {
             e.preventDefault();
 
+            const formData = new FormData();
+            const selectedOption = document.querySelector('input[name="option"]:checked').value;
+
+            if (selectedOption === 'ementa') {
+                const text = document.getElementById('text-input').value;
+                formData.append('text', text);
+            } else if (selectedOption === 'pdf') {
+                const fileInput = document.getElementById('pdf-input');
+                if (fileInput.files.length > 0) {
+                    formData.append('pdf', fileInput.files[0]);
+                }
+            }
+
             fetch('http://127.0.0.1:5000/probability', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ text: document.getElementById('text-input').value.trim() })
+                body: formData
             })
             .then(response => response.json())
             .then(data => {
