@@ -9,6 +9,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .result-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            background-color: #f9f9f9;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result-container h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .result-class {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .probabilities {
+            font-size: 1.1em;
+        }
+        .probability-item {
+            margin-bottom: 10px;
+        }
+        .probability-label {
+            font-weight: bold;
+        }
+        .probability-value {
+            margin-left: 10px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -43,14 +78,64 @@
             <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                 <h1 style="margin: 2%; text-align: center;">Probabilidade de Ganho do Processo</h1>
                 <h3 style="margin: 2%; text-align: center;">Envie o documento processual para que a Inteligência Artificial do JurAI analise e retorne a porcentagem de ganho desse caso</h3>
-                <div style="display: flex; justify-content: center; align-items: center; width: 75%;">
-                    <button class="items-prob">Enviar</button>
-                    <label for="inpdocproc" class="items-prob" id="lbldocproc" style="margin: 2%; text-align: center;" >Selecionar Documento</label>
-                    <input type="file" id="inpdocproc" name="inpdocproc" style="margin: 2%;">
-                </div>
+
+                <form id="probability-generator">
+                    <label for="text-input">Ementa:</label>
+                    <textarea id="text-input" name="text-input" cols="40" rows="8"></textarea>
+
+                    <label for="pdf-input">Selecionar Documento</label>
+                    <input type="file" id="pdf-input" name="pdf-input">
+
+                    <button type="submit">Generate</button>
+                </form>
             </div>
+            <div id="result"></div>
         </section>
     </main> 
     <script src="../script.js"></script>
+    <script>
+        const result = document.getElementById('result');
+
+        document.getElementById('probability-generator').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            fetch('http://127.0.0.1:5000/probability', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: document.getElementById('text-input').value.trim() })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+
+                result.innerHTML = `
+                    <div class="result-container">
+                        <h2>Classe Predita</h2>
+                        <div class="result-class">${data['predicted_class']}</div>
+                        <h2>Probabilidades</h2>
+                        <div class="probabilities">
+                            <div class="probability-item">
+                                <span class="probability-label">Recurso provido:</span>
+                                <span class="probability-value">${(data['probabilities']['positive'] * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="probability-item">
+                                <span class="probability-label">Recurso parcialmente provido:</span>
+                                <span class="probability-value">${(data['probabilities']['partial'] * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="probability-item">
+                                <span class="probability-label">Recurso negado:</span>
+                                <span class="probability-value">${(data['probabilities']['negative'] * 100).toFixed(1)}%</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(err => {
+                console.error('Error:', err);
+            });
+        });
+    </script>
 </body>
 </html>
