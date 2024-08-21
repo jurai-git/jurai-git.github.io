@@ -80,27 +80,25 @@ function validateForm() {
     return valid;
 }
 
-    myAccBtn.addEventListener("click", function() {
-        if(dpDownLogin.style.display == "none" || dpDownLogin.style.display == ""){
-            dpDownLogin.style.display = "block";
-            
-        }
-        else{
-            dpDownLogin.style.display = "none";
-        }
+myAccBtn.addEventListener("click", function() {
+    if(dpDownLogin.style.display == "none" || dpDownLogin.style.display == ""){
+        dpDownLogin.style.display = "block";
         
-     });
-
-function changePositions(){
-    
-    if(registerCliForm.style.display == "none"){
-        registerAdvForm.style.display = "none";
-        registerCliForm.style.display = "flex";
-    }   
-    else{
-        registerAdvForm.style.display="flex";
-        registerCliForm.style.display="none";
     }
-        
-}
+    else{
+        dpDownLogin.style.display = "none";
+    }
+    
+ });
 
+
+
+window.onload = function(){
+    document.getElementById("inpdocproc").addEventListener('change',getFileName);
+}
+const getFileName = (event) => {
+    const files = event.target.files;
+    const fileName = files[0].name;
+    document.getElementById("lbldocproc").innerText = fileName;
+}
+   

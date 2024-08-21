@@ -52,9 +52,7 @@ main{
     background-color: var(--color-login);
     border-radius: 20px;
     box-sizing: border-box;
-    
 }
-
 
 .register-fields{
     display: flex;
@@ -114,8 +112,8 @@ label{
 
 .dashboard{
     background-color: var(--color-login);
-    width: 73%;
-    margin: 2% 0 2% 2%;
+    width: 50%;
+    margin: 2%;
     padding: 1%;
     border-radius: 10px;
 }
@@ -138,11 +136,7 @@ td{
 }
 
 .tdstate{
-    width: 40%;
-}
-
-.tdtools{
-    width: 25%;
+    width: 55%;
 }
 
 .tools{
@@ -170,8 +164,8 @@ aside{
     width: 20%;
 }
 
-a > #btnregclient{
-    margin: 1% 1% 0 1%;
+a > .btnsdash{
+    margin: 3% 3% 0 3%;
     border-radius: 15px;
     cursor: pointer;
 }
@@ -203,7 +197,6 @@ a > #btnregclient{
 }
 
 .changestep{
-    
     display: none;
 }
 
@@ -303,5 +296,18 @@ a > #btnregclient{
 #cards-btn-buyed{
     background-color: var(--color-background);
     border-color: white;
+    color: white;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.items-prob{
+    padding: 10px;
+    border: 2px solid var(--color-login);
+    border-radius: 20px;
+    background-color: var(--color-input-underline);
+    cursor: pointer;
     color: white;
 }

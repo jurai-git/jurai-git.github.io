@@ -25,24 +25,27 @@
     
     <main style="height: calc(100vh - 60px);">
         <section style="display: flex; justify-content: center; align-items: center;">
-            <div class="divregister" style="min-height: 600px;">
-                <div class="register-fields" id="form-cli" style="display: none;" >
+            <div class="divregister" style="width: 60%; padding: 3%;" >
+                <input type="checkbox" id="flip" name="flip" style="display: none;">
+                <div class="register-fields" id="form-cli" style="display: none; opacity: 0%;">
                     <h1>Sou um Cliente</h1>
                     <h4 class="subtitles" style="text-align: center;">Insira suas informações para se registrar como cliente</h4>
                     <form id="formlogin">
+                        <input type="text" id="cliname" name="cliname" placeholder="Nome" required>
+                        <input type="text" id="clicpf" name="clicpf" placeholder="CPF" required>
                         <input type="email" id="cliemail" name="cliemail" placeholder="Email" required>
                         <input type="password" id="clipassword" name="clipassword" placeholder="Senha" required>
                         <input type="password" id="cliconfpassword" name="cliconfpassword" placeholder="Confirmar Senha" required>
-                            <div style="display: flex; justify-content: center; align-items: center;">
-                                <input type="submit" value="Cadastrar" class="btns">
-                            </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <input type="submit" value="Cadastrar" class="btns">
+                        </div>
                     </form>
-                    <span style="color: white;">É um cliente? <button onclick="changePositions()" class="formanchors" id="logreganchor">Cadastre-se agora como cliente!</button></span>
+                    <span style="color: white; text-align: center;">É um advogado? Cadastre-se agora como <label for="flip">advogado!</label></span>
                 </div>
-                <div style="width: 25%">
-                    <img src="./assets/img/juraiicon.png" id="logo" width="100%">
+                <div style="width: 25%;" id="divfoto">
+                    <img src="./assets/img/juraiicon.png" id="logo" width="100%" style="z-index: 1;">
                 </div>
-                <div class="register-fields" id="form-adv">
+                <div class="register-fields" id="form-adv" style="opacity: 100%;">
                     <h1>Sou um Advogado</h1>
                     <h4 class="subtitles" style="text-align: center;">Insira suas informações para se registrar como advogado</h4>
                     <form id="formlogin">
@@ -55,7 +58,7 @@
                                 <input type="submit" value="Cadastrar" class="btns">
                             </div>
                     </form>
-                    <span style="color: white;">É um cliente? <button onclick="changePositions()" class="formanchors" id="logreganchor">Cadastre-se agora como cliente!</button></span>
+                    <span style="color: white; text-align: center;">É um cliente? Cadastre-se agora como <label for="flip">cliente!</label></span>
                 </div>
             </div>
         </section>
