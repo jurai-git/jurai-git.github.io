@@ -28,10 +28,10 @@
     <main style="height: calc(100vh - 60px);">
         <section>
             <div class="divlogin">
-                <form id="formclireg" action="">
+                <form id="formclireg">
                     <div style="position: relative;">
                         <h4 id="step" class="subtitles">Etapa 1</h4>
-                        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <div class="centralizer" style="flex-direction: column;">
                             <h1>Cadastro</h1>
                             <h4 class="subtitles" id="regclisubtitle">Informações Pessoais</h4>     
                         </div>
@@ -40,7 +40,7 @@
                         <input type="text" id="inpcliname" name="inpcliname" placeholder="Nome" required>
                         <input type="text" id="inpclisocialname" name="inpclisocialname" placeholder="Nome Social (Opcional)">
                         <input type="email" id="inpcliemail" name="inpcliemail" placeholder="Email">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="centralizer align-sides-fields" >
                             <div>
                                 <input type="date" id="inpclibirth" name="inpclibirth" required>
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                             <input type="text" id="inpclicpfcnpj" name="inpclicpfcnpj" placeholder="CPF/CNPJ" required>
                             <input type="checkbox" id="inpclicpfcnpjnot" name="inpclicpfcnpjnot" value="NaoCpfCnpj"><label for="inpclicpfcnpjnot">Declaro que a parte não possui CPF/CNPJ</label>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="centralizer align-sides-fields">
                             <input type="text" id="inpclirg" name="inpclirg" placeholder="RG" required>
                             <h1>-</h1>
                                 <select>
@@ -82,7 +82,7 @@
                             </div>
     
                         <input type="checkbox" id="inpclirgnot" name="inpclirgnot" value="NaoRg"><label for="inpclirgnot">Declaro que a parte não possui RG</label>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="centralizer align-sides-fields">
                             <div>
                                 <input type="text" id="inpcliestcivil" name="inpcliestcivil" placeholder="Estado Civil">
                             </div>
@@ -105,7 +105,7 @@
                             <input type="text" id="inpclicep" name="inpclicep" placeholder="CEP" required>
                             <img src="../assets/img/findicon.png" class="tools"></img>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="centralizer align-sides-fields">
                             <div style="width: 90%; padding-right: 1%;">
                                 <input type="text" id="inpclilogra" name="inpclilogra" placeholder="Logradouro" required>
                             </div>
@@ -114,7 +114,7 @@
                             </div>    
                         </div>
                         <input type="text" id="inpclibairro" name="inpclibairro" placeholder="Bairro" required>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="centralizer align-sides-fields">
                             <input type="text" id="inpclicidade" name="inpclicidade" placeholder="Cidade">
                             <select>
                                 <option value="sp">SP</option>
@@ -127,7 +127,7 @@
                         <div class="modalregcliopt">
                             <h1>Deseja cadastrar a demanda desse cliente?</h1>
                             <h4 class="subtitles">(Você pode fazer isso depois)</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="centralizer align-sides-fields">
                                 <button id="hdem" class="dembtns">Cadastrar Agora</button>
                                 <button id="dhdem" class="dembtns">Cadastrar Depois</button>
                             </div>
@@ -136,7 +136,7 @@
 
                     <div style="position: relative;">
                         <button type="button" id="prevBtn" onclick="nextPrev(-1)"><</button>
-                        <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="centralizer">
                             <input type="submit" id="continueBtn" value="Continuar" onclick="nextPrev(1)">
                         </div>
                     </div>

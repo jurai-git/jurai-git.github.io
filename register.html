@@ -24,8 +24,8 @@
     </nav>
     
     <main style="height: calc(100vh - 60px);">
-        <section style="display: flex; justify-content: center; align-items: center;">
-            <div class="divregister" style="width: 60%; padding: 3%;" >
+        <section class="centralizer">
+            <div class="divregister">
                 <input type="checkbox" id="flip" name="flip" style="display: none;">
                 <div class="register-fields" id="form-cli" style="display: none;">
                     <h1>Sou um Cliente</h1>
@@ -36,11 +36,11 @@
                         <input type="email" id="cliemail" name="cliemail" placeholder="Email" required>
                         <input type="password" id="clipassword" name="clipassword" placeholder="Senha" required>
                         <input type="password" id="cliconfpassword" name="cliconfpassword" placeholder="Confirmar Senha" required>
-                        <div style="display: flex; justify-content: center; align-items: center;">
+                        <div class="centralizer">
                             <input type="submit" value="Cadastrar" class="btns">
                         </div>
                     </form>
-                    <span style="color: white; text-align: center;">É um advogado? Cadastre-se agora como <label for="flip" style="color: var(--color-input-underline); cursor: pointer;" onclick="changePositions()">advogado!</label></span>
+                    <span style="text-align: center;">É um advogado? Cadastre-se agora como <label for="flip" style="color: var(--color-input-underline); cursor: pointer;" onclick="changePositions()">advogado!</label></span>
                 </div>
                 <div style="width: 25%;" id="divfoto">
                     <img src="./assets/img/juraiicon.png" id="logo" width="100%" style="z-index: 1;">
@@ -58,7 +58,7 @@
                                 <input type="submit" value="Cadastrar" class="btns">
                             </div>
                     </form>
-                    <span style="color: white; text-align: center;">É um cliente? Cadastre-se agora como <label for="flip" style="color: var(--color-input-underline); cursor: pointer;" onclick="changePositions()">cliente!</label></span>
+                    <span style="text-align: center;">É um cliente? Cadastre-se agora como <label for="flip" onclick="changePositions()">cliente!</label></span>
                 </div>
             </div>
         </section>

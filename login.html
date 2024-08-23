@@ -24,27 +24,26 @@
     </nav>
     
     <main style="height: calc(100vh - 60px);">
-        <section style="display: flex; justify-content: center; align-items: center;">
+        <section class="centralizer">
             <img src="./assets/img/juraiicon.png" id="logo" width="20%">
             <div class="divlogin" id="loginform">
                 <h1>Bem Vindo de Volta!</h1>
-                
                 <form action="./advogado/dashboard.html" id="formlogin">
                     <input type="email" id="inpemail" name="inpemail" placeholder="Email" required>
                     <input type="password" id="inppassword" name="password" placeholder="Senha" required>
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="align-connected">
                         <div>
-                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span style="color: white;">Mantenha-me conectado</span></label>
+                            <input type="checkbox" id="inpchkconnect" name="inpchkconnect"><label for="inpchkconnect"><span>Mantenha-me conectado</span></label>
                         </div>
                         <div>
                             <a href="#" class="formanchors">Esqueci minha senha</a>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: center; align-items: center;">
+                    <div class="centralizer">
                         <input type="submit" value="Entrar" class="btns">
                     </div>
                 </form>
-                <span style="color: white;">Não possui uma conta? <a href="register.html" class="formanchors" id="logreganchor">Registre-se agora!</a></span>
+                <span>Não possui uma conta? <a href="register.html" class="formanchors" id="logreganchor">Registre-se agora!</a></span>
             </div>
         </section>
     </main>

@@ -63,6 +63,11 @@ li{
     border-color: transparent transparent var(--color-login) transparent;
 }
 
+.dpdownlogopts{
+    display: flex;
+    flex-direction: column;
+}
+
 .btndropdown{
     padding: 2% 5% 2% 5%;
     border: 1px solid var(--color-input-underline);

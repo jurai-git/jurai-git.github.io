@@ -14,7 +14,6 @@
     <nav>
         <div class="navcenter">
             <img src="../assets/img/juraitext.png" width="15%">
-
             <ul>
                 <li><a href="../index.html" class="navanchor">Início</a></li>
                 <li><a href="#" class="navanchor">Consulta Rápida</a></li>
@@ -25,7 +24,7 @@
                         <div class="accmenu" id="dpdownlogin">
                             <p>Seja Bem-Vindo(a)</p>
                             <p>NomeDeUsuário</p>
-                            <div style="display: flex; flex-direction: column;">
+                            <div class="dpdownlogopts">
                                 <a class="btndropdown" id="btnddlogin" href="#">Dashboard</a>
                                 <a class="btndropdown" id="btnddregister" href="#">Sua conta</a>
                                 <hr>
@@ -39,18 +38,18 @@
     </nav>
 
     <main style="height: calc(100vh - 60px);">
-        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; ">
+        <div class="divdashboard">
             <article class="dashboard">
                 <h1>Consulta de Clientes Cadastrados</h1>
-                <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="centralizer">
                     <input type="text" id="txtboxnome" name="txtboxnome" placeholder="Insira os dados a serem buscados" style="width: 100%;">
                     <select style="width: 50%;">
                         <option value="Nome">Nome</option>
                         <option value="Estado">Estado do Processo</option>
                     </select>
                 </div>
-                <section style="justify-content: flex-start; flex-direction: column; height: 50vh; overflow-y: scroll; overflow-x: hidden;">
-                    <table cellspacing="0">              
+                <section class="section-table">
+                    <table>              
                         <tr>
                             <td class="noborder">Nome</td>
                             <td class="noborder">Estado do Processo</td>
@@ -101,7 +100,7 @@
                         </tr>
                     </table>
                 </section>
-                <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="centralizer">
                     <a href="../advogado/client-register.html"><button class="btns" id="btnregclient">Cadastrar Cliente</button></a>   
                 </div>
             </article>

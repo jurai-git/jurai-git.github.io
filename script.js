@@ -1,5 +1,6 @@
 var currentTab = 0;
 var loginRegister = 0;
+
 var continuBtn = document.getElementById("continueBtn");
 var previousBtn = document.getElementById("prevBtn");
 var modal = document.getElementById("modalregcli");
@@ -101,8 +102,6 @@ function changePositions(){
         registerCliForm.style.display="none";
     }
 }
-
-
 
 window.onload = function(){
     document.getElementById("pdf-input").addEventListener('change',getFileName);

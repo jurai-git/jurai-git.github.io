@@ -27,21 +27,21 @@
                             <hr>
                             <a class="btndropdown" id="btnddlogin" href="login.html">Login</a>
                             <a class="btndropdown" id="btnddregister" href="register.html">Cadastre-se</a>
-                        </div>  
+                        </div>
                     </div>
                 </li>
-            </ul> 
-        </div>       
+            </ul>
+        </div>
     </nav>
 
     <main>
-        <section id="home" class="secdivs" style="margin: 70px 0 70px 0;">
+        <section id="home" class="secdivs">
             <img src="./assets/img/juraiicon.png" width="30%" id="logo">
             <img src="./assets/img/juraitext.png" width="60%" id="logo" style="margin-bottom: 20px;">
             <h1 style="text-align: center;">A Inteligência que Facilita o Processo</h1>  
         </section>
         
-        <section id="about" class="secdivs" style="margin: 70px 0 70px 0; width: 80%; flex-direction: row;">
+        <section id="about" class="secdivs">
             <div style="width: 50%;">
                 <h1 style="font-size: xx-large;">O que é o JurAI?</h1>
                 <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_aperto_de_mao_-_anyaberkut5.jpg?quality=70&strip=info&w=960" width="80%">
@@ -51,22 +51,22 @@
             </div>
         </section>
 
-        <section id="quick-search" class="secdivs" style="width: 80%;">
+        <section id="quick-search" class="secdivs">
             <h1>Faça uma pesquisa rápida para conhecer melhor o nosso produto</h1>
-            <div style="display: flex; justify-content: center; align-items: center; width: 60%; margin-top: 20px; background-color: var(--color-login); border-radius: 50px; padding: 0 10px 0 10px;">
-                <div style="width: 80%; margin-left: 20px;">
+            <div id="container-search">
+                <div id="search-input">
                     <input type="text">
                 </div>
-                <div style="display: flex; justify-content: center; align-items: center; width: 20%;">
-                    <input type="submit" value="Pesquisar" style="padding: 5px 10px; margin: initial; background-color: var(--color-background); border: 2px solid white; color: white;">
+                <div id="search-submit">
+                    <input type="submit" value="Pesquisar">
                 </div>
             </div>
         </section>
 
-        <section id="plans" class="secdivs" style="margin: 70px 0 70px 0; width: 80%; justify-content: space-between; flex-direction: row;">
+        <section id="plans" class="secdivs">
             <div class="plans-cards">
                 <h2 style="text-align: center;">Free</h2>
-                <h1 style="text-align: center; font-size: 50px;">R$0,00</h1>
+                <h1 class="plans-prices">R$0,00</h1>
                 <hr style="width: 90%;">
                 <ul>
                     <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (10 por dia)</li>
@@ -79,7 +79,7 @@
             </div>
             <div class="plans-cards">
                 <h2 style="text-align: center;">Advanced</h2>
-                <h1 style="text-align: center; font-size: 50px;">R$25,00</h1>
+                <h1 class="plans-prices">R$25,00</h1>
                 <hr style="width: 90%;">
                 <ul>
                     <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (50 por dia)</li>
@@ -92,7 +92,7 @@
             </div>
             <div class="plans-cards">
                 <h2 style="text-align: center;">Premium</h2>
-                <h1 style="text-align: center; font-size: 50px;">R$50,00</h1>
+                <h1 class="plans-prices">R$50,00</h1>
                 <hr style="width: 90%;">
                 <ul>
                     <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (Ilimitado)</li>
