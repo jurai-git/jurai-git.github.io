@@ -87,31 +87,46 @@
     
     <main style="height: calc(100vh - 60px);">
         <section style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <h1 style="margin: 2%; text-align: center;">Probabilidade de Ganho do Processo</h1>
-                <h3 style="margin: 2%; text-align: center;">Envie o documento processual para que a Inteligência Artificial do JurAI analise e retorne a porcentagem de ganho desse caso</h3>
+            <div id="probabBody">
+                <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h1 style="margin: 2%; text-align: center;">Probabilidade de Ganho do Processo</h1>
+                    <h3 style="margin: 2%; text-align: center;" class="subtitles">Envie o documento processual para que a Inteligência Artificial do JurAI analise e retorne a porcentagem de ganho desse caso</h3>
+                    <div>
+                        <form id="probability-generator">
+                            
+                                <div id="radioBtnE">
+                                    <input type="radio" id="ementa" name="option" value="ementa" checked>
+                                    <label for="ementa" class="subtitles">Ementa</label>
+                                </div>
+                                <div id="radioBtnP">
+                                    <input type="radio" id="pdf" name="option" value="pdf">
+                                    <label for="pdf" class="subtitles">PDF</label>
+                                </div>
+                          
+                            
+                            <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
+                                <label for="text-input">Ementa:</label>
+                                <style>
+                                    ::-webkit-input-placeholder{
+                                        text-align: center;
+                                        color: #ffffff;
+                                    }
+                                </style>
+                                <textarea id="text-input" name="text-input" cols="40" rows="8" placeholder="Insira a ementa aqui:"></textarea>
+                            </div>
+                            <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                                <label for="pdf-input" id="pdfname" class="items-prob">Selecionar Documento</label>
+                                <input type="file" id="pdf-input" name="pdf-input">
+                                <button type="submit" class="btndropdown" style="border: 2px solid var(--color-login); font-size: medium; color: white;">Generate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="result">
 
-                <div>
-                    <form id="probability-generator">
-                        <input type="radio" id="ementa" name="option" value="ementa" checked>
-                        <label for="ementa">Ementa</label>
-            
-                        <input type="radio" id="pdf" name="option" value="pdf">
-                        <label for="pdf">PDF</label>
-
-                        <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
-                            <label for="text-input">Ementa:</label>
-                            <textarea id="text-input" name="text-input" cols="40" rows="8"></textarea>
-                        </div>
-                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
-                            <label for="pdf-input" id="pdfname" class="items-prob">Selecionar Documento</label>
-                            <input type="file" id="pdf-input" name="pdf-input">
-                            <button type="submit" class="btndropdown" style="border: 2px solid var(--color-login); font-size: medium; color: white;">Generate</button>
-                        </div>
-                    </form>
+                   
                 </div>
             </div>
-            <div id="result"></div>
         </section>
     </main> 
     <script src="../script.js"></script>
@@ -171,12 +186,15 @@
         });
 
         if(resultText.innerText == "positive"){
+            resultText="Positivo"
             resultText.style.color="green";
         }
         else if(resultText.innerText == "impartial"){
+            resultText="Parcial"
             resultText.style.color="yellow";
         }
         else{
+            resultText="Negativo"
             resultText.style.color = "red";
         }
     </script>
