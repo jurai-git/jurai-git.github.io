@@ -402,3 +402,9 @@ input[type="file"]{
     border-radius: 20px;
     cursor: pointer;
 }
+
+#probabBody{
+    background-color: var(--color-login);
+    border-radius: 15px;
+    width: 80%;
+}
