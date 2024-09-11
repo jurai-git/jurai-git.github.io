@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+:root {
+    --color-first-background-layer: #201F24;
+    --color-second-background-layer: #191e2e;
+
+    --color-background: #201F24;
+    --color-background-soft: #191e2e;
+
+    --color-border: #2d3a62;
+    --color-border-hover: #2e3f71;
+
+    --color-text: #9dceff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-first-background-layer: #201F24;
+        --color-second-background-layer: #191e2e;
+
+        --color-background: #201F24;
+        --color-background-soft: #191e2e;
+
+        --color-border: #2d3a62;
+        --color-border-hover: #2e3f71;
+
+        --color-text: #9dceff;
+    }
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: color .4s, background-color .4s;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family:
+        Inter,
+        'Arial',
+        -apple-system,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}

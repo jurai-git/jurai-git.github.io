@@ -3,123 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JurAI</title>
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon(1).ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>JurAI - Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
 <body>
-    <nav>
-        <div class="navcenter">
-            <img src="../assets/img/juraitext.png" width="15%">
-            <ul>
-                <li><a href="../index.html" class="navanchor">Início</a></li>
-                <li><a href="#" class="navanchor">Consulta Rápida</a></li>
-                <li><a href="../index.html#plans" class="navanchor">Planos</a></li>
-                <li>
-                    <div class="accountmenu">
-                        <a href="#" class="navanchor" id="myaccbtn">Conta</a>
-                        <div class="accmenu" id="dpdownlogin">
-                            <p>Seja Bem-Vindo(a)</p>
-                            <p>NomeDeUsuário</p>
-                            <div class="dpdownlogopts">
-                                <a class="btndropdown" id="btnddlogin" href="#">Dashboard</a>
-                                <a class="btndropdown" id="btnddregister" href="#">Sua conta</a>
-                                <hr>
-                                <a class="btndropdown" id="btnddexit" href="../index.html">Sair</a>
-                            </div>
-                        </div>  
-                    </div>
-                </li>
-            </ul>
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../assets/img/juraifull.png" alt="JurAI - Logo">
+            </a>
         </div>
-    </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">Visão Geral</a></li>
+                    <li><a href="./r/cadastro.html">Cadastrar Cliente</a></li>
+                    <li><a href="./d/cadastro.html">Cadastrar Demanda</a></li>
+                    <li><a href="./analise-processual.html">Análise Processual</a></li>
+                    <li><a href="./documentos.html">Documentos</a></li>
+                    <li><a href="./plano.html">Meu Plano</a></li>
+                    <li><a href="./conta.html">Minha Conta</a></li>
+                    <li><a href="#" onclick="confirmExit()">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Bem vindo, {{ Advogado }}</h1>
 
-    <main style="height: calc(100vh - 60px);">
-        <div class="divdashboard">
-            <article class="dashboard">
-                <h1>Consulta de Clientes Cadastrados</h1>
-                <div class="centralizer">
-                    <input type="text" id="txtboxnome" name="txtboxnome" placeholder="Insira os dados a serem buscados" style="width: 100%;">
-                    <select style="width: 50%;">
-                        <option value="Nome">Nome</option>
-                        <option value="Estado">Estado do Processo</option>
-                    </select>
+            <section class="card-container">
+                <div class="card">
+                    <h2>Clientes</h2>
+                    <h3>4</h3>
+                    <small>Requerentes</small>
                 </div>
-                <section class="section-table">
+                <div class="card">
+                    <h2>Petições</h2>
+                    <h3>10</h3>
+                    <small>Demandas</small>
+                </div>
+                <div class="card">
+                    <h2>Arquivados</h2>
+                    <h3>2</h3>
+                    <small>Ações</small>
+                </div>
+                <div class="card">
+                    <h2>Processos</h2>
+                    <canvas id="winRate"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Tabela de Clientes</h2>
+                    <br>
+
                     <table>              
-                        <tr>
-                            <td class="noborder">Nome</td>
-                            <td class="noborder">Estado do Processo</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
-                        <tr>
-                            <td class="tdname">Juninho da Silva</td>
-                            <td class="tdstate">Tramitação Prioritária</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Requerente</th>
+                                <th>Estado do Processo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juninho</td>
+                                <td>Tramitação</td>
+                            </tr>
+                            <tr>
+                                <td>Maria</td>
+                                <td>Concluso</td>
+                            </tr>
+                            <tr>
+                                <td>Carlos</td>
+                                <td>Sentença</td>
+                            </tr>
+                            <tr>
+                                <td>Ana</td>
+                                <td>Arquivado</td>
+                            </tr>
+                            <tr>
+                                <td>Pedro</td>
+                                <td>Em Andamento</td>
+                            </tr>
+                            <tr>
+                                <td>Luciana</td>
+                                <td>Apelação</td>
+                            </tr>
+                            <tr>
+                                <td>José</td>
+                                <td>Distribuído</td>
+                            </tr>
+                            <tr>
+                                <td>Clara</td>
+                                <td>Baixado</td>
+                            </tr>
+                            <tr>
+                                <td>Bruno</td>
+                                <td>Extinto</td>
+                            </tr>
+                            <tr>
+                                <td>Sofia</td>
+                                <td>Aguardando Despacho</td>
+                            </tr>
+                            <tr>
+                                <td>Lucas</td>
+                                <td>Concluso ao Juiz</td>
+                            </tr>
+                            <tr>
+                                <td>Fernanda</td>
+                                <td>Aguardando Sentença</td>
+                            </tr>
+                            <tr>
+                                <td>Ricardo</td>
+                                <td>Remetido ao Tribunal</td>
+                            </tr>
+                            <tr>
+                                <td>Gabriela</td>
+                                <td>Pronto para Julgamento</td>
+                            </tr>
+                            <tr>
+                                <td>Vinícius</td>
+                                <td>Sobrestado</td>
+                            </tr>
+                        </tbody>
                     </table>
-                </section>
-                <div class="centralizer">
-                    <a href="../advogado/client-register.html"><button class="btns" id="btnregclient">Cadastrar Cliente</button></a>   
                 </div>
-            </article>
-            <aside style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 2%;">
-                <img src="../assets/img/personicon.png" width="100%">
-                <div style="display: flex; justify-content: center; align-items: left; flex-direction: column; width: 100%;">
-                    <h3 style="margin: 5% 0 5% 0;">Nome:</h3>
-                    <h3 style="margin: 5% 0 5% 0;">Email:</h3>
-                    <h3 style="margin: 5% 0 5% 0;">CPF/CNPJ:</h3>
-                    <h3 style="margin: 5% 0 5% 0;">Possui demanda?:</h3>
-                </div>
-                <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%;">
-                    <img src="../assets/img/findicon.png" class="tools">
-                    <img src="../assets/img/personicon.png" class="tools">
-                    <img src="../assets/img/xicon.png" class="tools">
-                </div>
-            </aside>
-        </div>
-    </main>
-    <script src="../script.js"></script>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/script.js"></script>
+    <script> 
+        window.addEventListener('load', ()=>{
+            initGraphics();
+            // getNews();
+        });
+    </script>
 </body>
 </html>
