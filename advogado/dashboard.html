@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI - Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../assets/img/juraifull.png" alt="JurAI - Logo">
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">Visão Geral</a></li>
+                    <li><a href="./r/cadastro.html">Cadastrar Cliente</a></li>
+                    <li><a href="./d/cadastro.html">Cadastrar Demanda</a></li>
+                    <li><a href="./analise-processual.html">Análise Processual</a></li>
+                    <li><a href="./documentos.html">Documentos</a></li>
+                    <li><a href="./plano.html">Meu Plano</a></li>
+                    <li><a href="./conta.html">Minha Conta</a></li>
+                    <li><a href="#" onclick="confirmExit()">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Bem vindo, {{ Advogado }}</h1>
+
+            <section class="card-container">
+                <div class="card">
+                    <h2>Clientes</h2>
+                    <h3>4</h3>
+                    <small>Requerentes</small>
+                </div>
+                <div class="card">
+                    <h2>Petições</h2>
+                    <h3>10</h3>
+                    <small>Demandas</small>
+                </div>
+                <div class="card">
+                    <h2>Arquivados</h2>
+                    <h3>2</h3>
+                    <small>Ações</small>
+                </div>
+                <div class="card">
+                    <h2>Processos</h2>
+                    <canvas id="winRate"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Tabela de Clientes</h2>
+                    <br>
+
+                    <table>              
+                        <thead>
+                            <tr>
+                                <th>Requerente</th>
+                                <th>Estado do Processo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juninho</td>
+                                <td>Tramitação</td>
+                            </tr>
+                            <tr>
+                                <td>Maria</td>
+                                <td>Concluso</td>
+                            </tr>
+                            <tr>
+                                <td>Carlos</td>
+                                <td>Sentença</td>
+                            </tr>
+                            <tr>
+                                <td>Ana</td>
+                                <td>Arquivado</td>
+                            </tr>
+                            <tr>
+                                <td>Pedro</td>
+                                <td>Em Andamento</td>
+                            </tr>
+                            <tr>
+                                <td>Luciana</td>
+                                <td>Apelação</td>
+                            </tr>
+                            <tr>
+                                <td>José</td>
+                                <td>Distribuído</td>
+                            </tr>
+                            <tr>
+                                <td>Clara</td>
+                                <td>Baixado</td>
+                            </tr>
+                            <tr>
+                                <td>Bruno</td>
+                                <td>Extinto</td>
+                            </tr>
+                            <tr>
+                                <td>Sofia</td>
+                                <td>Aguardando Despacho</td>
+                            </tr>
+                            <tr>
+                                <td>Lucas</td>
+                                <td>Concluso ao Juiz</td>
+                            </tr>
+                            <tr>
+                                <td>Fernanda</td>
+                                <td>Aguardando Sentença</td>
+                            </tr>
+                            <tr>
+                                <td>Ricardo</td>
+                                <td>Remetido ao Tribunal</td>
+                            </tr>
+                            <tr>
+                                <td>Gabriela</td>
+                                <td>Pronto para Julgamento</td>
+                            </tr>
+                            <tr>
+                                <td>Vinícius</td>
+                                <td>Sobrestado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/script.js"></script>
+    <script> 
+        window.addEventListener('load', ()=>{
+            initGraphics();
+            // getNews();
+        });
+    </script>
+</body>
+</html>
