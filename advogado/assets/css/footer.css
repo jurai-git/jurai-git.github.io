@@ -1,0 +1,12 @@
+@import './reset.css';
+
+footer p{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p,
+footer small{
+    text-align: center;
+}
