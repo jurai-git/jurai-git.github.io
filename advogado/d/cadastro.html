@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI - Cadastro de Demanda</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../assets/img/juraifull.png" alt="JurAI - Logo">
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="../dashboard.html">Visão Geral</a></li>
+                    <li><a href="../r/cadastro.html">Cadastrar Cliente</a></li>
+                    <li><a href="#">Cadastrar Demanda</a></li>
+                    <li><a href="../analise-processual.html">Análise Processual</a></li>
+                    <li><a href="../documentos.html">Documentos</a></li>
+                    <li><a href="../plano.html">Meu Plano</a></li>
+                    <li><a href="../conta.html">Minha Conta</a></li>
+                    <li><a href="#" onclick="confirmExit('../../index.html')">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Cadastro de Demanda</h1>
+
+            <section class="main-container">
+                <form>
+                    <div class="container">
+                        <div class="form-section">
+                            <h2>Informações da Petição</h2>
+                            
+                            <label for="forum"> Foro </label>
+                            <input type="text" id="forum">
+
+                            <label for="competence"> Competência </label>
+                            <input type="text" id="competence">
+
+                            <label for="class"> Classe </label>
+                            <input type="text" id="class">
+
+                            <label for="subject"> Assunto Principal </label>
+                            <input type="text" id="subject">
+
+                            <label for="judicial-summary"> Ementa </label>
+                            <textarea id="judicial-summary" placeholder="Resumo do processo..."></textarea>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h2>Informações Opcionais</h2>
+                            
+                            <label for="other-subjects"> Outros Assuntos </label>
+                            <input type="text" id="other-subjects">
+
+                            <label for="protection">
+                                <input type="checkbox" id="protection">
+                                Pedido de Liminar/Tutela Antecipada
+                            </label>
+
+                            <label for="judicial-secrecy"> 
+                                <input type="checkbox" id="judicial-secrecy">
+                                Segredo de Justiça 
+                            </label>
+
+                            <label for="share-value"> Valor da ação (em R$) </label>
+                            <input type="number" id="share-value">
+
+                            <label for="expenses"> Despesas Processuais </label>
+                            <input type="number" id="expenses">
+
+                            <label for="dismissal"> 
+                                <input type="checkbox" id="dismissal">
+                                Não há recolhimento/Dispensa Legal  
+                            </label>
+
+                            <label for="free-justice"> 
+                                <input type="checkbox" id="free-justice">
+                                Pedido de Justiça Gratuita  
+                            </label>
+                            
+                            <label for="cost-guide"> Guia de Custas  </label>
+                            <input type="file" id="cost-guide">
+                        </div>
+                    </div>
+                    <input type="submit" value="Cadastrar">
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+    </footer>
+    <script src="../assets/script.js"></script>
+</body>
+
+</html>
