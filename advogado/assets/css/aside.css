@@ -1,0 +1,46 @@
+@import './reset.css';
+
+aside{
+    flex: .15;
+    padding: 16px;
+    background: #19181D;
+    border-right: 2px solid #202024;
+}
+
+aside nav{
+    height: 100%;
+}
+
+aside ul{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+}
+
+aside ul li {
+    display: flex;
+    background: #98999b1f;
+    border-radius: 6px;
+    padding: 4px 12px;
+}
+
+aside a {
+    width: 100%;
+    font-size: 1.1em;
+    color: #98999b;
+    text-decoration: none;
+    transition: .3s;
+}
+
+aside a:hover {
+    opacity: .6;
+}
+
+aside li:last-child{
+    margin-top: auto;
+}
+
+aside li:last-child a:hover{
+    color: red;
+}
