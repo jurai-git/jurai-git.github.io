@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI - Análise Processual</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../assets/img/juraifull.png" alt="JurAI - Logo">
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="./dashboard.html">Visão Geral</a></li>
+                    <li><a href="./r/cadastro.html">Cadastrar Cliente</a></li>
+                    <li><a href="./d/cadastro.html">Cadastrar Demanda</a></li>
+                    <li><a href="#">Análise Processual</a></li>
+                    <li><a href="./documentos.html">Documentos</a></li>
+                    <li><a href="./plano.html">Meu Plano</a></li>
+                    <li><a href="./conta.html">Minha Conta</a></li>
+                    <li><a href="#" onclick="confirmExit()">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Análise Processual</h1>
+
+            <section class="main-container">
+                <form>
+                    <textarea maxlength="2048" placeholder="Digite sua ementa aqui, ou arraste e solte um documento PDF..." required></textarea>
+    
+                    <div class="buttons-group">
+                        <label> <input type="checkbox" checked> Probabilidade </label>
+                        <label> <input type="checkbox" checked> Melhor Argumento </label>
+                        <label> <input type="checkbox" checked> Gerar Documento </label>
+                    </div>
+                    <input type="submit" value="Processar">
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="./assets/script/event.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
