@@ -320,16 +320,35 @@ dialog {
 .info-buttons>button {
     margin: 0 0.8em;
     padding: 0 0.4em;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: white;
     background: none;
     border: none;
     border-bottom: 2px solid #539cd4;
 }
 
+.info-buttons>button:hover{
+    border-bottom: 2px solid #235174;
+}
+
+#btn-general-info, #btn-adress-info{
+    color: #737373
+} 
+
+.field{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    margin: .6em 0;
+}
+
+.field .field{
+    width: 40%;
+}
+
 .client-information {
     display: flex;
-
     flex-direction: column;
     width: 100%;
     padding: 2em;
@@ -367,4 +386,51 @@ dialog {
     color: white;
     background-color: #1C1C1E;
     border: 1.5px solid #2e2e32;
+    transition: .5s;
+}
+
+.btn-dialog:focus{
+    background-color: #101011;
+}
+
+.btn-dialog:hover{
+    transform: scale(1.06);
+}
+
+.details-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#btn-exit{
+    color:crimson;
+}
+
+#btn-previous{
+    display: none;
+}
+
+#step-adress{
+    display: none;
+}
+
+#step-general{
+    display: none;
+}
+
+.client-isOlder{
+    display: flex;
+    flex-direction: row;
+}
+
+.client-isOlder input {
+    width: inherit;
+    vertical-align: text-bottom
+}
+
+#btn-next{
+    border: 1.5px solid #386898;
+    background-color: #386898;
 }

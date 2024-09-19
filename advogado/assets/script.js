@@ -149,3 +149,58 @@ function changePlan(n){
 
     }
 }
+
+var currentTab = 0;
+
+function changeStep(i){
+    currentTab=i;
+    switch(i){
+        case 0:
+            document.getElementById("step-personal").style.display = "flex";
+            document.getElementById("step-general").style.display = "none";
+            document.getElementById("step-adress").style.display = "none";
+            document.getElementById("btn-previous").style.display = "none";
+            document.getElementById("btn-next").textContent = "Próximo";
+            document.getElementById("btn-personal-info").style.color = "white";
+            document.getElementById("btn-general-info").style.color = "#737373";
+            document.getElementById("btn-adress-info").style.color = "#737373";
+            break;
+        case 1:
+            document.getElementById("step-personal").style.display = "none";
+            document.getElementById("step-general").style.display = "flex";
+            document.getElementById("step-adress").style.display = "none";
+            document.getElementById("btn-previous").style.display = "block";
+            document.getElementById("btn-next").textContent = "Próximo";
+            document.getElementById("btn-personal-info").style.color = "#737373";
+            document.getElementById("btn-general-info").style.color = "white";
+            document.getElementById("btn-adress-info").style.color = "#737373";
+            break;
+        case 2:
+            document.getElementById("step-personal").style.display = "none";
+            document.getElementById("step-general").style.display = "none";
+            document.getElementById("step-adress").style.display = "flex";
+            document.getElementById("btn-previous").style.display = "block";
+            document.getElementById("btn-next").textContent = "Enviar";
+            document.getElementById("btn-personal-info").style.color = "#737373";
+            document.getElementById("btn-general-info").style.color = "#737373";
+            document.getElementById("btn-adress-info").style.color = "white";
+            break;    
+    }
+    
+}
+
+function closeModal(){
+    document.querySelector('dialog').close();
+    changeStep(0);
+}
+
+function nextStep(n){
+    var x = document.getElementsByClassName("client-information");
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    changeStep(currentTab);
+}
+
+document.getElementById("btn-exit").addEventListener("click", function(){
+    currentTab = 0;
+});
