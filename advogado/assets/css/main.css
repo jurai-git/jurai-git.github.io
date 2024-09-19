@@ -10,12 +10,13 @@ main {
     overflow-y: auto;
 }
 
-th, h1 {
+th,
+h1 {
     font-weight: 900;
 }
 
 h2,
-.main-container th{
+.main-container th {
     font-size: 1.5em;
 }
 
@@ -26,6 +27,7 @@ h2,
     justify-content: space-around;
     margin: 0 auto;
 }
+
 
 .card {
     display: flex;
@@ -53,6 +55,57 @@ h2,
     margin: auto;
 }
 
+.plan-card {
+    min-width: 330px;
+    min-height: 550px;
+    justify-content: center;
+    align-items: center;
+    overflow-y: none;
+    transition: 1s;
+}
+
+.plan-card:hover {
+    border: 1px solid var(--color-text);
+}
+
+.plan-card>ul {
+    margin: 5% 0 7% 0;
+}
+
+.plan-card>ul>li {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.plan-card>.temp-css:hover,
+.plan-choosed:active,
+.plan-choosed>.temp-css {
+    color: #161921;
+    background: #84aed8;
+    border: 1px solid var(--color-text);
+}
+
+.plan-choosed {
+    background-color: var(--color-text);
+    color: #161921;
+    border: 1px solid black;
+    flex-grow: 2;
+}
+
+.temp-css {
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: var(--color-text);
+    background: #98999b1f;
+    padding: 8px 12px;
+    border: 1px solid var(--color-text);
+    border-radius: 6px;
+    outline: none;
+    transition: .5s;
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -72,7 +125,8 @@ table button:hover {
     background-color: #0056b3;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: 1px solid #19181D;
 }
@@ -109,6 +163,32 @@ tr:hover {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+#spacing {
+    justify-content: space-evenly;
+}
+
+.lawyer-information>ul {
+    list-style: none;
+}
+
+.lawyer-information>ul>li {
+    margin: 5% 0 5% 0;
+}
+
+.lawyer-information>ul>li>* {
+    display: inline-block;
+}
+
+.lawyer-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.lawyer-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .news-toggle {
     display: none;
 }
@@ -138,7 +218,7 @@ form {
     flex: 1;
 }
 
-form > textarea {
+form>textarea {
     background: #98999b1f;
 }
 
@@ -211,4 +291,80 @@ form select {
 form input[type="radio"],
 form input[type="checkbox"] {
     margin-right: 10px;
+}
+
+dialog {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.details-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #19181d;
+    width: 40%;
+    padding: 1%;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #2e2e32;
+}
+
+.info-buttons>button {
+    margin: 0 0.8em;
+    padding: 0 0.4em;
+    font-size: 1.3em;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #539cd4;
+}
+
+.client-information {
+    display: flex;
+
+    flex-direction: column;
+    width: 100%;
+    padding: 2em;
+}
+
+.client-information input,
+.client-information label {
+    color: white;
+    margin: .3em;
+}
+
+.client-information input {
+    border: none;
+    background: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+
+.adress-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.adress-details>div>input {
+    width: 90%;
+}
+
+.btn-dialog{
+    width: 100px;
+    padding: .5em;
+    font-size: 1.2em;
+    border-radius: .5em;
+    color: white;
+    background-color: #1C1C1E;
+    border: 1.5px solid #2e2e32;
 }
