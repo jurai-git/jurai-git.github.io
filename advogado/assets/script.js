@@ -204,3 +204,4 @@ function nextStep(n){
 document.getElementById("btn-exit").addEventListener("click", function(){
     currentTab = 0;
 });
+
