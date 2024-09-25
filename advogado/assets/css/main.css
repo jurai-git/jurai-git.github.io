@@ -6,7 +6,7 @@ main {
   flex-direction: column;
   gap: 28px;
   padding: 20px 40px 40px;
-  background: #1c1c1e;
+  background: var(--color-main-background);
   overflow-y: auto;
 }
 
@@ -31,7 +31,7 @@ h2,
 .card {
   display: flex;
   flex-direction: column;
-  background: #16192133;
+  background: var(--color-main-container);
   border-radius: 8px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -76,14 +76,14 @@ h2,
 .plan-card > .temp-css:hover,
 .plan-choosed:active,
 .plan-choosed > .temp-css {
-  color: #161921;
-  background: #84aed8;
+  color: var(--color-plan-choosed-text);
+  background: var(--color-plan-choosed-background);
   border: 1px solid var(--color-text);
 }
 
 .plan-choosed {
   background-color: var(--color-text);
-  color: #161921;
+  color: var(--color-plan-choosed-text);
   border: 1px solid black;
   flex-grow: 1.5;
 }
@@ -93,7 +93,7 @@ h2,
   font-size: 1.1em;
   cursor: pointer;
   color: var(--color-text);
-  background: #98999b1f;
+  background: var(--color-inputs-lists-background);
   padding: 8px 12px;
   border: 1px solid var(--color-text);
   border-radius: 6px;
@@ -109,7 +109,7 @@ table {
 table button {
   color: white;
   padding: 8px 10px;
-  background-color: #007bff;
+  background-color: var(--color-table-button-background);
   border: none;
   outline: none;
   border-radius: 4px;
@@ -117,18 +117,18 @@ table button {
 }
 
 table button:hover {
-  background-color: #0056b3;
+  background-color: var(--color-table-button-background-hover);
 }
 
 th,
 td {
   padding: 12px;
-  border: 1px solid #19181d;
+  border: 1px solid var(--color-table-row-aside-background);
 }
 
 th {
-  background-color: #29282c;
-  color: #9dceff;
+  background-color: var(--color-table-row-important);
+  color: var(--color-text);
 }
 
 tr {
@@ -136,11 +136,11 @@ tr {
 }
 
 tr:nth-child(even) {
-  background-color: #19181d;
+  background-color: var(--color-table-row-aside-background);
 }
 
 tr:hover {
-  background-color: #29282c55;
+  background-color: var(--color-table-row-important-hover);
 }
 
 .main-container {
@@ -148,7 +148,7 @@ tr:hover {
   gap: 20px;
   flex-wrap: wrap;
   flex: 1;
-  background: #16192133;
+  background: var(--color-main-container);
   overflow: auto;
   padding: 20px;
   border-radius: 8px;
@@ -214,12 +214,12 @@ form {
 }
 
 form > textarea {
-  background: #98999b1f;
+  background: var(--color-inputs-lists-background);
 }
 
 form textarea {
   font-size: 1.1em;
-  color: #98999b;
+  color: var(--color-form-list-text);
   width: 100%;
   height: 100%;
   padding: 8px;
@@ -230,7 +230,7 @@ form textarea {
 }
 
 form label {
-  color: #98999b;
+  color: var(--color-form-list-text);
   display: block;
   font-size: 1.2em;
   font-weight: bold;
@@ -257,8 +257,8 @@ form input[type="submit"] {
   width: 100%;
   font-size: 1.1em;
   cursor: pointer;
-  color: #98999b;
-  background: #98999b1f;
+  color: var(--color-form-list-text);
+  background: var(--color-inputs-lists-background);
   padding: 8px 12px;
   border-radius: 6px;
   border: none;
@@ -272,11 +272,11 @@ form input[type="submit"] {
 .form-section textarea,
 form select {
   width: 100%;
-  background-color: #1c1c1e;
-  color: #eee;
+  background-color: var(--color-main-background);
+  color: var(--color-form-input-text);
   padding: 6px;
   margin-bottom: 15px;
-  border: 1.5px solid #696969;
+  border: 1.5px solid var(--color-form-list-text);
   border-radius: 10px;
   box-sizing: border-box;
   font-size: 1em;
@@ -306,12 +306,12 @@ dialog {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #19181d;
+  background-color: var(--color-table-row-aside-background);
   width: 40%;
   padding: 1%;
   border-radius: 10px;
   text-align: center;
-  border: 2px solid #2e2e32;
+  border: 2px solid var(--color-dialog-background-border);
 }
 
 .info-buttons > button {
@@ -321,17 +321,17 @@ dialog {
   color: white;
   background: none;
   border: none;
-  border-bottom: 2px solid #539cd4;
+  border-bottom: 2px solid var(--color-dialog-header-buttons);
   cursor: pointer;
 }
 
 .info-buttons > button:hover {
-  border-bottom: 2px solid #235174;
+  border-bottom: 2px solid var(--color-dialog-header-buttons-hover);
 }
 
 #btn-general-info,
 #btn-adress-info {
-  color: #737373;
+  color: var(--color-dialog-header-buttons-not-visited);
 }
 
 .field {
@@ -383,14 +383,14 @@ dialog {
   font-size: 1.2em;
   border-radius: 0.5em;
   color: white;
-  background-color: #1c1c1e;
-  border: 1.5px solid #2e2e32;
+  background-color: var(--color-main-background);
+  border: 1.5px solid var(--color-dialog-background-border);
   transition: 0.5s;
   cursor: pointer;
 }
 
 .btn-dialog:focus {
-  background-color: #101011;
+  background-color: var(--color-dialog-button-focus);
 }
 
 .btn-dialog:hover {
@@ -431,11 +431,21 @@ dialog {
 }
 
 #btn-next {
-  border: 1.5px solid #386898;
-  background-color: #386898;
+  border: 1.5px solid var(--color-dialog-button-next);
+  background-color: var(--color-dialog-button-next);
 }
 
 .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.account-general-information ,.account-fields>.form-section{
+  flex: initial;
+  width: 100%;
+}
+
+.account-fields{
   display: flex;
   flex-direction: row;
 }
@@ -455,11 +465,11 @@ dialog {
 }
 
 .account-configs-options li:hover {
-  background-color: #69696949;
+  background-color: var(--color-config-li-background);
 }
 
 .account-configs-options li:last-child a:hover {
-  color: #98999b;
+  color: var(--color-form-list-text);
   opacity: 0.6;
 }
 
@@ -489,11 +499,11 @@ dialog {
 .configs-list h2,
 .configs-list span,
 .configs-list label {
-  color: #98999b;
+  color: var(--color-form-list-text);
 }
 
-#btn-update-accountinfo {
-  width: 25%;
+#btn-update-accountinfo{
+  width: 35%;
   font-size: 1em;
   background-color: green;
   transform: initial;
@@ -503,9 +513,9 @@ dialog {
 #btn-change-accountpsw {
   width: 25%;
   font-size: 1em;
-  background-color: #98999b1f;
+  background-color: var(--color-inputs-lists-background);
   transform: initial;
-  border: 1px solid #696969;
+  border: 1px solid var(--color-form-list-text);
   margin: 0.6em 0;
 }
 
@@ -516,19 +526,54 @@ dialog {
 #btn-delete-account {
   width: 25%;
   font-size: 1em;
-  background-color: #98999b1f;
+  background-color: var(--color-inputs-lists-background);
   transform: initial;
   color: crimson;
-  border: 1px solid #696969;
+  border: 1px solid var(--color-form-list-text);
   margin: 0.6em 0;
 }
 
+.configs-list button:active{
+  transition: initial;
+  background: linear-gradient(rgb(0 0 0/40%) 0 0);
+}
+
 .config-select {
-  width: 10%;
+  width: 15%;
   border-radius: 10px;
-  padding: 5px;
-  color: #98999b;
-  background-color: #1c1c1e;
-  border: 1px solid #696969;
+  padding: 7px;
+  font-size: 1.05em;
+  color: var(--color-form-list-text);
+  background-color: var(--color-main-background);
+  border: 1px solid var(--color-form-list-text);
   margin: 0.6em 0;
+}
+
+.account-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-image img{
+  border-radius: 400px;
+}
+
+.theme-card{
+  border: 1px solid var(--color-form-list-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: .6em;
+}
+
+.theme-card img{
+  margin: .6em;
+  border: 1px solid var(--color-form-list-text);
+}
+
+.theme-card hr{
+  margin: .3em;
+  width: 90%;
 }

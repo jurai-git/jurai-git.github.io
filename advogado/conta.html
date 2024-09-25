@@ -52,22 +52,27 @@
                     </aside>
                 </div>
                 <div class="container configs-list" id="account-general-information">
-                    <div class="form-section">
-                        <h1>Seu perfil</h1>
-                        <hr>
-                        <div class="field">
-                            <label for="acc-name">Nome:</label>
-                            <input type="text" id="acc-name" placeholder="Nome">
+                    <h1>Seu perfil</h1>
+                    <hr>
+                    <div class="account-fields">
+                        <div class="form-section">
+                            <div class="field">
+                                <label for="acc-name">Nome:</label>
+                                <input type="text" id="acc-name" placeholder="Nome">
+                            </div>
+                            <div class="field">
+                                <label for="acc-email">Email:</label>
+                                <input type="text" id="acc-email" placeholder="Email">
+                            </div>
+                            <div class="field">
+                                <label for="acc-oab">Nº OAB:</label>
+                                <input type="text" id="acc-oab" placeholder="Nº OAB">
+                            </div>
+                            <button class="btn-dialog" id="btn-update-accountinfo">Atualizar Informações</button>
                         </div>
-                        <div class="field">
-                            <label for="acc-email">Email:</label>
-                            <input type="text" id="acc-email" placeholder="Email">
+                        <div class="account-image">
+                            <img src="../assets/img/adv-image.jfif" width="50%">
                         </div>
-                        <div class="field">
-                            <label for="acc-oab">Nº OAB:</label>
-                            <input type="text" id="acc-oab" placeholder="Nº OAB">
-                        </div>
-                        <button class="btn-dialog" id="btn-update-accountinfo">Atualizar Informações</button>
                     </div>
                 </div>
                 <div class="container configs-list" id="account-config">
@@ -96,8 +101,18 @@
                         <option>Dark</option>
                     </select>
                     <div class="theme-images">
-                        <img src="../assets/img/dark-themepng.png" width="50%">
-                        <img src="../assets/img/dark-themepng.png" width="50%">
+                        <div class="theme-card">
+                            <h1>Light Mode</h1>
+                            <hr>
+                            <span>Ao clicar aqui, o tema do site será trocado para o tema claro</span>
+                            <img src="../assets/img/dark-themepng.png" width="90%">
+                        </div>
+                        <div class="theme-card">
+                            <h1>Dark Mode</h1>
+                            <hr>
+                            <span>Ao clicar aqui, o tema do site será trocado para o tema escuro</span>
+                            <img src="../assets/img/dark-themepng.png" width="90%">
+                        </div>
                     </div>
                 </div>
             </div>

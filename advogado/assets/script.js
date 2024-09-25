@@ -158,8 +158,8 @@ function changeStep(i) {
       document.getElementById("btn-previous").style.display = "none";
       document.getElementById("btn-next").textContent = "Próximo";
       document.getElementById("btn-personal-info").style.color = "white";
-      document.getElementById("btn-general-info").style.color = "#737373";
-      document.getElementById("btn-adress-info").style.color = "#737373";
+      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
+      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       break;
     case 1:
       document.getElementById("step-personal").style.display = "none";
@@ -167,9 +167,9 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "none";
       document.getElementById("btn-previous").style.display = "block";
       document.getElementById("btn-next").textContent = "Próximo";
-      document.getElementById("btn-personal-info").style.color = "#737373";
+      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       document.getElementById("btn-general-info").style.color = "white";
-      document.getElementById("btn-adress-info").style.color = "#737373";
+      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       break;
     case 2:
       document.getElementById("step-personal").style.display = "none";
@@ -177,8 +177,8 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "flex";
       document.getElementById("btn-previous").style.display = "block";
       document.getElementById("btn-next").textContent = "Enviar";
-      document.getElementById("btn-personal-info").style.color = "#737373";
-      document.getElementById("btn-general-info").style.color = "#737373";
+      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
+      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       document.getElementById("btn-adress-info").style.color = "white";
       break;
   }
@@ -210,7 +210,7 @@ function changeConfig(n) {
       document.getElementById("account-theme").style.display = "none";
       document.getElementById(
         "list-general-information"
-      ).style.backgroundColor = "#69696949";
+      ).style.backgroundColor = "var(--color-config-li-background)";
       document.getElementById("list-config").style.background = "none";
       document.getElementById("list-theme").style.background = "none";
       break;
@@ -222,7 +222,7 @@ function changeConfig(n) {
       document.getElementById("list-general-information").style.background =
         "none";
       document.getElementById("list-config").style.backgroundColor =
-        "#69696949";
+        "var(--color-config-li-background)";
       document.getElementById("list-theme").style.background = "none";
       break;
     case "theme":
@@ -233,7 +233,7 @@ function changeConfig(n) {
       document.getElementById("list-general-information").style.background =
         "none";
       document.getElementById("list-config").style.background = "none";
-      document.getElementById("list-theme").style.backgroundColor = "#69696949";
+      document.getElementById("list-theme").style.backgroundColor = "var(--color-config-li-background)";
       break;
   }
 }

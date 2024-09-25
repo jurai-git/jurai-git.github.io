@@ -1,9 +1,9 @@
 @import './reset.css';
 
 header{
-    background-color: #19181D;
+    background-color: var(--color-table-row-aside-background);
     padding: 0 16px;
-    border-bottom: 2px solid #202024;
+    border-bottom: 2px solid var(--color-header-aside-border);
 }
 
 .logo-container{

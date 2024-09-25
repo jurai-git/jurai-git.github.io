@@ -3,8 +3,8 @@
 aside{
     flex: .15;
     padding: 16px;
-    background: #19181D;
-    border-right: 2px solid #202024;
+    background: var(--color-table-row-aside-background);
+    border-right: 2px solid var(--color-header-aside-border);
 }
 
 aside nav{
@@ -20,7 +20,7 @@ aside ul{
 
 aside ul li {
     display: flex;
-    background: #98999b1f;
+    background: var(--color-inputs-lists-background);
     border-radius: 6px;
     padding: 4px 12px;
 }
@@ -28,7 +28,7 @@ aside ul li {
 aside a {
     width: 100%;
     font-size: 1.1em;
-    color: #98999b;
+    color: var(--color-form-list-text);
     text-decoration: none;
     transition: .3s;
 }
