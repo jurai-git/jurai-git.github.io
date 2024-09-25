@@ -34,7 +34,71 @@
         </aside>
         <main>
             <h1>Minha Conta</h1>
-
+            <hr>
+            <div class="content">
+                <div class="container" style="display: block; min-width: 20%; flex: initial;">
+                    <aside class="account-configs-options">
+                        <nav>
+                            <ul>
+                                <span>Conta</span>
+                                <li id="list-general-information"><a href="#" onclick="changeConfig('information')">Informações Gerais</a></li>
+                                <li id="list-config"><a href="#" onclick="changeConfig('config')">Configurações</a></li>
+                                <hr>
+                                <span>Visual</span>
+                                <li id="list-theme"><a href="#" onclick="changeConfig('theme')">Aparência</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                </div>
+                <div class="container configs-list" id="account-general-information">
+                    <div class="form-section">
+                        <h1>Seu perfil</h1>
+                        <hr>
+                        <div class="field">
+                            <label for="acc-name">Nome:</label>
+                            <input type="text" id="acc-name" placeholder="Nome">
+                        </div>  
+                        <div class="field">
+                            <label for="acc-email">Email:</label>
+                            <input type="text" id="acc-email" placeholder="Email">
+                        </div>
+                        <div class="field">
+                            <label for="acc-oab">Nº OAB:</label>
+                            <input type="text" id="acc-oab" placeholder="Nº OAB">
+                        </div>
+                        <button class="btn-dialog" id="btn-update-accountinfo">Atualizar Informações</button>
+                    </div>
+                </div>
+                <div class="container configs-list" id="account-config">
+                    <h1>Configurações da Conta</h1>
+                    <hr>
+                    <div class="field">
+                        <h2>Senha</h2>
+                        <button class="btn-dialog" id="btn-change-accountpsw">Alterar Senha</button>
+                    </div>
+                    <hr>
+                    <div class="field" id="delete-account-field">
+                        <h2>Deletar Conta</h2>
+                        <span>Ao excluir sua conta, todos os seus dados e os dados dos seus requerentes serão excluídos completamente do sistema. Tenha certeza desta ação antes de executá-la</span>
+                        <button class="btn-dialog" id="btn-delete-account">Excluir Conta</button>
+                    </div>
+                </div>
+                <div class="container configs-list" id="account-theme">
+                    <h1>Estilo do site</h1>
+                    <hr>
+                    <span>Aqui você pode alterar as configurações e preferências de cores do site para se adaptar ao seu gosto</span>
+                    <span>Modo:</span>
+                    <select>
+                        <option>Light</option>
+                        <option>Dark</option>
+                    </select>
+                    <div class="theme-images">
+                        <img src="../assets/img/dark-themepng.png" width="50%">
+                        <img src="../assets/img/dark-themepng.png" width="50%">
+                    </div>
+                </div>
+            </div>
+            <!--
             <section class="main-container" id="spacing">
                 <div class="lawyer-control">
                     <img src="../assets/img/accounticon.png" width="300px">
@@ -65,6 +129,7 @@
                     </ul>
                 </div>
             </section>
+            -->
         </main>
     </div>
     <footer>

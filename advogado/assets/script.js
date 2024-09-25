@@ -205,3 +205,31 @@ document.getElementById("btn-exit").addEventListener("click", function(){
     currentTab = 0;
 });
 
+function changeConfig(n){
+    switch(n){
+        case "information":
+            document.getElementById("account-general-information").style.display = "flex";
+            document.getElementById("account-config").style.display = "none";
+            document.getElementById("account-theme").style.display = "none";
+            document.getElementById("list-general-information").style.backgroundColor = "#69696949";
+            document.getElementById("list-config").style.background = "none";
+            document.getElementById("list-theme").style.background = "none";
+            break;
+        case "config":
+            document.getElementById("account-general-information").style.display = "none";
+            document.getElementById("account-config").style.display = "flex";
+            document.getElementById("account-theme").style.display = "none";
+            document.getElementById("list-general-information").style.background = "none";
+            document.getElementById("list-config").style.backgroundColor = "#69696949";
+            document.getElementById("list-theme").style.background = "none";
+            break;
+        case "theme":
+            document.getElementById("account-general-information").style.display = "none";
+            document.getElementById("account-config").style.display = "none";
+            document.getElementById("account-theme").style.display = "flex";
+            document.getElementById("list-general-information").style.background = "none";
+            document.getElementById("list-config").style.background = "none";
+            document.getElementById("list-theme").style.backgroundColor = "#69696949";
+            break;
+    }
+};

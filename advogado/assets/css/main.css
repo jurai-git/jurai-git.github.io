@@ -434,3 +434,98 @@ dialog {
     border: 1.5px solid #386898;
     background-color: #386898;
 }
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-configs-options{
+    background: none;
+    border: none;
+    flex: 0.20;
+}
+
+.account-configs-options nav{
+    height: initial;
+}
+
+.account-configs-options li{
+    background: none;
+}
+
+.account-configs-options li:hover{
+    background-color: #69696949;
+}
+
+.account-configs-options li:last-child a:hover{
+    color: #98999b;
+    opacity: .6;
+}
+
+.content .container{
+    display: flex;
+    flex-direction: column;
+}
+
+.content .configs-list{
+    padding: 1em;
+}
+
+#account-config{
+    display: none;
+}
+
+#account-theme{
+    display: none;
+}
+
+.theme-images{
+    display: flex;
+    flex-direction: row;
+}
+
+.configs-list h1, .configs-list h2, .configs-list span, .configs-list label{
+    color: #98999b;
+}
+
+#btn-update-accountinfo{
+    width: 25%;
+    font-size: 1em;
+    background-color: green;
+    transform: initial;
+    margin: .6em 0;
+}
+
+#btn-change-accountpsw{
+    width: 25%;
+    font-size: 1em;
+    background-color: #98999b1f;
+    transform: initial;
+    border: 1px solid #696969;
+    margin: .6em 0;
+}
+
+#delete-account-field>h2{
+    color: crimson;
+}
+
+#btn-delete-account{
+    width: 25%;
+    font-size: 1em;
+    background-color: #98999b1f;
+    transform: initial;
+    color: crimson;
+    border: 1px solid #696969;
+    margin: .6em 0;
+}
+
+select{
+    width: 10%;
+    border-radius: 10px;
+    padding: 5px;
+    color: #98999b;
+    background-color: #1C1C1E;
+    border: 1px solid #696969;
+    margin: .6em 0;
+}
