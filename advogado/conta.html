@@ -41,7 +41,8 @@
                         <nav>
                             <ul>
                                 <span>Conta</span>
-                                <li id="list-general-information"><a href="#" onclick="changeConfig('information')">Informações Gerais</a></li>
+                                <li id="list-general-information"><a href="#"
+                                        onclick="changeConfig('information')">Informações Gerais</a></li>
                                 <li id="list-config"><a href="#" onclick="changeConfig('config')">Configurações</a></li>
                                 <hr>
                                 <span>Visual</span>
@@ -57,7 +58,7 @@
                         <div class="field">
                             <label for="acc-name">Nome:</label>
                             <input type="text" id="acc-name" placeholder="Nome">
-                        </div>  
+                        </div>
                         <div class="field">
                             <label for="acc-email">Email:</label>
                             <input type="text" id="acc-email" placeholder="Email">
@@ -79,16 +80,18 @@
                     <hr>
                     <div class="field" id="delete-account-field">
                         <h2>Deletar Conta</h2>
-                        <span>Ao excluir sua conta, todos os seus dados e os dados dos seus requerentes serão excluídos completamente do sistema. Tenha certeza desta ação antes de executá-la</span>
+                        <span>Ao excluir sua conta, todos os seus dados e os dados dos seus requerentes serão excluídos
+                            completamente do sistema. Tenha certeza desta ação antes de executá-la</span>
                         <button class="btn-dialog" id="btn-delete-account">Excluir Conta</button>
                     </div>
                 </div>
                 <div class="container configs-list" id="account-theme">
                     <h1>Estilo do site</h1>
                     <hr>
-                    <span>Aqui você pode alterar as configurações e preferências de cores do site para se adaptar ao seu gosto</span>
+                    <span>Aqui você pode alterar as configurações e preferências de cores do site para se adaptar ao seu
+                        gosto</span>
                     <span>Modo:</span>
-                    <select>
+                    <select class="config-select">
                         <option>Light</option>
                         <option>Dark</option>
                     </select>

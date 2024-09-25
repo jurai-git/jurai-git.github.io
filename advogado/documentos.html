@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div id="fade"></div>
     <header>
         <div class="logo-container">
             <a href="../index.html">
@@ -48,7 +49,10 @@
                         <tr>
                             <td>Juninho</td>
                             <td>Tramitação</td>
-                            <td><button onclick="document.querySelector('dialog').showModal()">Ver Detalhes</button></td>
+                            <td><button
+                                    onclick="document.querySelector('dialog').showModal(), document.getElementById('fade').style.display = 'block'">Ver
+                                    Detalhes</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Maria</td>
@@ -88,7 +92,8 @@
                         <tr>
                             <td>Bruno</td>
                             <td>Extinto</td>
-                            <td><button onclick="document.querySelector('dialog').showModal()">Ver Detalhes</button></td>
+                            <td><button onclick="document.querySelector('dialog').showModal()">Ver Detalhes</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sofia</td>
@@ -122,115 +127,115 @@
                         </tr>
                     </tbody>
                 </table>
-            
+
             </section>
             <dialog>
-                    <div class="details-content">
-                        <div class="info-buttons">
-                            <button id="btn-personal-info" onclick="changeStep(0)">Infos. Pessoais</button>
-                            <button id="btn-general-info" onclick="changeStep(1)">Infos. Gerais</button>
-                            <button id="btn-adress-info"onclick="changeStep(2)">Endereço</button>
-                        </div>
-                        <div class="client-information" id="step-personal">
-                            <div class="field name-field">
-                                <label for="name">Nome*</label>
-                                <input type="text" id="name" placeholder="Nome">
-                            </div>
-                            
-                            <div class="field  social-name-field">
-                                <label for="social-name">Nome Social</label>
-                                <input type="text" id="social-name" placeholder="Nome Social">
-                            </div>
-                            
-                            <div class="field email-field">
-                                <label for="email">Email*</label>
-                                <input type="email" id="email" placeholder="Email">
-                            </div>
-                            
-                            <div class="client-isOlder">
-                                <input type="radio" id="isOlder">
-                                <label for="isOlder">É idoso*</label>
-                            </div>
-                            <div class="field gender-field">
-                                <label for="gender">Gênero*</label>
-                                <input type="text" id="gender" placeholder="Gênero">
-                            </div>
+                <div class="details-content">
+                    <div class="info-buttons">
+                        <button id="btn-personal-info" onclick="changeStep(0)">Infos. Pessoais</button>
+                        <button id="btn-general-info" onclick="changeStep(1)">Infos. Gerais</button>
+                        <button id="btn-adress-info" onclick="changeStep(2)">Endereço</button>
+                    </div>
+                    <div class="client-information" id="step-personal">
+                        <div class="field name-field">
+                            <label for="name">Nome*</label>
+                            <input type="text" id="name" placeholder="Nome">
                         </div>
 
-                        <div class="client-information" id="step-general">
-                                <div class="field adress-details">
-                                    <div class="field">
-                                        <label for="cpf/cnpj">CPF/CNPJ*</label>
-                                        <input type="text" id="cpf/cnpj" placeholder="CPF/CNPJ">
-                                    </div>
-                                    <div class="field">
-                                        <label for="rg">RG</label>
-                                        <input type="text" id="rg" placeholder="RG">
-                                    </div>
-                                </div>
-                                <div class="field issuing-agency-field">
-                                    <label for="issuing-agency">Órgão Emissor*</label>
-                                    <input type="text" id="issuing-agency" placeholder="Orgão Emissor">
-                                </div>
-                                
-                                <div class="field profession-field">
-                                    <label for="profession">Profissão*</label>
-                                    <input type="text" id="profession" placeholder="Profissão">
-                                </div>
-                                <div class="field adress-details">
-                                    <div class="field">
-                                        <label for="estadocivil">Estado Civíl*</label>
-                                        <input type="text" id="estadocivil" placeholder="Estado Civíl">
-                                    </div>
-                                    <div class="field">
-                                        <label for="nacionality">Nacionalidade*</label>
-                                        <input type="text" id="nacionality" placeholder="Nacionalidade">
-                                    </div>
-                                </div>
-                            </div>
-
-                        <div class="client-information" id="step-adress">
-                            <div class="field cep-field">
-                                <label for="cep">CEP*</label>
-                                <input type="text" id="cep" placeholder="CEP">
-                            </div>
-                            
-                            <div class="field state-field">
-                                <label for="state">Estado*</label>
-                                <input type="text" id="state" placeholder="Estado">
-                            </div>
-                            
-                            <div class="field city-field">
-                                <label for="city">Cidade*</label>
-                                <input type="text" id="city" placeholder="Cidade">
-                            </div>
-                            
-                            <div class="field neighborhood-field">
-                                <label for="neighborhood">Bairro*</label>
-                                <input type="text" id="neighborhood" placeholder="Bairro">
-                            </div>
-                            <div class="field adress-details">
-                                <div class="field">
-                                    <label for="logradouro">Logradouro*</label>
-                                    <input type="text" id="logradouro" placeholder="Logradouro">
-                                </div>
-                                <div class="field">
-                                    <label for="numero">Número*</label>
-                                    <input type="text" id="numero" placeholder="Número">
-                                </div>
-                            </div>
-                            <div class="field complement-field">
-                                <label for="complement">Complemento*</label>
-                                <input type="text" id="complement" placeholder="Complemento">
-                            </div>
+                        <div class="field  social-name-field">
+                            <label for="social-name">Nome Social</label>
+                            <input type="text" id="social-name" placeholder="Nome Social">
                         </div>
-                        <div class="details-buttons">
-                            <button class="btn-dialog" id="btn-exit" onclick="closeModal()">Sair</button>
-                            <button class="btn-dialog" id="btn-previous" onclick="nextStep(-1)">Anterior</button>
-                            <button class="btn-dialog" id="btn-next" onclick="nextStep(1)">Próximo</button>
+
+                        <div class="field email-field">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" placeholder="Email">
+                        </div>
+
+                        <div class="client-isOlder">
+                            <input type="radio" id="isOlder">
+                            <label for="isOlder">É idoso*</label>
+                        </div>
+                        <div class="field gender-field">
+                            <label for="gender">Gênero*</label>
+                            <input type="text" id="gender" placeholder="Gênero">
                         </div>
                     </div>
-                </dialog>
+
+                    <div class="client-information" id="step-general">
+                        <div class="field adress-details">
+                            <div class="field">
+                                <label for="cpf/cnpj">CPF/CNPJ*</label>
+                                <input type="text" id="cpf/cnpj" placeholder="CPF/CNPJ">
+                            </div>
+                            <div class="field">
+                                <label for="rg">RG</label>
+                                <input type="text" id="rg" placeholder="RG">
+                            </div>
+                        </div>
+                        <div class="field issuing-agency-field">
+                            <label for="issuing-agency">Órgão Emissor*</label>
+                            <input type="text" id="issuing-agency" placeholder="Orgão Emissor">
+                        </div>
+
+                        <div class="field profession-field">
+                            <label for="profession">Profissão*</label>
+                            <input type="text" id="profession" placeholder="Profissão">
+                        </div>
+                        <div class="field adress-details">
+                            <div class="field">
+                                <label for="estadocivil">Estado Civíl*</label>
+                                <input type="text" id="estadocivil" placeholder="Estado Civíl">
+                            </div>
+                            <div class="field">
+                                <label for="nacionality">Nacionalidade*</label>
+                                <input type="text" id="nacionality" placeholder="Nacionalidade">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="client-information" id="step-adress">
+                        <div class="field cep-field">
+                            <label for="cep">CEP*</label>
+                            <input type="text" id="cep" placeholder="CEP">
+                        </div>
+
+                        <div class="field state-field">
+                            <label for="state">Estado*</label>
+                            <input type="text" id="state" placeholder="Estado">
+                        </div>
+
+                        <div class="field city-field">
+                            <label for="city">Cidade*</label>
+                            <input type="text" id="city" placeholder="Cidade">
+                        </div>
+
+                        <div class="field neighborhood-field">
+                            <label for="neighborhood">Bairro*</label>
+                            <input type="text" id="neighborhood" placeholder="Bairro">
+                        </div>
+                        <div class="field adress-details">
+                            <div class="field">
+                                <label for="logradouro">Logradouro*</label>
+                                <input type="text" id="logradouro" placeholder="Logradouro">
+                            </div>
+                            <div class="field">
+                                <label for="numero">Número*</label>
+                                <input type="text" id="numero" placeholder="Número">
+                            </div>
+                        </div>
+                        <div class="field complement-field">
+                            <label for="complement">Complemento*</label>
+                            <input type="text" id="complement" placeholder="Complemento">
+                        </div>
+                    </div>
+                    <div class="details-buttons">
+                        <button class="btn-dialog" id="btn-exit" onclick="closeModal()">Sair</button>
+                        <button class="btn-dialog" id="btn-previous" onclick="nextStep(-1)">Anterior</button>
+                        <button class="btn-dialog" id="btn-next" onclick="nextStep(1)">Próximo</button>
+                    </div>
+                </div>
+            </dialog>
         </main>
     </div>
 
