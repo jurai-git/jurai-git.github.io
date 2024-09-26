@@ -157,7 +157,7 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "none";
       document.getElementById("btn-previous").style.display = "none";
       document.getElementById("btn-next").textContent = "Próximo";
-      document.getElementById("btn-personal-info").style.color = "white";
+      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-visited)";
       document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       break;
@@ -168,7 +168,7 @@ function changeStep(i) {
       document.getElementById("btn-previous").style.display = "block";
       document.getElementById("btn-next").textContent = "Próximo";
       document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-general-info").style.color = "white";
+      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-visited)";
       document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       break;
     case 2:
@@ -179,7 +179,7 @@ function changeStep(i) {
       document.getElementById("btn-next").textContent = "Enviar";
       document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
       document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-adress-info").style.color = "white";
+      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-visited)";
       break;
   }
 }

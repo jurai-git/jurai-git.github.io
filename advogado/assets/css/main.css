@@ -41,7 +41,7 @@ h2,
   max-height: 320px;
   overflow: auto;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--color-config-li-background);
 }
 
 .card h2 {
@@ -155,7 +155,7 @@ tr:hover {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--color-config-li-background);
 }
 
 #spacing {
@@ -306,7 +306,7 @@ dialog {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--color-table-row-aside-background);
+  background-color: var(--color-dialog-background);
   width: 40%;
   padding: 1%;
   border-radius: 10px;
@@ -318,7 +318,7 @@ dialog {
   margin: 0 0.8em;
   padding: 0 0.4em;
   font-size: 1.2em;
-  color: white;
+  color: var(--color-dialog-header-button-visited);
   background: none;
   border: none;
   border-bottom: 2px solid var(--color-dialog-header-buttons);
@@ -355,14 +355,14 @@ dialog {
 
 .client-information input,
 .client-information label {
-  color: white;
+  color: var(--color-form-input-text);
   margin: 0.3em;
 }
 
 .client-information input {
   border: none;
   background: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid var(--color-form-list-text);
   width: 100%;
 }
 
@@ -382,8 +382,8 @@ dialog {
   padding: 0.5em;
   font-size: 1.2em;
   border-radius: 0.5em;
-  color: white;
-  background-color: var(--color-main-background);
+  color: var(--color-dialog-button-text);
+  background-color: var(--color-dialog-button);
   border: 1.5px solid var(--color-dialog-background-border);
   transition: 0.5s;
   cursor: pointer;
@@ -410,6 +410,10 @@ dialog {
 
 #btn-previous {
   display: none;
+}
+
+#btn-next{
+  color: white;
 }
 
 #step-adress {

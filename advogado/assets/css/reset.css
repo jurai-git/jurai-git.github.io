@@ -76,13 +76,17 @@
     --color-select-li-theme-card: #696969;
     --color-form-input-text: #eee;
 
+    --color-dialog-background: #19181d;
     --color-dialog-background-border: #2e2e32;
     --color-dialog-button-focus: #101011;
 
+    
     --color-dialog-header-buttons: #539cd4;
     --color-dialog-header-buttons-hover: #235174;
+    --color-dialog-header-button-visited: white;
     --color-dialog-header-buttons-not-visited: #737373;
     --color-dialog-button-next: #386898;
+    --color-dialog-button-text: white;
 
     --color-config-li-background: #98999b49;
   }
@@ -96,10 +100,10 @@
     --color-background: #ffffff;
     --color-background-soft: #f0f0f0;
 
-    --color-main-background: #e6e6e6;
-    --color-main-container: #f7f7f7;
+    --color-main-background: #e6e4e1;
+    --color-main-container: #f0edea;
 
-    --color-border: #d0d0d0;
+    --color-border: #cccccc;
     --color-border-hover: #b0b0b0; 
 
     --color-text: #3a3a3a;
@@ -109,27 +113,31 @@
     --color-plan-choosed-text: #ffffff;
     --color-plan-choosed-background: #007bff;
 
-    --color-inputs-lists-background: #f7f7f7;
+    --color-inputs-lists-background: #e0e0e0;
 
-    --color-table-button-background: #007bff;
-    --color-table-button-background-hover: #0056b3;
+    --color-table-button-background: rgba(83,156,212,0.6);
+    --color-table-button-background-hover: rgb(83,156,212);
     --color-table-row-aside-background: #f9f9f9;
     --color-table-row-important: #e0e0e0;
     --color-table-row-important-hover: #e0e0e055;
 
-    --color-form-list-text: #333333;
+    --color-form-list-text: #4e4e4e;
     --color-select-li-theme-card: #333333;
     --color-form-input-text: #333333;
 
-    --color-dialog-background-border: #d0d0d0;
-    --color-dialog-button-focus: #007bff;
+    --color-dialog-background: #e6e6e6;
+    --color-dialog-background-border: #39393e;
+    --color-dialog-button: #e6e6e6;
+    --color-dialog-button-focus: #cecece;
 
     --color-dialog-header-buttons: #007bff;
     --color-dialog-header-buttons-hover: #0056b3;
+    --color-dialog-header-button-visited: #161616;
     --color-dialog-header-buttons-not-visited: #7a7a7a;
     --color-dialog-button-next: #007bff;
+    --color-dialog-button-text: #39393e;
 
-    --color-config-li-background: #f0f0f0;
+    --color-config-li-background: rgba(46, 46, 46, 0.286)
 
   }
 }
