@@ -4,107 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JurAI</title>
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
 <body>
-    <nav>
-        <div class="navcenter">
-            <img src="./assets/img/juraitext.png" width="15%">          
+    <header>
+        <div class="logo-container">
+            <a href="#">
+                <picture>
+                    <source srcset="./assets/img/jurai-light.png" media="(prefers-color-scheme: dark)">
+                    <source srcset="./assets/img/jurai-dark.png" media="(prefers-color-scheme: light)">
+                    <img src="./assets/img/jurai-light.png" alt="JurAI - Logo">
+                </picture>
+            </a>
+        </div>
+        <nav>
             <ul>
-                <li><a href="#" class="navanchor">Início</a></li>
-                <li><a href="#quick-search" class="navanchor">Consulta Rápida</a></li>
-                <li><a href="#plans" class="navanchor">Planos</a></li>
-                <li>
-                    <div class="accountmenu">
-                        <a href="#" class="navanchor" id="myaccbtn">Minha Conta</a>
-                        <div class="accmenu" id="dpdownlogin">
-                            <p>Seja Bem-Vindo(a)</p>
-                            <p>Cadastre-se ou faça login para desfrutar do site</p>
-                            <hr>
-                            <a class="btndropdown" id="btnddlogin" href="login.html">Login</a>
-                            <a class="btndropdown" id="btnddregister" href="register.html">Cadastre-se</a>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#download">Baixar</a></li>
+                <li><a href="#quick-consult">Consulta Rápida</a></li>
+                <li><a href="#plans">Planos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="#">Minha Conta</a>
+    </header>
+    <div class="scroll-container">
+        <main>
+            <section class="flex-container" id="home">
+                <div>
+                    <h1>JurAI - A inteligência que facilita o processo</h1>
+                    <h2>O JurAI transforma a rotina do advogado em eficiência, automatizando tarefas repetitivas e oferecendo insights jurídicos inteligentes.</h2>
+                </div>
+                <div class="img-stack">
+                    <img src="./assets/img/jurai-desktop-light.png">
+                    <img src="./assets/img/jurai-desktop-dark.png">
+                    <img src="./assets/img/jurai-web.png">
+                </div>
+            </section>
+
+            <section> <h2>Download Section</h2> </section>
+            <section> <h2>Quick Consult Section</h2> </section>
+            <section> <h2>Plans Section</h2> </section>
+            <section> <h2>Contact Section</h2> </section>
+
+        </main>
+        <footer id="contact">
+            <img src="./assets/img/jurai-icon.png" alt="JurAI - Icon">
+
+            <div class="footer-container">
+                <picture>
+                    <source srcset="./assets/img/jurai-name.png" media="(prefers-color-scheme: dark)">
+                    <source srcset="./assets/img/jurai-text-dark.png" media="(prefers-color-scheme: light)">
+                    <img src="./assets/img/jurai-name.png" alt="JurAI - Text">
+                </picture>
+                
+                <div class="footer-content">
+                    <div>
+                        <h2>Contato</h2>
+
+                        <div class="icons-container">
+                            <picture>
+                                <source srcset="./assets/icons/github-light-icon.png" media="(prefers-color-scheme: dark)">
+                                <source srcset="./assets/icons/github-dark-icon.svg" media="(prefers-color-scheme: light)">
+                                <img src="./assets/icons/github-dark-icon.svg" alt="GitHub">
+                            </picture>
+                              
+                            <a href="https://github.com/jurai-git" target="_blank"> JurAI-Git </a>
+                        </div>
+
+                        <div class="icons-container">
+                            <img src="./assets/icons/huggingface-icon.svg" alt="HuggingFace - Icon">
+                            <a href="https://huggingface.co/jurai-org" target="_blank"> HuggingFace </a>
+                        </div>
+
+                        <div class="icons-container">
+                            <img src="./assets/icons/email-icon.png" alt="E-Mail - Icon">
+                            <a href="mailto:contas.jurai@gmail.com" target="_blank">E-Mail</a>
                         </div>
                     </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-        <section id="home" class="secdivs">
-            <img src="./assets/img/juraiicon.png" width="30%" id="logo">
-            <img src="./assets/img/juraitext.png" width="60%" id="logo" style="margin-bottom: 20px;">
-            <h1 style="text-align: center;">A Inteligência que Facilita o Processo</h1>  
-        </section>
-        
-        <section id="about" class="secdivs">
-            <div style="width: 50%;">
-                <h1 style="font-size: xx-large;">O que é o JurAI?</h1>
-                <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_aperto_de_mao_-_anyaberkut5.jpg?quality=70&strip=info&w=960" width="80%">
-            </div>
-            <div style="width: 50%;">
-                <h3 style="text-align: center;">O JurAI surgiu da necessidade de advogados em adquirir mais otimização nos seus escritórios de advocacia, tendo em vista que o trabalho diário de analisar inúmeros documentos processuais é um processo lento e exaustivo para os mesmos. Tendo em vista isso, o JurAI surge dessa necessidade para melhorar o desempenho do advogado, deixando a parte complexa para nosso produto, e a parte racional para o advogado, visando um bom trabalho e uma boa elaboração de documentos processuais</h3>
-            </div>
-        </section>
-
-        <section id="quick-search" class="secdivs">
-            <h1>Faça uma pesquisa rápida para conhecer melhor o nosso produto</h1>
-            <div id="container-search">
-                <div id="search-input">
-                    <input type="text">
+                    <div>
+                        <h2>Outros</h2>
+                        <div class="icons-container">
+                            <img src="./assets/icons/team-icon.png" alt="Privacy Policy - Icon">
+                            <a href="">Time</a>
+                        </div>
+                        <div class="icons-container">
+                            <img src="./assets/icons/privacy-icon.png" alt="Privacy Policy - Icon">
+                            <a href="">Política de Privacidade</a>
+                        </div>
+                        <div class="icons-container">
+                            <img src="./assets/icons/license-icon.png" alt="Terms of Use - Icon">
+                            <a href="">Termos de Uso</a>
+                        </div>
+                        <div class="icons-container">
+                            <img src="./assets/icons/code_of_conduct-icon.png" alt="Code of Conduct - Icon">
+                            <a href="">Código de Conduta</a>
+                        </div>
+                    </div>
                 </div>
-                <div id="search-submit">
-                    <input type="submit" value="Pesquisar">
-                </div>
-            </div>
-        </section>
 
-        <section id="plans" class="secdivs">
-            <div class="plans-cards">
-                <h2 style="text-align: center;">Free</h2>
-                <h1 class="plans-prices">R$0,00</h1>
-                <hr style="width: 90%;">
-                <ul>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (10 por dia)</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Visualização de Resultados</li>
-                    <li><img src="./assets/img/xicon.png" width="15px">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                    <li><img src="./assets/img/xicon.png" width="15px">Análise dos Melhores Argumentos Utilizados</li>
-                    <li><img src="./assets/img/xicon.png" width="15px">Geração de Documentos como Base de acordo com os Resultados</li>
-                </ul>
-                <button class="cards-btn" id="cards-btn-buyed">Já Possui</button>
+                <span>
+                    <h3>Inovando o futuro da advocacia com inteligência artificial</h3>
+                    <p>© 2024 JurAI | Todos os direitos reservados</p>
+                </span>
             </div>
-            <div class="plans-cards">
-                <h2 style="text-align: center;">Advanced</h2>
-                <h1 class="plans-prices">R$25,00</h1>
-                <hr style="width: 90%;">
-                <ul>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (50 por dia)</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Visualização de Resultados</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                    <li><img src="./assets/img/xicon.png" width="15px">Análise dos Melhores Argumentos Utilizados</li>
-                    <li><img src="./assets/img/xicon.png" width="15px">Geração de Documentos como Base de acordo com os Resultados</li>
-                </ul>
-                <button class="cards-btn" id="cards-btn-buy">Escolher Plano</button>
-            </div>
-            <div class="plans-cards">
-                <h2 style="text-align: center;">Premium</h2>
-                <h1 class="plans-prices">R$50,00</h1>
-                <hr style="width: 90%;">
-                <ul>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Consulta Rápida (Ilimitado)</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Visualização de Resultados</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Análise dos Melhores Argumentos Utilizados</li>
-                    <li><img src="./assets/img/icons8-marca-de-seleção-emoji-48.png" width="15px">Geração de Documentos como Base de acordo com os Resultados</li>
-                </ul>
-                <button class="cards-btn" id="cards-btn-buy">Escolher Plano</button>
-            </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+        </footer>
+    </div>
+    <script src="./assets/js/scrollSnapping.js"></script>
 </body>
 </html>

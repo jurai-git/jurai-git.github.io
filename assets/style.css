@@ -1,5 +1,26 @@
-@import url(./style/footer.css);
-@import url(./style/header.css);
-@import url(./style/main.css);
-@import url(./style/reset.css);
+@import './css/reset.css';
+@import './css/header.css';
+@import './css/main.css';
+@import './css/footer.css';
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-center{
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center{
+    display: flex;
+    align-items: center;
+}
+
+.scroll-container {
+    flex: 1;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}

@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+:root {
+    --color-first-background-layer: #201f24;
+    --color-second-background-layer: #191e2e;
+
+    --color-background: #201f24;
+    --color-background-soft: #191e2e;
+
+    --color-main-background: #1c1c1e;
+    --color-main-container: #16192133;
+
+    --color-border: #2d3a62;
+    --color-border-hover: #2e3f71;
+
+    --color-text: #9dceff;
+
+    --color-header-aside-border: #202024;
+
+    --color-plan-choosed-text: #161921;
+    --color-plan-choosed-background: #84aed8;
+
+    --color-inputs-lists-background: #98999b1f;
+
+    --color-table-button-background: #007bff;
+    --color-table-button-background-hover: #0056b3;
+    --color-table-row-aside-background: #19181d;
+    --color-table-row-important: #29282c;
+    --color-table-row-important-hover: #29282c55;
+
+    --color-form-list-text: #98999b;
+    --color-select-li-theme-card: #696969;
+    --color-form-input-text: #eee;
+
+    --color-dialog-background-border: #2e2e32;
+    --color-dialog-button-focus: #101011;
+
+    --color-dialog-header-buttons: #539cd4;
+    --color-dialog-header-buttons-hover: #235174;
+    --color-dialog-header-buttons-not-visited: #737373;
+    --color-dialog-button-next: #386898;
+
+    --color-config-li-background: #98999b49;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-first-background-layer: #201f24;
+        --color-second-background-layer: #191e2e;
+
+        --color-background: #201f24;
+        --color-background-soft: #191e2e;
+
+        --color-main-background: #1c1c1e;
+        --color-main-container: #16192133;
+
+        --color-border: #2d3a62;
+        --color-border-hover: #2e3f71;
+
+        --color-text: #9dceff;
+
+        --color-header-aside-border: #202024;
+
+        --color-plan-choosed-text: #161921;
+        --color-plan-choosed-background: #84aed8;
+
+        --color-inputs-lists-background: #98999b1f;
+
+        --color-table-button-background: #007bff;
+        --color-table-button-background-hover: #0056b3;
+        --color-table-row-aside-background: #19181d;
+        --color-table-row-important: #29282c;
+        --color-table-row-important-hover: #29282c55;
+
+        --color-form-list-text: #98999b;
+        --color-select-li-theme-card: #696969;
+        --color-form-input-text: #eee;
+
+        --color-dialog-background-border: #2e2e32;
+        --color-dialog-button-focus: #101011;
+
+        --color-dialog-header-buttons: #539cd4;
+        --color-dialog-header-buttons-hover: #235174;
+        --color-dialog-header-buttons-not-visited: #737373;
+        --color-dialog-button-next: #386898;
+
+        --color-config-li-background: #98999b49;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-first-background-layer: #ffffff;
+        --color-second-background-layer: #f0f0f0;
+
+        --color-background: #ffffff;
+        --color-background-soft: #f0f0f0;
+
+        --color-main-background: #e6e6e6;
+        --color-main-container: #f7f7f7;
+
+        --color-border: #d0d0d0;
+        --color-border-hover: #b0b0b0;
+
+        --color-text: #3a3a3a;
+
+        --color-header-aside-border: #e0e0e0;
+
+        --color-plan-choosed-text: #ffffff;
+        --color-plan-choosed-background: #007bff;
+
+        --color-inputs-lists-background: #f7f7f7;
+
+        --color-table-button-background: #007bff;
+        --color-table-button-background-hover: #0056b3;
+        --color-table-row-aside-background: #f9f9f9;
+        --color-table-row-important: #e0e0e0;
+        --color-table-row-important-hover: #e0e0e055;
+
+        --color-form-list-text: #333333;
+        --color-select-li-theme-card: #333333;
+        --color-form-input-text: #333333;
+
+        --color-dialog-background-border: #d0d0d0;
+        --color-dialog-button-focus: #007bff;
+
+        --color-dialog-header-buttons: #007bff;
+        --color-dialog-header-buttons-hover: #0056b3;
+        --color-dialog-header-buttons-not-visited: #7a7a7a;
+        --color-dialog-button-next: #007bff;
+
+        --color-config-li-background: #f0f0f0;
+
+    }
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+html, 
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: color .4s, background-color .4s;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: Inter, "Arial", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+section, 
+footer {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-size: 2.1em;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
