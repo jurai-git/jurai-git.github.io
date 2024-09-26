@@ -1,0 +1,53 @@
+@import './reset.css';
+
+main {
+    padding: 0 20px;
+    background: var(--color-main-background);
+    width: 100%;
+}
+
+section{
+    flex-direction: column;
+    gap: 60px;
+}
+
+section h1,
+section h2{
+    text-wrap: wrap;
+    text-align: center;
+    max-width: 50vw;
+}
+
+.img-stack {
+    position: relative;
+    width: 75vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.img-stack img {
+    border-radius: 12px;
+    position: absolute;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.img-stack img:nth-child(1) {
+    left: -10%;
+}
+
+.img-stack img:nth-child(2) {
+    right: -10%;
+}
+
+.img-stack img:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
