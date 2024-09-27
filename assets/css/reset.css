@@ -59,6 +59,8 @@
 
         --color-text: #9dceff;
 
+        --color-nav-index-text: white;
+
         --color-header-aside-border: #202024;
 
         --color-plan-choosed-text: #161921;
@@ -103,6 +105,8 @@
         --color-border-hover: #b0b0b0;
 
         --color-text: #3a3a3a;
+
+        --color-nav-index-text: black;
 
         --color-header-aside-border: #e0e0e0;
 
@@ -180,7 +184,7 @@ h2{
 }
 
 a{
-    color: white;
+    color: var(--color-nav-index-text);
     text-decoration: none;
 }
 
