@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll('section, footer');
-const scrollContainer = document.getElementById('scroll-container');
+const scrollContainer = document.querySelector('.scroll-container');
 
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', (e) => {
