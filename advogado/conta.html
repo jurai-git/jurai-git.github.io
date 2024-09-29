@@ -13,11 +13,7 @@
     <header>
         <div class="logo-container">
             <a href="#">
-                <picture>
-                    <source srcset="../assets/img/jurai-light.png" media="(prefers-color-scheme: dark)">
-                    <source srcset="../assets/img/jurai-dark.png" media="(prefers-color-scheme: light)">
-                    <img src="../assets/img/jurai-light.png" alt="JurAI - Logo">
-                </picture>
+                    <img src="/assets/img/jurai-light.png" id="jurai-logo" alt="JurAI - Logo">
             </a>
         </div>
     </header>
@@ -72,7 +68,7 @@
                                 <label for="acc-oab">Nº OAB:</label>
                                 <input type="text" id="acc-oab" placeholder="Nº OAB">
                             </div>
-                            <button class="btn-dialog" id="btn-update-accountinfo">Atualizar Informações</button>
+                            <button class="btn-dialog btn-fade" id="btn-update-accountinfo">Atualizar Informações</button>
                         </div>
                         <div class="account-image">
                             <img src="./assets/img/profile-photo.jfif" width="50%">
@@ -84,14 +80,14 @@
                     <hr>
                     <div class="field">
                         <h2>Senha</h2>
-                        <button class="btn-dialog" id="btn-change-accountpsw">Alterar Senha</button>
+                        <button class="btn-dialog btn-fade" id="btn-change-accountpsw">Alterar Senha</button>
                     </div>
                     <hr>
                     <div class="field" id="delete-account-field">
                         <h2>Deletar Conta</h2>
                         <span>Ao excluir sua conta, todos os seus dados e os dados dos seus requerentes serão excluídos
                             completamente do sistema. Tenha certeza desta ação antes de executá-la</span>
-                        <button class="btn-dialog" id="btn-delete-account">Excluir Conta</button>
+                        <button class="btn-dialog btn-fade" id="btn-delete-account">Excluir Conta</button>
                     </div>
                 </div>
                 <div class="container configs-list" id="account-theme">
@@ -100,18 +96,18 @@
                     <span>Aqui você pode alterar as configurações e preferências de cores do site para se adaptar ao seu
                         gosto</span>
                     <span>Modo:</span>
-                    <select class="config-select">
+                    <select class="config-select" id="select-theme">
                         <option>Light</option>
                         <option>Dark</option>
                     </select>
                     <div class="theme-images">
-                        <div class="theme-card">
+                        <div class="theme-card" id="light-mode-theme" onclick="themeCardClick('Light')">
                             <h1>Light Mode</h1>
                             <hr>
                             <span>Ao clicar aqui, o tema do site será trocado para o tema claro</span>
                             <img src="../assets/img/jurai-desktop-light.png" width="90%">
                         </div>
-                        <div class="theme-card">
+                        <div class="theme-card" id="dark-mode-theme" onclick="themeCardClick('Dark')">
                             <h1>Dark Mode</h1>
                             <hr>
                             <span>Ao clicar aqui, o tema do site será trocado para o tema escuro</span>
@@ -158,6 +154,7 @@
         <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
     </footer>
     <script src="./assets/script.js"></script>
+    <script src="../assets/js/themeHandler.js"></script>
 </body>
 
 </html>

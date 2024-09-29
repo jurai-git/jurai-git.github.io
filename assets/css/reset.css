@@ -18,13 +18,13 @@
     --color-header-aside-border: #202024;
 
     --color-plan-choosed-text: #161921;
-    --color-plan-choosed-background: #84aed8;
+    --color-plan-choosed-background: #84aed8; 
 
     --color-inputs-lists-background: #98999b1f;
 
     --color-table-button-background: #007bff;
     --color-table-button-background-hover: #0056b3;
-    --color-table-row-aside-background: #19181d;
+    --color-table-row-aside-background: #19181d; 
     --color-table-row-important: #29282c;
     --color-table-row-important-hover: #29282c55;
 
@@ -32,15 +32,20 @@
     --color-select-li-theme-card: #696969;
     --color-form-input-text: #eee;
 
+    --color-dialog-background: #19181d;
     --color-dialog-background-border: #2e2e32;
     --color-dialog-button-focus: #101011;
 
+    
     --color-dialog-header-buttons: #539cd4;
     --color-dialog-header-buttons-hover: #235174;
+    --color-dialog-header-button-visited: white;
     --color-dialog-header-buttons-not-visited: #737373;
     --color-dialog-button-next: #386898;
+    --color-dialog-button-text: white;
 
     --color-config-li-background: #98999b49;
+
 }
 
 @media (prefers-color-scheme: dark) {

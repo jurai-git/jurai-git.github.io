@@ -499,6 +499,10 @@ dialog {
   flex-direction: row;
 }
 
+.theme-images span, .theme-images h1{
+  text-align: center;
+}
+
 .configs-list h1,
 .configs-list h2,
 .configs-list span,
@@ -537,7 +541,7 @@ dialog {
   margin: 0.6em 0;
 }
 
-.configs-list button:active{
+.btn-fade:active{
   transition: initial;
   background: linear-gradient(rgb(0 0 0/40%) 0 0);
 }
@@ -570,14 +574,78 @@ dialog {
   justify-content: space-between;
   align-items: center;
   margin: .6em;
+  border-radius: 15px;
 }
 
 .theme-card img{
-  margin: .6em;
+  margin: .6em .6em 1.2em .6em;
   border: 1px solid var(--color-form-list-text);
+  border-radius: 13px;
 }
 
 .theme-card hr{
   margin: .3em;
   width: 90%;
 }
+
+#light-mode-theme,
+#dark-mode-theme{
+  transition: 1s;
+  cursor: pointer;
+}
+
+#light-mode-theme:hover{
+  border-color: #4e4e4e;
+  background-color: #e6e4e1;
+}
+
+#light-mode-theme:hover h1, 
+#light-mode-theme:hover span{
+  color: #4e4e4e;
+}
+
+#light-mode-theme:hover hr{
+  border-color: initial;
+}
+
+#dark-mode-theme:hover{
+  border-color: #98999b;
+  background-color: #1c1c1e;
+}
+
+#dark-mode-theme:hover h1, 
+#dark-mode-theme:hover span{
+  color: #98999b;
+}
+
+#dark-mode-theme:hover hr{
+  border-color: initial;
+}
+
+/* fazer isso em media query de cell
+#light-mode-theme{
+  border-color: #4e4e4e;
+  background-color: #e6e4e1;
+}
+
+#light-mode-theme h1, #light-mode-theme span{
+  color: #4e4e4e;
+}
+
+#light-mode-theme hr{
+  border-color: #4e4e4e;
+}
+
+#dark-mode-theme{
+  border-color: #98999b;
+  background-color: #1c1c1e;
+}
+
+#dark-mode-theme h1, #dark-mode-theme span{
+  color: #98999b;
+}
+
+#dark-mode-theme hr{
+  border-color: #98999b;
+}
+  */
