@@ -191,7 +191,7 @@ h2{
 }
 
 a{
-    color: var(--color-nav-index-text);
+    color: var(--color-dialog-button-text);
     text-decoration: none;
 }
 
