@@ -42,3 +42,14 @@ document.querySelectorAll('.download-btn').forEach(btn => {
         }
     });
 })();
+
+function changeLoginRegister(){
+    if(document.getElementById("register-mode").style.display === "none"){
+        document.getElementById("register-mode").style.display = "flex";
+        document.getElementById("login-mode").style.display = "none";
+    }
+    else{
+        document.getElementById("register-mode").style.display = "none";
+        document.getElementById("login-mode").style.display = "flex";
+    }
+}
