@@ -13,7 +13,7 @@
     <header>
         <div class="logo-container">
             <a href="#">
-                    <img src="/assets/img/jurai-light.png" id="jurai-logo" alt="JurAI - Logo">
+                <img src="../assets/img/jurai-light.png" id="jurai-logo" alt="JurAI - Logo">
             </a>
         </div>
     </header>
@@ -36,7 +36,7 @@
             <h1>Minha Conta</h1>
             <hr>
             <div class="content">
-                <div class="container" style="display: block; min-width: 20%; flex: initial;">
+                <div class="container" id="account-config-list">
                     <aside class="account-configs-options">
                         <nav>
                             <ul>
@@ -97,17 +97,17 @@
                         gosto</span>
                     <span>Modo:</span>
                     <select class="config-select" id="select-theme">
-                        <option>Light</option>
-                        <option>Dark</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
                     </select>
                     <div class="theme-images">
-                        <div class="theme-card" id="light-mode-theme" onclick="themeCardClick('Light')">
+                        <div class="theme-card" id="light-mode-theme" onclick="changeThemeByCard('light')">
                             <h1>Light Mode</h1>
                             <hr>
                             <span>Ao clicar aqui, o tema do site será trocado para o tema claro</span>
                             <img src="../assets/img/jurai-desktop-light.png" width="90%">
                         </div>
-                        <div class="theme-card" id="dark-mode-theme" onclick="themeCardClick('Dark')">
+                        <div class="theme-card" id="dark-mode-theme" onclick="changeThemeByCard('dark')">
                             <h1>Dark Mode</h1>
                             <hr>
                             <span>Ao clicar aqui, o tema do site será trocado para o tema escuro</span>

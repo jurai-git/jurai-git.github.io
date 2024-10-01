@@ -477,6 +477,17 @@ dialog {
   opacity: 0.6;
 }
 
+.account-configs-options span{
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+#account-config-list{
+  display: block;
+  min-width: 20%;
+  flex: initial;
+}
+
 .content .container {
   display: flex;
   flex-direction: column;
