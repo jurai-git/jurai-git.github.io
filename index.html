@@ -27,7 +27,7 @@
     </header>
     <div class="scroll-container">
         <main>
-            <section class="flex-container" id="home">
+            <section id="home">
                 <div>
                     <h1>JurAI - A inteligência que facilita o processo</h1>
                     <h2>O JurAI transforma a rotina do advogado em eficiência, automatizando tarefas repetitivas e oferecendo insights jurídicos inteligentes.</h2>
@@ -39,10 +39,34 @@
                 </div>
             </section>
 
-            <section> <h2>Download Section</h2> </section>
+            <section class="horizontal-center" id="download">
+                <div class="download-container">
+                    <h1>Download</h1>
+                    <p>Descubra a próxima geração de soluções com desempenho e simplicidade aprimorados.</p>
+                    
+                    <div class="tabs">
+                        <button class="tab" data-tab="windows">Windows</button>
+                        <button class="tab" data-tab="linux">Linux</button>
+                        <button class="tab" data-tab="mobile">Mobile</button>
+                    </div>
+                    
+                    <div id="windows" class="tab-content">
+                        <a href="#" class="download-btn" data-os="Windows">Baixar para Windows</a>
+                    </div>
+                    
+                    <div id="linux" class="tab-content">
+                        <a href="#" class="download-btn" data-os="Linux">Baixar para Linux</a>
+                    </div>
+
+                    <div id="mobile" class="tab-content">
+                        <p>Disponível na App Store e Google Play</p>
+                        <a href="#" class="download-btn" data-os="Mobile">Baixar para Celular</a>
+                    </div>
+                </div>
+            </section>
+
             <section> <h2>Quick Consult Section</h2> </section>
             <section> <h2>Plans Section</h2> </section>
-            <section> <h2>Contact Section</h2> </section>
 
         </main>
         <footer id="contact">
@@ -113,7 +137,9 @@
             </div>
         </footer>
     </div>
-    <script src="./assets/js/scrollSnapping.js"></script>
+
     <script src="./assets/js/themeHandler.js"></script>
+    <script src="./assets/js/indexEvents.js"></script>
+    <script src="./assets/js/scrollSnapping.js"></script>
 </body>
 </html>

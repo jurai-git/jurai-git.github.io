@@ -51,3 +51,41 @@ section h2{
     z-index: 1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+
+.download-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 8px 24px;
+    background-color: #f0f0f0;
+    border: none;
+}
+
+.tab.active {
+    background-color: #e0e0e0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

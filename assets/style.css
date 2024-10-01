@@ -12,6 +12,7 @@
 .horizontal-center{
     display: flex;
     justify-content: center;
+    flex-direction: row;
 }
 
 .vertical-center{
