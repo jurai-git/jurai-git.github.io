@@ -81,11 +81,31 @@ section h2{
     display: block;
 }
 
-.download-btn {
-    display: inline-block;
+.download-btn-container{
+    display: flex;
+    align-items: center;
+}
+
+.download-btn,
+.download-slc {
     padding: 8px 24px;
     background-color: #007bff;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    height: 2.5em;
+    text-align: center;
+}
+
+.download-btn-container a {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px
+}
+
+.download-btn-container select {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-left: -1px;
 }
