@@ -46,21 +46,44 @@
                     
                     <div class="tabs">
                         <button class="tab" data-tab="windows">Windows</button>
+                        <button class="tab" data-tab="macos">MacOS</button>
                         <button class="tab" data-tab="linux">Linux</button>
                         <button class="tab" data-tab="mobile">Mobile</button>
                     </div>
                     
                     <div id="windows" class="tab-content">
-                        <a href="#" class="download-btn" data-os="Windows">Baixar para Windows</a>
+                        <div class="download-btn-container">
+                            <a href="#" class="download-btn" data-os="Windows">Baixar para Windows</a>
+                            <select class="download-slc">
+                                <option value="windows">.exe (Windows)</option>
+                                <option value="windows-arm64">.exe (Windows ARM64)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="macos" class="tab-content">
+                        <div class="download-btn-container">
+                            <a href="#" class="download-btn" data-os="MacOS">Baixar para MacOS</a>
+                            <select class="download-slc">
+                                <option value="macos-intel">.dmg (Intel)</option>
+                                <option value="macos-apple-silicon">.dmg (Apple Silicon)</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <div id="linux" class="tab-content">
-                        <a href="#" class="download-btn" data-os="Linux">Baixar para Linux</a>
+                        <div class="download-btn-container">
+                            <a href="#" class="download-btn" data-os="Linux">Baixar para Linux</a>
+                            <select class="download-slc">
+                                <option value="linux">.tar.gz (Linux)</option>
+                                <option value="linux-arm64">.tar.gz (Linux ARM64)</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div id="mobile" class="tab-content">
                         <p>Disponível na App Store e Google Play</p>
-                        <a href="#" class="download-btn" data-os="Mobile">Baixar para Celular</a>
+                        <a href="#" class="download-btn" data-os="Mobile">Baixar para Celular &#x1F855;</a>
                     </div>
                 </div>
             </section>
