@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI - Login</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/index.html">
+                <img src="/assets/img/jurai-light.png" id="jurai-logo" alt="JurAI - Logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="login-container" id="login-mode">
+                <h2>Bem-Vindo(a) de Volta!</h2>
+                Insira suas credenciais para entrar no seu dashboard
+                <div class="alternative-login">
+                    <a href="#">
+                        <img src="https://auth.hostinger.com/assets/images/oauth/google.svg" alt="Google">
+                    </a>
+                </div>
+                <div class="division">
+                    <hr>
+                    <span>ou</span>
+                    <hr>
+                </div>
+                <form action="/advogado/dashboard.html">
+                    <label for="">Email:</label>
+                    <input type="email">
+                    <label for="">Senha:</label>
+                    <input type="password">
+                    <div class="login-remember-field">
+                        <input type="checkbox">
+                        <label for="">Lembrar de mim</label>
+                    </div>
+                    <input type="submit" class="btn-fade">
+                </form>
+                <div>
+                    Ainda não possui uma conta? <span onclick="changeLoginRegister()" class="login-register-button">Registre-se agora!</span>
+                </div>
+            </div>
+            <div class="login-container" id="register-mode" style="display: none;">
+                <h2>Seja Bem-Vindo(a)!</h2>
+                Insira suas credenciais para criar sua conta
+                <div class="alternative-login">
+                    <a href="#">
+                        <img src="https://auth.hostinger.com/assets/images/oauth/google.svg" alt="Google">
+                    </a>
+                </div>
+                <div class="division">
+                    <hr>
+                    <span>ou</span>
+                    <hr>
+                </div>
+                <form action="/advogado/dashboard.html">
+                    <label for="">Nome:</label>
+                    <input type="text">
+                    <label for="">Nº OAB:</label>
+                    <input type="text">
+                    <label for="">Email:</label>
+                    <input type="email">
+                    <label for="">Senha:</label>
+                    <input type="password">
+                    <label for="">Confirmar Senha:</label>
+                    <input type="password">
+                    <div class="login-remember-field">
+                        <input type="checkbox">
+                        <label for="">Lembrar de mim</label>
+                    </div>
+                    <input type="submit" class="btn-fade" value="Cadastrar">
+                </form>
+                <div>
+                    Já possui uma conta? <span onclick="changeLoginRegister()" class="login-register-button">Entre agora!</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/themeHandler.js"></script>
+    <script src="/assets/js/indexEvents.js"></script>
+</body>
+</html>
