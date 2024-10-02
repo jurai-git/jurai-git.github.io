@@ -169,6 +169,10 @@ section h2{
     color: var(--color-text);
 }
 
+form{
+    width: 100%;
+}
+
 .login-container .alternative-login{
     display: flex;
     justify-content: center;
@@ -217,6 +221,7 @@ section h2{
     color: var(--color-form-list-text);
 }
 
+
 .login-remember.field{
     display: flex;
     justify-content: center;
@@ -240,3 +245,84 @@ section h2{
     opacity: 0.7;
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-main-container);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex: 1;
+    padding: 20px;
+    min-width: 410px;
+    max-height: 320px;
+    overflow: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-config-li-background);
+  }
+  
+  .card h2 {
+    flex: 0 0 auto;
+  }
+  
+  .card canvas {
+    flex: 1 1 auto;
+    height: 100% !important;
+    margin: auto;
+  }
+  
+  .plan-card {
+    min-width: 330px;
+    min-height: 550px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+    transition: 1s;
+  }
+  
+  .plan-card:hover {
+    border: 1px solid var(--color-text);
+  }
+  
+  .plan-card > ul > li {
+    margin: 10px;
+    font-size: 1.2em;
+  }
+  
+  .plan-card > .temp-css:hover,
+  .plan-choosed:active,
+  .plan-choosed > .temp-css {
+    color: var(--color-plan-choosed-text);
+    background: var(--color-plan-choosed-background);
+    border: 1px solid var(--color-text);
+  }
+  
+  .plan-choosed {
+    background-color: var(--color-text);
+    color: var(--color-plan-choosed-text);
+    border: 1px solid black;
+    flex-grow: 1.5;
+  }
+  
+  .temp-css {
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: var(--color-text);
+    background: var(--color-inputs-lists-background);
+    padding: 8px 12px;
+    border: 1px solid var(--color-text);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.5s;
+  }

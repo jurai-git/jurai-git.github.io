@@ -93,7 +93,49 @@
             </section>
 
             <section> <h2>Quick Consult Section</h2> </section>
-            <section> <h2>Plans Section</h2> </section>
+            <section class="card-container">
+                <div class="card plan-card" id="free-plan" onclick="changePlan(1)">
+                    Para usuários comuns
+                    <h1>Free</h1>
+                    <h2>R$0,00</h2>
+                    <ul>
+                        <li>Consulta Rápida (10 p/dia)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Escolher Plano" class="temp-css">
+                </div>
+
+                <div class="card plan-card plan-choosed" id="premium-plan" onclick="changePlan(2)">
+                        Seu plano atual é o
+                        <h1>Premium</h1>
+                        <h2>R$49,99</h2>
+                    <ul>
+                        <li>Consulta Rápida (50 p/dia)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Já Escolhido" class="temp-css" readonly>
+                </div>
+
+                <div class="card plan-card" id="advanced-plan" onclick="changePlan(3)">
+                    Novas ferramentas, preço justo
+                    <h1>Advanced</h1>
+                    <h2>R$24,99</h2>
+                    <ul>
+                        <li>Consulta Rápida (Ilimitado)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Escolher Plano" class="temp-css">
+                </div>
+            </section>
 
         </main>
         <footer id="contact">

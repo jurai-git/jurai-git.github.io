@@ -87,8 +87,8 @@
 
   --color-dialog-header-buttons: #007bff;
   --color-dialog-header-buttons-hover: #0056b3;
-  --color-dialog-header-button-visited: #161616;
-  --color-dialog-header-buttons-not-visited: #7a7a7a;
+  --color-dialog-header-button-visited: #7a7a7a;
+  --color-dialog-header-buttons-not-visited: #161616;
   --color-dialog-button-next: #007bff;
   --color-dialog-button-text: #39393e;
 
@@ -134,8 +134,8 @@
 
     --color-dialog-header-buttons: #007bff;
     --color-dialog-header-buttons-hover: #0056b3;
-    --color-dialog-header-button-visited: #161616;
-    --color-dialog-header-buttons-not-visited: #7a7a7a;
+    --color-dialog-header-button-visited: #7a7a7a;
+    --color-dialog-header-buttons-not-visited: #161616;
     --color-dialog-button-next: #007bff;
     --color-dialog-button-text: #39393e;
 
