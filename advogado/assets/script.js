@@ -148,6 +148,18 @@ function changePlan(n) {
 
 var currentTab = 0;
 
+var colorVisited = "#";
+var colorNotVisited = "#";
+
+if(localStorage.getItem("theme") === "dark"){
+  var colorVisited = "white";
+  var colorNotVisited = "#737373";
+}
+else{
+  var colorVisited = "#161616";
+  var colorNotVisited = "#7a7a7a";
+}
+
 function changeStep(i) {
   currentTab = i;
   switch (i) {
@@ -157,9 +169,9 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "none";
       document.getElementById("btn-previous").style.display = "none";
       document.getElementById("btn-next").textContent = "Próximo";
-      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-visited)";
-      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
+      document.getElementById("btn-personal-info").style.color = colorVisited;
+      document.getElementById("btn-general-info").style.color = colorNotVisited;
+      document.getElementById("btn-adress-info").style.color = colorNotVisited;
       break;
     case 1:
       document.getElementById("step-personal").style.display = "none";
@@ -167,9 +179,9 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "none";
       document.getElementById("btn-previous").style.display = "block";
       document.getElementById("btn-next").textContent = "Próximo";
-      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-visited)";
-      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
+      document.getElementById("btn-personal-info").style.color = colorNotVisited;
+      document.getElementById("btn-general-info").style.color = colorVisited;
+      document.getElementById("btn-adress-info").style.color = colorNotVisited;
       break;
     case 2:
       document.getElementById("step-personal").style.display = "none";
@@ -177,9 +189,9 @@ function changeStep(i) {
       document.getElementById("step-adress").style.display = "flex";
       document.getElementById("btn-previous").style.display = "block";
       document.getElementById("btn-next").textContent = "Enviar";
-      document.getElementById("btn-personal-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-general-info").style.color = "var(--color-dialog-header-buttons-not-visited)";
-      document.getElementById("btn-adress-info").style.color = "var(--color-dialog-header-buttons-visited)";
+      document.getElementById("btn-personal-info").style.color = colorNotVisited;
+      document.getElementById("btn-general-info").style.color = colorNotVisited;
+      document.getElementById("btn-adress-info").style.color = colorVisited;
       break;
   }
 }
