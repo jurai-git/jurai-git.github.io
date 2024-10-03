@@ -53,3 +53,23 @@ function changeLoginRegister(){
         document.getElementById("login-mode").style.display = "flex";
     }
 }
+
+function changePlan(n) {
+    switch (n) {
+      case 1:
+        document.getElementById("free-plan").classList.add("plan-choosed");
+        document.getElementById("premium-plan").classList.remove("plan-choosed");
+        document.getElementById("advanced-plan").classList.remove("plan-choosed");
+        break;
+      case 2:
+        document.getElementById("free-plan").classList.remove("plan-choosed");
+        document.getElementById("premium-plan").classList.add("plan-choosed");
+        document.getElementById("advanced-plan").classList.remove("plan-choosed");
+        break;
+      case 3:
+        document.getElementById("free-plan").classList.remove("plan-choosed");
+        document.getElementById("premium-plan").classList.remove("plan-choosed");
+        document.getElementById("advanced-plan").classList.add("plan-choosed");
+        break;
+    }
+  }

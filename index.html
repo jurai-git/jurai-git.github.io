@@ -93,7 +93,52 @@
             </section>
 
             <section> <h2>Quick Consult Section</h2> </section>
-            <section> <h2>Plans Section</h2> </section>
+            <section id="plans">
+                <h1>Planos</h1>
+                <div class="card-container">
+                    <div class="card plan-card" id="free-plan" onclick="changePlan(1)">
+                        Para usuários comuns
+                        <h1>Free</h1>
+                        <h2>R$0,00</h2>
+                        <ul>
+                            <li class="include-in-plan">Consulta Rápida (10 p/dia)</li>
+                            <li class="include-in-plan">Visualização de Resultados</li>
+                            <li class="not-include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                            <li class="not-include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
+                            <li class="not-include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
+                        </ul>
+                        <input type="submit" value="Escolher Plano" class="temp-css">
+                    </div>
+
+                    <div class="card plan-card" id="advanced-plan" onclick="changePlan(3)">
+                        Novas ferramentas, preço justo
+                        <h1>Advanced</h1>
+                        <h2>R$24,99</h2>
+                        <ul>
+                            <li class="include-in-plan">Consulta Rápida (50 p/dia)</li>
+                            <li class="include-in-plan">Visualização de Resultados</li>
+                            <li class="include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                            <li class="not-include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
+                            <li class="not-include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
+                        </ul>
+                        <input type="submit" value="Escolher Plano" class="temp-css">
+                    </div>
+
+                    <div class="card plan-card" id="premium-plan" onclick="changePlan(2)">
+                            Zero preocupações
+                            <h1>Premium</h1>
+                            <h2>R$49,99</h2>
+                        <ul>
+                            <li class="include-in-plan">Consulta Rápida (Ilimitado)</li>
+                            <li class="include-in-plan">Visualização de Resultados</li>
+                            <li class="include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                            <li class="include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
+                            <li class="include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
+                        </ul>
+                        <input type="submit" value="Escolher Plano" class="temp-css">
+                    </div>
+                </div>
+            </section>
 
         </main>
         <footer id="contact">
