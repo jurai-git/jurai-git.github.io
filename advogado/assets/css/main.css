@@ -302,11 +302,16 @@ dialog {
   align-items: center;
   flex-direction: column;
   background-color: var(--color-dialog-background);
+  min-width: 300px;
   width: 40%;
   padding: 1%;
   border-radius: 10px;
   text-align: center;
   border: 2px solid var(--color-dialog-background-border);
+}
+
+.info-buttons{
+  margin-top: .5em;
 }
 
 .info-buttons button {
@@ -341,11 +346,15 @@ dialog {
   width: 40%;
 }
 
+#client-documents-form{
+  width: 100%;
+}
+
 .client-information {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .client-information input,
@@ -354,11 +363,21 @@ dialog {
   margin: 0.3em;
 }
 
+.client-information label{
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
 .client-information input {
   border: none;
   background: none;
   border-bottom: 2px solid var(--color-form-list-text);
   width: 100%;
+  font-size: 1em;
+
+  &:focus{
+    border-color: var(--color-dialog-header-buttons);
+  }
 }
 
 .adress-details {
@@ -426,7 +445,10 @@ dialog {
 
 .client-isOlder input {
   width: inherit;
-  vertical-align: text-bottom;
+}
+
+.client-isOlder input[type="radio"]{
+  margin-right: inherit;
 }
 
 #btn-next {
@@ -517,7 +539,7 @@ dialog {
 }
 
 #btn-update-accountinfo{
-  width: 35%;
+  min-width: 200px;
   font-size: 1em;
   background-color: green;
   transform: initial;
@@ -525,7 +547,7 @@ dialog {
 }
 
 #btn-change-accountpsw {
-  width: 25%;
+  min-width: 200px;
   font-size: 1em;
   background-color: var(--color-inputs-lists-background);
   transform: initial;
@@ -538,7 +560,7 @@ dialog {
 }
 
 #btn-delete-account {
-  width: 25%;
+  min-width: 200px;
   font-size: 1em;
   background-color: var(--color-inputs-lists-background);
   transform: initial;
@@ -553,7 +575,7 @@ dialog {
 }
 
 .config-select {
-  width: 15%;
+  width: 80px;
   border-radius: 10px;
   padding: 7px;
   font-size: 1.05em;
@@ -567,10 +589,13 @@ dialog {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 1em;
 }
 
 .account-image img{
   border-radius: 400px;
+  min-width: 200px;
+  width: 50%;
 }
 
 .theme-card{
