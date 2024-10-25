@@ -151,6 +151,7 @@ section h2{
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .login-container{
     display: flex;
     justify-content: center;
@@ -169,18 +170,8 @@ section h2{
     color: var(--color-text);
 }
 
-form{
+.login-container form{
     width: 100%;
-}
-
-.login-container .alternative-login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-form-input-text);
-    padding: .5em 0 .3em 0;
-    width: 15%;
-    margin: .6em;
 }
 
 .login-container input{
@@ -200,8 +191,35 @@ form{
     color: var(--color-plan-choosed-text);
 }
 
+.login-container input[type="submit"]:active{
+    opacity: 0.6;
+}
+
 .login-container span{
     color: var(--color-text);
+}
+
+.login-container input[type="checkbox"]{
+    width: initial;
+}
+
+.login-container div:last-child span{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-container div:last-child span:active{
+    opacity: 0.7;
+}
+
+.login-container .alternative-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-form-input-text);
+    padding: .5em 0 .3em 0;
+    width: 15%;
+    margin: .6em;
 }
 
 .division{
@@ -221,30 +239,6 @@ form{
     color: var(--color-form-list-text);
 }
 
-
-.login-remember.field{
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-
-.login-remember-field input{
-    width: initial;
-}
-
-.btn-fade:active{
-    background: linear-gradient(rgb(0 0 0/40%) 0 0);
-}
-
-.login-register-button{
-    cursor: pointer;
-    font-weight:bold;
-}
-
-.login-register-button:active{
-    opacity: 0.7;
-}
-
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -252,9 +246,9 @@ form{
     justify-content: space-around;
     flex-direction: row;
     margin: 0 auto;
-  }
+}
   
-  .card {
+.card {
     display: flex;
     flex-direction: column;
     background: var(--color-main-container);
@@ -268,73 +262,55 @@ form{
     overflow: auto;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--color-config-li-background);
-  }
+}
   
-  .card h2 {
+.card h2 {
     flex: 0 0 auto;
-  }
+}
   
-  .card canvas {
+.card canvas {
     flex: 1 1 auto;
     height: 100% !important;
     margin: auto;
-  }
+}
   
-  .plan-card {
+.plan-card {
     min-width: 330px;
     min-height: 550px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     overflow-y: hidden;
-    transition: 1s;
-  }
+    transition: .7s;
+}
   
-  .plan-card:hover {
+.plan-card:hover {
     border: 1px solid var(--color-text);
-  }
+}
   
-  .plan-card ul > li {
+  .plan-card ul li {
     margin: 10px;
     font-size: 1.2em;
   }
 
-  .include-in-plan::before, .not-include-in-plan::before{
+  .plan-card li:before{
     margin-right: 10px;
-  }
-
-  .include-in-plan::before{
     content: url(/assets/icons/include-in-plan-choosed.png);
   }
 
-  .not-include-in-plan::before{
+  #free-plan li:nth-child(n+3):before, #advanced-plan li:nth-child(n+4):before{
     content: url(/assets/icons/not-include-in-plan-choosed.png);
   }
   
-  .plan-choosed .include-in-plan::before{
+  .plan-choosed li:before{
     content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAzMCI+CjxwYXRoIGQ9Ik0gMjYuOTgwNDY5IDUuOTkwMjM0NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuMjkyOTY5IDYuMjkyOTY4OCBMIDExIDIxLjU4NTkzOCBMIDQuNzA3MDMxMiAxNS4yOTI5NjkgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDMuMjkyOTY4OCAxNi43MDcwMzEgTCAxMC4yOTI5NjkgMjMuNzA3MDMxIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxMS43MDcwMzEgMjMuNzA3MDMxIEwgMjcuNzA3MDMxIDcuNzA3MDMxMiBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuOTgwNDY5IDUuOTkwMjM0NCB6Ij48L3BhdGg+Cjwvc3ZnPg==");
   }
 
-  .plan-choosed .not-include-in-plan::before{
+  .plan-choosed#free-plan li:nth-child(n+3):before, .plan-choosed#advanced-plan li:nth-child(n+4):before{
     content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA1MCA1MCI+CjxwYXRoIGQ9Ik0gOS4xNTYyNSA2LjMxMjUgTCA2LjMxMjUgOS4xNTYyNSBMIDIyLjE1NjI1IDI1IEwgNi4yMTg3NSA0MC45Njg3NSBMIDkuMDMxMjUgNDMuNzgxMjUgTCAyNSAyNy44NDM3NSBMIDQwLjkzNzUgNDMuNzgxMjUgTCA0My43ODEyNSA0MC45Mzc1IEwgMjcuODQzNzUgMjUgTCA0My42ODc1IDkuMTU2MjUgTCA0MC44NDM3NSA2LjMxMjUgTCAyNSAyMi4xNTYyNSBaIj48L3BhdGg+Cjwvc3ZnPg==");
 }
 
-  .plan-card > .temp-css:hover,
-  .plan-choosed:active,
-  .plan-choosed > .temp-css {
-    color: var(--color-plan-choosed-text);
-    background: var(--color-plan-choosed-background);
-    border: 1px solid var(--color-text);
-  }
-  
-  .plan-choosed {
-    background-color: var(--color-text);
-    color: var(--color-plan-choosed-text);
-    border: 1px solid black;
-    flex-grow: 1.5;
-  }
-  
-  .temp-css {
+.plan-card input[type="submit"]{
     width: 100%;
     font-size: 1.1em;
     cursor: pointer;
@@ -345,4 +321,18 @@ form{
     border-radius: 6px;
     outline: none;
     transition: 0.5s;
+}
+
+  .plan-card input[type="submit"]:hover,
+  .plan-choosed:active, .plan-choosed input[type="submit"] {
+    color: var(--color-plan-choosed-text);
+    background: var(--color-plan-choosed-background);
+    border: 1px solid var(--color-text);
+  }
+  
+  .plan-choosed {
+    background-color: var(--color-text);
+    color: var(--color-plan-choosed-text);
+    border: 1px solid black;
+    flex-grow: 1.5;
   }

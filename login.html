@@ -31,19 +31,19 @@
                     <span>ou</span>
                     <hr>
                 </div>
-                <form action="/advogado/dashboard.html">
-                        <label for="">Email:</label>
-                        <input type="email">
-                        <label for="">Senha:</label>
-                        <input type="password">
+                <form id="loginLawyer">
+                        <label for="username">Conta:</label>
+                        <input type="text" name="username" id="username">
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" id="password">
                     <div class="login-remember-field">
                         <input type="checkbox">
                         <label for="">Lembrar de mim</label>
                     </div>
-                        <input type="submit" class="btn-fade" value="Entrar">
+                        <input type="submit" value="Entrar">
                 </form>
                 <div>
-                    Ainda não possui uma conta? <span onclick="changeLoginRegister()" class="login-register-button">Registre-se agora!</span>
+                    Ainda não possui uma conta? <span onclick="changeLoginRegister()">Registre-se agora!</span>
                 </div>
             </div>
             <div class="login-container" id="register-mode" style="display: none;">
@@ -59,30 +59,80 @@
                     <span>ou</span>
                     <hr>
                 </div>
-                <form action="/advogado/dashboard.html">
-                    <label for="">Nome:</label>
-                    <input type="text">
-                    <label for="">Nº OAB:</label>
-                    <input type="text">
-                    <label for="">Email:</label>
-                    <input type="email">
-                    <label for="">Senha:</label>
-                    <input type="password">
-                    <label for="">Confirmar Senha:</label>
-                    <input type="password">
+                <form id="registerLawyer">
+                    <label for="username">Nome:</label>
+                    <input type="text" name="username" id="username" required>
+                
+                    <label for="oab">Nº OAB:</label>
+                    <input type="text" name="oab" id="oab" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                
+                    <label for="password">Senha:</label>
+                    <input type="password" name="password" id="password" required>
+                
+                    <label for="confirm_password">Confirmar Senha:</label>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
+                
                     <div class="login-remember-field">
-                        <input type="checkbox">
-                        <label for="">Lembrar de mim</label>
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Lembrar de mim</label>
                     </div>
-                    <input type="submit" class="btn-fade" value="Cadastrar">
+                    <input type="submit" value="Cadastrar">
                 </form>
                 <div>
-                    Já possui uma conta? <span onclick="changeLoginRegister()" class="login-register-button">Entre agora!</span>
+                    Já possui uma conta? <span onclick="changeLoginRegister()">Entre agora!</span>
                 </div>
             </div>
         </section>
     </main>
     <script src="./assets/js/themeHandler.js"></script>
-    <script src="/assets/js/indexEvents.js"></script>
+    <script src="./assets/js/indexEvents.js"></script>
+    <script src="./assets/js/formEvents.js"></script>
+    <script>
+        document.getElementById('loginLawyer').addEventListener('submit', handleSubmit);
+        document.getElementById('registerLawyer').addEventListener('submit', handleSubmit);
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formId = event.target.id;
+            const actionType = formId === 'loginLawyer' ? 'login' : 'register';
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            if (actionType === 'register' && data.password !== data.confirm_password) {
+                alert("As senhas não coincidem. Por favor, tente novamente.");
+                return;
+            }
+
+            callApi(event)
+            .then(data => {
+                if (actionType === 'login') {
+                    alert(`Login realizado com sucesso, ${data.advogado.username}!`);
+                } else {
+                    alert(`Cadastro realizado com sucesso!`);
+                }
+                
+                const rememberMeChecked = document.getElementById('rememberMe')?.checked || false;
+
+                if (rememberMeChecked) {
+                    const expirationDate = new Date();
+
+                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+                    document.cookie = `access_token=${data.advogado.access_token}; path=/; expires=${expirationDate.toUTCString()}; secure; samesite=strict`;
+                } else {
+                    document.cookie = `access_token=${data.advogado.access_token}; path=/; max-age=1800; secure; samesite=strict`;
+                }
+
+                window.location.href = './advogado/dashboard.html';
+            })
+            .catch(err => {
+                alert(`Erro: ${err.message}`);
+            });
+        }
+    </script>
 </body>
 </html>
