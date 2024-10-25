@@ -7,9 +7,16 @@
     <title>JurAI - Conta</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
+
+    <style>
+        @media (max-width: 1000px) {
+            .content{
+                flex-direction: column;
+            }
+        }
+    </style>
     <script src="./assets/script/auth.js" async></script>
 </head>
-
 <body>
     <header>
         <div class="logo-container">
@@ -72,7 +79,7 @@
                             <button class="btn-dialog btn-fade" id="btn-update-accountinfo">Atualizar Informações</button>
                         </div>
                         <div class="account-image">
-                            <img src="./assets/img/profile-photo.jfif" width="50%">
+                            <img src="./assets/img/profile-photo.jfif">
                         </div>
                     </div>
                 </div>
@@ -117,11 +124,12 @@
                     </div>
                 </div>
             </div>
+            <footer>
+                <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+            </footer>
         </main>
     </div>
-    <footer>
-        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
-    </footer>
+    
     <script src="../assets/js/themeHandler.js"></script>
     <script src="./assets/script.js"></script>
     <script src="../assets/js/formEvents.js"></script>

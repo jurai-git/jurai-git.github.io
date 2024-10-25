@@ -203,9 +203,13 @@ function closeModal() {
 }
 
 function nextStep(n) {
+  console.log(n);
   var x = document.getElementsByClassName("client-information");
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
+  if(x[currentTab]===undefined){
+    document.getElementById("client-documents-form").submit();
+  }
   changeStep(currentTab);
 }
 
