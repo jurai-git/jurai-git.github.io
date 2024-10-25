@@ -101,6 +101,14 @@
             const formId = event.target.id;
             const actionType = formId === 'loginLawyer' ? 'login' : 'register';
 
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            if (actionType === 'register' && data.password !== data.confirm_password) {
+                alert("As senhas não coincidem. Por favor, tente novamente.");
+                return;
+            }
+
             callApi(event)
             .then(data => {
                 if (actionType === 'login') {
