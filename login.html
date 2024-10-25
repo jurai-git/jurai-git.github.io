@@ -117,6 +117,17 @@
                     alert(`Cadastro realizado com sucesso!`);
                 }
                 
+                const rememberMeChecked = document.getElementById('rememberMe')?.checked || false;
+
+                if (rememberMeChecked) {
+                    const expirationDate = new Date();
+
+                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+                    document.cookie = `access_token=${data.advogado.access_token}; path=/; expires=${expirationDate.toUTCString()}; secure; samesite=strict`;
+                } else {
+                    document.cookie = `access_token=${data.advogado.access_token}; path=/; max-age=1800; secure; samesite=strict`;
+                }
+
                 window.location.href = './advogado/dashboard.html';
             })
             .catch(err => {
