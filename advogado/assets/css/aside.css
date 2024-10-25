@@ -5,6 +5,7 @@ aside{
     padding: 16px;
     background: var(--color-table-row-aside-background);
     border-right: 2px solid var(--color-header-aside-border);
+    z-index: 1;
 }
 
 aside nav{
