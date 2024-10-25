@@ -45,6 +45,6 @@ function callApi(event) {
         }
         return res.json();
     })
-    .then(data => console.log('Data:', data))
+    .then(responseData => console.log('Data:', responseData))
     .catch(err => console.error('Error:', err));
 }
