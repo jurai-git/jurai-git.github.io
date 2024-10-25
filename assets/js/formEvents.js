@@ -1,7 +1,3 @@
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', callApi);
-});
-
 function callApi(event) {
     event.preventDefault();
 
@@ -38,13 +34,15 @@ function callApi(event) {
         body: JSON.stringify(data)
     };
 
-    fetch(url, options)
+
+    return fetch(url, options)
     .then(res => {
         if (!res.ok) {
             throw new Error(`HTTP status: ${res.status}`);
         }
         return res.json();
     })
-    .then(responseData => console.log('Data:', responseData))
-    .catch(err => console.error('Error:', err));
+    .finally(() => {
+        hideLoadingIndicator();
+    });
 }
