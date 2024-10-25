@@ -85,5 +85,20 @@
     <script src="./assets/js/themeHandler.js"></script>
     <script src="./assets/js/indexEvents.js"></script>
     <script src="./assets/js/formEvents.js"></script>
+    <script>
+        document.getElementById('loginLawyer').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            callApi(event)
+            .then(data => {
+                alert(`Login realizado com sucesso, ${data.advogado.username}!`);
+                
+                // window.location.href = './advogado/dashboard.html';
+            })
+            .catch(err => {
+                alert(`Erro: ${err.message}`);
+            });
+        });
+    </script>
 </body>
 </html>
