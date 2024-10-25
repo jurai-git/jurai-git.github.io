@@ -60,20 +60,26 @@
                     <hr>
                 </div>
                 <form id="registerLawyer">
-                    <label for="">Nome:</label>
-                    <input type="text">
-                    <label for="">Nº OAB:</label>
-                    <input type="text">
-                    <label for="">Email:</label>
-                    <input type="email">
-                    <label for="">Senha:</label>
-                    <input type="password">
-                    <label for="">Confirmar Senha:</label>
-                    <input type="password">
+                    <label for="username">Nome:</label>
+                    <input type="text" name="username" id="username" required>
+                
+                    <label for="oab">Nº OAB:</label>
+                    <input type="text" name="oab" id="oab" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                
+                    <label for="password">Senha:</label>
+                    <input type="password" name="password" id="password" required>
+                
+                    <label for="confirm_password">Confirmar Senha:</label>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
+                
                     <div class="login-remember-field">
-                        <input type="checkbox">
-                        <label for="">Lembrar de mim</label>
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Lembrar de mim</label>
                     </div>
+                
                     <input type="submit" class="btn-fade" value="Cadastrar">
                 </form>
                 <div>
