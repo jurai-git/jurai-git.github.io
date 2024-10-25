@@ -34,15 +34,11 @@ function callApi(event) {
         body: JSON.stringify(data)
     };
 
-
     return fetch(url, options)
     .then(res => {
         if (!res.ok) {
             throw new Error(`HTTP status: ${res.status}`);
         }
         return res.json();
-    })
-    .finally(() => {
-        hideLoadingIndicator();
     });
 }
