@@ -1,6 +1,6 @@
 import { CONFIG } from './config.js';
 
-function callApi(event) {
+function callApi(event, bearer_token=true) {
     event.preventDefault();
 
     const baseUrl = CONFIG.apiBaseUrl;
@@ -27,10 +27,13 @@ function callApi(event) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${getAccessToken()}`,
         },
         body: JSON.stringify(data)
     };
+
+    if (bearer_token) {
+        options.headers['Authorization'] = `Bearer ${getAccessToken()}`;
+    }
 
     return fetch(url, options)
     .then(res => {
