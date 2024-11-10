@@ -1,4 +1,4 @@
-import callApi from '../formEvents.js';
+import ApiService from '../services/apiService.js';
 import CookieService from '../services/cookieService.js';
 
 const COOKIE_NAME = 'access_token';
@@ -20,7 +20,7 @@ async function handleSubmit(event) {
     }
     
     try {
-        const response = await callApi(event, false);
+        const response = await ApiService.request(event, false);
         handleSubmission(response, actionType);
     } catch (error) {
         handleError(error);
