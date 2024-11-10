@@ -1,5 +1,5 @@
 import callApi from '../formEvents.js';
-import CookieService from '../service/cookieService.js';
+import CookieService from '../services/cookieService.js';
 
 const COOKIE_NAME = 'access_token';
 const REDIRECT_URL = './advogado/dashboard.html';
