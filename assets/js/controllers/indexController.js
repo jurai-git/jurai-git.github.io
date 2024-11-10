@@ -4,6 +4,9 @@ const SELECTORS = {
     downloadBtn: '.download-btn',
     registerMode: '#register-mode',
     loginMode: '#login-mode',
+    scrollContainer: '.scroll-container',
+    navigationLinks: 'nav ul li a',
+    sections: 'section, footer',
     plans: {
         free: '#free-plan',
         premium: '#premium-plan',
@@ -15,6 +18,46 @@ const CLASSES = {
     active: 'active',
     planChoosed: 'plan-choosed'
 };
+
+
+class NavigationManager {
+    constructor() {
+        this.sections = document.querySelectorAll(SELECTORS.sections);
+        this.scrollContainer = document.querySelector(SELECTORS.scrollContainer);
+        this.navigationLinks = document.querySelectorAll(SELECTORS.navigationLinks);
+
+        this.initializeNavigation();
+    }
+
+    initializeNavigation() {
+        if (!this.scrollContainer) {
+            console.warn('Scroll container not found');
+            return;
+        }
+
+        this.navigationLinks.forEach(link => {
+            link.addEventListener('click', (e) => this.handleNavClick(e, link));
+        });
+    }
+
+    handleNavClick(e, link) {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.slice(1);
+        if (!targetId) return;
+
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+
+        this.scrollToSection(targetSection);
+    }
+
+    scrollToSection(section) {
+        this.scrollContainer.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}
 
 
 class TabManager {
@@ -88,6 +131,8 @@ class AuthModeSwitcher {
     }
 
     toggle() {
+        if (!this.registerMode || !this.loginMode) return;
+
         const isRegisterVisible = this.registerMode.style.display === 'none';
 
         this.registerMode.style.display = isRegisterVisible ? 'flex' : 'none';
@@ -106,27 +151,30 @@ class PlanSelector {
     }
 
     selectPlan(planNumber) {
-        Object.values(this.plans).forEach(plan =>
-            plan.classList.remove(CLASSES.planChoosed)
-        );
+        Object.values(this.plans).forEach(plan => {
+            if (plan) plan.classList.remove(CLASSES.planChoosed);
+        });
 
         switch (planNumber) {
             case 1:
-                this.plans.free.classList.add(CLASSES.planChoosed);
+                this.plans.free?.classList.add(CLASSES.planChoosed);
                 break;
             case 2:
-                this.plans.premium.classList.add(CLASSES.planChoosed);
+                this.plans.premium?.classList.add(CLASSES.planChoosed);
                 break;
             case 3:
-                this.plans.advanced.classList.add(CLASSES.planChoosed);
+                this.plans.advanced?.classList.add(CLASSES.planChoosed);
                 break;
         }
     }
 }
 
-const tabManager = new TabManager();
-const authModeSwitcher = new AuthModeSwitcher();
-const planSelector = new PlanSelector();
+document.addEventListener('DOMContentLoaded', () => {
+    const navigationManager = new NavigationManager();
+    const tabManager = new TabManager();
+    const authModeSwitcher = new AuthModeSwitcher();
+    const planSelector = new PlanSelector();
 
-window.changeLoginRegister = () => authModeSwitcher.toggle();
-window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
+    window.changeLoginRegister = () => authModeSwitcher.toggle();
+    window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
+});
