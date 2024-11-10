@@ -1,23 +1,4 @@
-const SELECTORS = {
-    tabs: '.tab',
-    tabContent: '.tab-content',
-    downloadBtn: '.download-btn',
-    registerMode: '#register-mode',
-    loginMode: '#login-mode',
-    scrollContainer: '.scroll-container',
-    navigationLinks: 'nav ul li a',
-    sections: 'section, footer',
-    plans: {
-        free: '#free-plan',
-        premium: '#premium-plan',
-        advanced: '#advanced-plan'
-    }
-};
-
-const CLASSES = {
-    active: 'active',
-    planChoosed: 'plan-choosed'
-};
+import { CLASSES, SELECTORS } from "./config.js";
 
 
 class NavigationManager {
@@ -124,23 +105,6 @@ class TabManager {
 }
 
 
-class AuthModeSwitcher {
-    constructor() {
-        this.registerMode = document.querySelector(SELECTORS.registerMode);
-        this.loginMode = document.querySelector(SELECTORS.loginMode);
-    }
-
-    toggle() {
-        if (!this.registerMode || !this.loginMode) return;
-
-        const isRegisterVisible = this.registerMode.style.display === 'none';
-
-        this.registerMode.style.display = isRegisterVisible ? 'flex' : 'none';
-        this.loginMode.style.display = isRegisterVisible ? 'none' : 'flex';
-    }
-}
-
-
 class PlanSelector {
     constructor() {
         this.plans = {
@@ -172,9 +136,7 @@ class PlanSelector {
 document.addEventListener('DOMContentLoaded', () => {
     const navigationManager = new NavigationManager();
     const tabManager = new TabManager();
-    const authModeSwitcher = new AuthModeSwitcher();
     const planSelector = new PlanSelector();
 
-    window.changeLoginRegister = () => authModeSwitcher.toggle();
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
 });

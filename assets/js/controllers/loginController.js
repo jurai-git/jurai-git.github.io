@@ -1,5 +1,6 @@
 import ApiService from '../services/apiService.js';
 import CookieService from '../services/cookieService.js';
+import { SELECTORS } from './config.js';
 
 const COOKIE_NAME = 'access_token';
 const REDIRECT_URL = './advogado/dashboard.html';
@@ -89,3 +90,23 @@ function redirectToDashboard() {
 function handleError(error) {
     alert(error.message);
 }
+
+
+class AuthModeSwitcher {
+    constructor() {
+        this.registerMode = document.querySelector(SELECTORS.registerMode);
+        this.loginMode = document.querySelector(SELECTORS.loginMode);
+    }
+
+    toggle() {
+        if (!this.registerMode || !this.loginMode) return;
+
+        const isRegisterVisible = this.registerMode.style.display === 'none';
+
+        this.registerMode.style.display = isRegisterVisible ? 'flex' : 'none';
+        this.loginMode.style.display = isRegisterVisible ? 'none' : 'flex';
+    }
+}
+
+const authModeSwitcher = new AuthModeSwitcher();
+window.changeLoginRegister = () => authModeSwitcher.toggle();
