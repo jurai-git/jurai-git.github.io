@@ -61,16 +61,20 @@ document.querySelectorAll('.download-btn').forEach(btn => {
     });
 })();
 
-function changeLoginRegister(){
-    if(document.getElementById("register-mode").style.display === "none"){
-        document.getElementById("register-mode").style.display = "flex";
-        document.getElementById("login-mode").style.display = "none";
+class AuthModeSwitcher {
+    constructor() {
+        this.registerMode = document.querySelector(SELECTORS.registerMode);
+        this.loginMode = document.querySelector(SELECTORS.loginMode);
     }
-    else{
-        document.getElementById("register-mode").style.display = "none";
-        document.getElementById("login-mode").style.display = "flex";
+
+    toggle() {
+        const isRegisterVisible = this.registerMode.style.display === 'none';
+
+        this.registerMode.style.display = isRegisterVisible ? 'flex' : 'none';
+        this.loginMode.style.display = isRegisterVisible ? 'none' : 'flex';
     }
 }
+const authModeSwitcher = new AuthModeSwitcher();
 
 class PlanSelector {
     constructor() {
@@ -82,7 +86,7 @@ class PlanSelector {
     }
 
     selectPlan(planNumber) {
-        Object.values(this.plans).forEach(plan => 
+        Object.values(this.plans).forEach(plan =>
             plan.classList.remove(CLASSES.planChoosed)
         );
 
@@ -101,4 +105,5 @@ class PlanSelector {
 }
 const planSelector = new PlanSelector();
 
+window.changeLoginRegister = () => authModeSwitcher.toggle();
 window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
