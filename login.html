@@ -88,51 +88,6 @@
         </section>
     </main>
     <script src="./assets/js/themeHandler.js"></script>
-    <script src="./assets/js/indexEvents.js"></script>
-    <script src="./assets/js/formEvents.js"></script>
-    <script>
-        document.getElementById('loginLawyer').addEventListener('submit', handleSubmit);
-        document.getElementById('registerLawyer').addEventListener('submit', handleSubmit);
-
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const formId = event.target.id;
-            const actionType = formId === 'loginLawyer' ? 'login' : 'register';
-
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
-
-            if (actionType === 'register' && data.password !== data.confirm_password) {
-                alert("As senhas não coincidem. Por favor, tente novamente.");
-                return;
-            }
-
-            callApi(event)
-            .then(data => {
-                if (actionType === 'login') {
-                    alert(`Login realizado com sucesso, ${data.advogado.username}!`);
-                } else {
-                    alert(`Cadastro realizado com sucesso!`);
-                }
-                
-                const rememberMeChecked = document.getElementById('rememberMe')?.checked || false;
-
-                if (rememberMeChecked) {
-                    const expirationDate = new Date();
-
-                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
-                    document.cookie = `access_token=${data.advogado.access_token}; path=/; expires=${expirationDate.toUTCString()}; secure; samesite=strict`;
-                } else {
-                    document.cookie = `access_token=${data.advogado.access_token}; path=/; max-age=1800; secure; samesite=strict`;
-                }
-
-                window.location.href = './advogado/dashboard.html';
-            })
-            .catch(err => {
-                alert(`Erro: ${err.message}`);
-            });
-        }
-    </script>
+    <script type="module" src="./assets/js/controllers/loginController.js"></script>
 </body>
 </html>
