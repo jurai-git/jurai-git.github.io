@@ -7,7 +7,7 @@
     <title>JurAI - Cadastro de Demanda</title>
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../assets/style.css">
-    <script src="../assets/script/auth.js" async></script>
+    <script type="module" src="../assets/script/controllers/authController.js"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <li><a href="../documentos.html">Documentos</a></li>
                     <li><a href="../plano.html">Meu Plano</a></li>
                     <li><a href="../conta.html">Minha Conta</a></li>
-                    <li><a href="#" onclick="confirmExit('../../index.html')">Sair</a></li>
+                    <li><a href="#" id="logout">Sair</a></li>
                 </ul>
             </nav>
         </aside>
