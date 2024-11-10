@@ -1,24 +1,21 @@
+import { CONFIG } from './config.js';
+
 function callApi(event) {
     event.preventDefault();
 
-    const baseUrl = 'https://cors-anywhere.herokuapp.com/https://jurai-server-production.up.railway.app';
-
-    const urlMap = {
-        registerLawyer: `${baseUrl}/advogado/new`,
-        loginLawyer: `${baseUrl}/advogado/get`,
-        registerPetitioner: `${baseUrl}/requerente/new`,
-        registerPetition: `${baseUrl}/demanda/new`,
-    };
+    const baseUrl = CONFIG.apiBaseUrl;
+    const urlMap = CONFIG.endpoints;
 
     const form = event.target;
     const formId = form.id;
-    const url = urlMap[formId];
+    const endpoint = urlMap[formId];
 
-    if (!url) {
-        console.error('Form ID não encontrado no mapa de URLs.');
+    if (!endpoint) {
+        console.error('Form ID not found in URL map.');
         return;
     }
 
+    const url = `${baseUrl}${endpoint}`;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
@@ -29,7 +26,8 @@ function callApi(event) {
     const options = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getAccessToken()}`,
         },
         body: JSON.stringify(data)
     };
@@ -40,5 +38,15 @@ function callApi(event) {
             throw new Error(`HTTP status: ${res.status}`);
         }
         return res.json();
+    })
+    .catch(error => {
+        console.error('Error in API call: ', error);
     });
+}
+
+function getAccessToken() {
+    const cookieName = CONFIG.cookies.access;
+    const match = document.cookie.match(new RegExp(`(^| )${cookieName}=([^;]+)`));
+    
+    return match ? match[2] : null;
 }
