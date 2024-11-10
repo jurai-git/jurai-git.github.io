@@ -120,12 +120,6 @@ function getNews() {
     });
 }
 
-function confirmExit(page = "../index.html") {
-  const response = confirm("Deseja sair da conta?");
-
-  if (response == true) window.location.href = page;
-}
-
 function changePlan(n) {
   switch (n) {
     case 1:
