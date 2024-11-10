@@ -89,8 +89,9 @@
     </main>
     <script src="./assets/js/themeHandler.js"></script>
     <script src="./assets/js/indexEvents.js"></script>
-    <script src="./assets/js/formEvents.js"></script>
-    <script>
+    <script type="module">
+        import callApi from './assets/js/formEvents.js';
+
         document.getElementById('loginLawyer').addEventListener('submit', handleSubmit);
         document.getElementById('registerLawyer').addEventListener('submit', handleSubmit);
 

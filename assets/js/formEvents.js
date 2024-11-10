@@ -50,3 +50,5 @@ function getAccessToken() {
     
     return match ? match[2] : null;
 }
+
+export default callApi;
