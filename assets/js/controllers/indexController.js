@@ -204,6 +204,8 @@ class QuickSearchManager {
                 <h2>Análise do Processo</h2>
             </div>
 
+            <hr>
+
             <div class="info-section">
                 <h3>Informações do Processo</h3>
                 <div class="info-item">
