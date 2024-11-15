@@ -334,11 +334,10 @@ section h2{
 
 .next-steps {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 .next-steps li {
+    color: var(--color-form-list-text);
     margin-bottom: .5rem;
     padding-left: 1.5rem;
     position: relative;
@@ -348,7 +347,7 @@ section h2{
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--color-text);
+    color: var(--color-form-list-text);
 }
 
 .report {
