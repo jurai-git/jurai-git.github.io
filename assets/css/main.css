@@ -232,6 +232,34 @@ section h2{
     }
 }
 
+.dialog-header {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-form-list-text);
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s;
+    transform: translateY(-50%);
+}
+
+.close-button:hover {
+    background-color: #98999b;
+    color: #333;
+}
+
 .analysis-container {
     flex-direction: column;
     position: fixed;
@@ -266,7 +294,6 @@ section h2{
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid var(--color-text);
-    padding-bottom: 0.5rem;
 }
 
 .analysis-container h3 {
