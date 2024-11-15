@@ -43,8 +43,7 @@ class NavigationManager {
 
 class TabManager {
     constructor() {
-        this.tabs = document.querySelectorAll(SELECTORS.tabs);
-        this.tabContents = document.querySelectorAll(SELECTORS.tabContent);
+        this.tabsWrappers = document.querySelectorAll(SELECTORS.tabsWrapper);
 
         this.initializeTabs();
         this.initializeDownloadButtons();
@@ -52,17 +51,25 @@ class TabManager {
     }
 
     initializeTabs() {
-        this.tabs.forEach(tab => {
-            tab.addEventListener('click', () => this.switchTab(tab));
+        this.tabsWrappers.forEach(wrapper => {
+            const tabs = wrapper.querySelectorAll(SELECTORS.tabs);
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => this.switchTab(tab));
+            });
         });
     }
 
     switchTab(selectedTab) {
-        this.tabs.forEach(tab => tab.classList.remove(CLASSES.active));
-        this.tabContents.forEach(content => content.classList.remove(CLASSES.active));
+        const wrapper = selectedTab.closest(SELECTORS.tabsWrapper);
+        if (!wrapper) return;
+
+        wrapper.querySelectorAll(SELECTORS.tabs)
+            .forEach(tab => tab.classList.remove(CLASSES.active));
+        wrapper.querySelectorAll(SELECTORS.tabContent)
+            .forEach(content => content.classList.remove(CLASSES.active));
 
         selectedTab.classList.add(CLASSES.active);
-        const targetContent = document.getElementById(selectedTab.dataset.tab);
+        const targetContent = wrapper.querySelector(`#${selectedTab.dataset.tab}`);
         if (targetContent) {
             targetContent.classList.add(CLASSES.active);
         }
@@ -94,13 +101,23 @@ class TabManager {
     }
 
     setInitialTabBasedOnOS() {
-        const os = this.getOperatingSystem().toLowerCase();
-        const matchingTab = Array.from(this.tabs)
-            .find(tab => tab.dataset.tab.toLowerCase() === os);
-
-        if (matchingTab) {
-            this.switchTab(matchingTab);
+        const downloadWrapper = document.querySelector('.download-tabs');
+        if (downloadWrapper) {
+            const os = this.getOperatingSystem().toLowerCase();
+            const matchingTab = downloadWrapper.querySelector(`[data-tab="${os}"]`);
+            if (matchingTab) {
+                this.switchTab(matchingTab);
+            }
         }
+
+        this.tabsWrappers.forEach(wrapper => {
+            if (!wrapper.classList.contains('download-tabs')) {
+                const firstTab = wrapper.querySelector(SELECTORS.tabs);
+                if (firstTab) {
+                    this.switchTab(firstTab);
+                }
+            }
+        });
     }
 }
 

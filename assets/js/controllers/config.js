@@ -1,4 +1,5 @@
 const SELECTORS = {
+    tabsWrapper: '.tabs-wrapper',
     tabs: '.tab',
     tabContent: '.tab-content',
     downloadBtn: '.download-btn',
