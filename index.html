@@ -109,6 +109,7 @@
                                 <input 
                                 type="text" 
                                 id="process-number" 
+                                name="process-number"
                                 placeholder="NNNNNNN-DD.AAAA.J.TR.OOOO" 
                                 maxlength="25" 
                                 pattern="^\d{7}-\d{2}\.\d{4}\.\w{1}\.\w{2}\.\d{4}$"
@@ -124,7 +125,7 @@
                         <form>
                             <div>
                                 <label for="class">Classe Judicial</label>
-                                <select id="class" required>
+                                <select id="class" name="class" required>
                                     <option value="" disabled selected>Selecione a classe</option>
                                     <option value="1">Ação Civil Pública</option>
                                     <option value="2">Procedimento Comum</option>
@@ -135,7 +136,7 @@
 
                             <div>
                                 <label for="subject">Assunto</label>
-                                <select id="subject" required>
+                                <select id="subject" name="subject" required>
                                     <option value=""  disabled selected>Selecione o assunto</option>
                                     <option value="1">Dano Moral</option>
                                     <option value="2">Contratos Bancários</option>

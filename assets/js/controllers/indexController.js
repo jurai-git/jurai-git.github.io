@@ -1,4 +1,4 @@
-import { CLASSES, SELECTORS } from "./config.js";
+import { CLASSES, SELECTORS, MOCK_DATA } from "./config.js";
 
 
 class NavigationManager {
@@ -124,6 +124,7 @@ class TabManager {
 class QuickSearchManager {
     constructor() {
         this.initializeRegex();
+        this.initializeSearch();
     }
 
     initializeRegex() {
@@ -131,6 +132,21 @@ class QuickSearchManager {
         this.input.addEventListener('input', () => {
             let value = this.formatProcessNumber(this.input.value);
             this.input.value = value.slice(0, 25);
+        });
+    }
+
+    initializeSearch() {
+        const processNumberForm = document.querySelector('#process-number-form form');
+        const classAndSubjectForm = document.querySelector('#class-and-subject form');
+
+        processNumberForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.searchAndRender(e);
+        });
+
+        classAndSubjectForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.searchAndRender(e);
         });
     }
 
@@ -142,6 +158,38 @@ class QuickSearchManager {
         value = value.replace(/^(\d{7}-\d{2}\.\d{4}\.\d{1})/, '$1.');
         value = value.replace(/^(\d{7}-\d{2}\.\d{4}\.\d{1}\.\d{2})/, '$1.');
         return value;
+    }
+
+    searchAndRender(e) {
+        const searchResults = this.searchByFormData(e.currentTarget);
+        this.renderSearchResults(searchResults);
+    }
+
+    searchByFormData(form) {
+        const formData = new FormData(form);
+
+        const processNumberValue = formData.get('process-number');
+        const classValue = formData.get('class');
+        const subjectValue = formData.get('subject');
+
+        if (processNumberValue){
+            return this.searchByNumber(processNumberValue);
+        }
+        else if (classValue || subjectValue) {
+            return this.searchByClassAndSubject(classValue, subjectValue);
+        }
+    }
+
+    searchByNumber(processNumberValue) {
+        return MOCK_DATA.find(item => item.number === processNumberValue);
+    }
+    
+    searchByClassAndSubject(classValue, subjectValue) {
+        return MOCK_DATA.filter(item => item.class == classValue || item.subject == subjectValue);
+    }
+
+    renderSearchResults(results) {
+        console.log(results)
     }
 }
 
