@@ -292,6 +292,7 @@ section h2{
 
 .analysis-container h2 {
     font-size: 1.8rem;
+    max-width: 100%;
 }
 
 .analysis-container hr {
@@ -370,6 +371,7 @@ section h2{
     border: none;
     cursor: pointer;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .report-button:hover {
