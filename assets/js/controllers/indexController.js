@@ -121,6 +121,30 @@ class TabManager {
     }
 }
 
+class QuickSearchManager {
+    constructor() {
+        this.initializeRegex();
+    }
+
+    initializeRegex() {
+        this.input = document.getElementById('process-number');
+        this.input.addEventListener('input', () => {
+            let value = this.formatProcessNumber(this.input.value);
+            this.input.value = value.slice(0, 25);
+        });
+    }
+
+    formatProcessNumber(value) {
+        value = value.replace(/\D/g, '');
+        value = value.replace(/^(\d{7})/, '$1-');
+        value = value.replace(/^(\d{7}-\d{2})/, '$1.');
+        value = value.replace(/^(\d{7}-\d{2}\.\d{4})/, '$1.');
+        value = value.replace(/^(\d{7}-\d{2}\.\d{4}\.\d{1})/, '$1.');
+        value = value.replace(/^(\d{7}-\d{2}\.\d{4}\.\d{1}\.\d{2})/, '$1.');
+        return value;
+    }
+}
+
 
 class PlanSelector {
     constructor() {
@@ -153,6 +177,7 @@ class PlanSelector {
 document.addEventListener('DOMContentLoaded', () => {
     const navigationManager = new NavigationManager();
     const tabManager = new TabManager();
+    const quickSearchManager = new QuickSearchManager();
     const planSelector = new PlanSelector();
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
