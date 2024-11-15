@@ -232,6 +232,204 @@ section h2{
     }
 }
 
+.analysis-container {
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 968px;
+    width: 90%;
+    height: 75vh;
+    background-color: var(--color-first-background-layer);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
+    padding: 2rem;
+    border-radius: 12px;
+    border: none;
+    color: var(--color-text);
+    animation: fadeIn .4s ease-out;
+    overflow-y: auto;
+    z-index: 1;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.analysis-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-text);
+    padding-bottom: 0.5rem;
+}
+
+.analysis-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, .05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform .3s;
+}
+
+.info-section:hover {
+    transform: translateX(5px);
+}
+
+.info-item {
+    display: flex;
+    gap: .5rem;
+    font-size: 1rem;
+}
+
+.info-label {
+    font-weight: 500;
+    color: rgba(255, 255, 255, .7);
+}
+
+.info-value {
+    color: var(--color-text);
+}
+
+.next-steps {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.next-steps li {
+    margin-bottom: .5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.next-steps li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-text);
+}
+
+.report {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.report-button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-form-list-text);
+    padding: 1rem 2rem;
+    background-color: var(--color-inputs-lists-background);
+    border-radius: 6px;
+    text-align: center;
+    transition: all .3s;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.report-button:hover {
+    opacity: .95;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .analysis-container {
+        width: 95%;
+        height: 85vh;
+        padding: 1.5rem;
+    }
+
+    .report-button {
+        width: 100%;
+    }
+}
+
+.progress-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.circular-progress svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circular-progress circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.progress {
+    stroke: var(--success-color);
+    transition: stroke-dasharray 1s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.progress-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.progress-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, .7);
+}
+
+.progress-description {
+    font-size: .9rem;
+    color: rgba(255, 255, 255, .6);
+}
+
+@media (max-width: 768px) {
+    .progress-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circular-progress {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .login-container{
     display: flex;
     justify-content: center;
