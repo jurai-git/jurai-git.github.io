@@ -1,4 +1,4 @@
-import { CLASSES, SELECTORS, MOCK_DATA } from "./config.js";
+import { CLASSES, SELECTORS, MOCK_DATA, CLASS_SUBJECT_MAP } from "./config.js";
 
 
 class NavigationManager {
@@ -123,6 +123,8 @@ class TabManager {
 
 class QuickSearchManager {
     constructor() {
+        this.quickConsult = document.getElementById('quick-consult');
+
         this.initializeRegex();
         this.initializeSearch();
     }
@@ -172,7 +174,7 @@ class QuickSearchManager {
         const classValue = formData.get('class');
         const subjectValue = formData.get('subject');
 
-        if (processNumberValue){
+        if (processNumberValue) {
             return this.searchByNumber(processNumberValue);
         }
         else if (classValue || subjectValue) {
@@ -183,13 +185,121 @@ class QuickSearchManager {
     searchByNumber(processNumberValue) {
         return MOCK_DATA.find(item => item.number === processNumberValue);
     }
-    
+
     searchByClassAndSubject(classValue, subjectValue) {
         return MOCK_DATA.filter(item => item.class == classValue || item.subject == subjectValue);
     }
 
     renderSearchResults(results) {
-        console.log(results)
+        this.modal = this.quickConsult.querySelector('dialog');
+
+        let nextSteps = '';
+        for (let item of results.nextSteps) {
+            nextSteps += `<li>${item}</li>`;
+        }
+
+        this.modal.innerHTML = `
+            <div class="dialog-header">
+                <button type="button" class="close-button" title="Fechar">&times;</button>
+                <h2>Análise do Processo</h2>
+            </div>
+
+            <div class="info-section">
+                <h3>Informações do Processo</h3>
+                <div class="info-item">
+                    <span class="info-label">Número:</span>
+                    <span class="info-value">${results.number}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Classe:</span>
+                    <span class="info-value">${CLASS_SUBJECT_MAP.class[results.class]}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Assunto:</span>
+                    <span class="info-value">${CLASS_SUBJECT_MAP.subject[results.subject]}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Data de Distribuição:</span>
+                    <span class="info-value">${results.distributionDate}</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span class="info-value">${results.statusText}</span>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Resultado da Análise</h3>
+                <div class="progress-section">
+                    <div class="circular-progress">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" />
+                            <circle class="progress" cx="50" cy="50" r="45"
+                                style="stroke-dasharray: calc(85 * 2 * 3.14159 * 45 / 100) 1000" />
+                        </svg>
+                        <div class="progress-text">${results.probability}</div>
+                    </div>
+
+                    <div class="progress-details">
+                        <span class="progress-label">Probabilidade de Êxito</span>
+                        <span class="progress-description">Análise baseada em Inteligência Artificial</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Tempo estimado:</span>
+                    <span class="info-value">${results.estimatedTime}</span>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Próximos passos recomendados</h3>
+                <ul class="next-steps">
+                    ${nextSteps}
+                </ul>
+            </div>
+
+            <div class="report">
+                <button class="report-button">Baixar Relatório Completo</button>
+            </div>
+        `
+        this.modal.querySelector('.close-button').addEventListener('click', this.toggleModal)
+
+        this.toggleModal();
+        this.updateProgress(results.probability)
+    }
+
+    toggleModal() {
+        if (this.modal.open)
+            this.modal.close();
+        else
+            this.modal.showModal();
+    }
+
+    updateProgress(value) {
+        const circle = this.modal.querySelector('.progress');
+        const text = this.modal.querySelector('.progress-text');
+        const circumference = 2 * Math.PI * 45;
+        const offset = (circumference * value) / 100;
+
+        let color = getComputedStyle(document.documentElement).getPropertyValue('--danger-color');
+        if (value >= 70) {
+            color = getComputedStyle(document.documentElement).getPropertyValue('--success-color');
+        } else if (value >= 40) {
+            color = getComputedStyle(document.documentElement).getPropertyValue('--warning-color');
+        }
+
+        circle.style.stroke = color;
+        circle.style.strokeDasharray = `${offset} ${circumference}`;
+        text.textContent = `${value}%`;
+
+        circle.style.animation = 'none';
+        circle.offsetHeight;
+        circle.style.animation = null;
     }
 }
 
