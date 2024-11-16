@@ -269,7 +269,7 @@ class QuickSearchManager {
                 <button class="report-button">Baixar Relatório Completo</button>
             </div>
         `
-        this.modal.querySelector('.close-button').addEventListener('click', this.toggleModal)
+        this.modal.querySelector('.close-button').addEventListener('click', this.toggleModal.bind(this));
 
         this.toggleModal();
         this.updateProgress(results.probability)
