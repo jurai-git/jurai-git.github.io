@@ -60,6 +60,7 @@ class TabManager {
     }
 
     switchTab(selectedTab) {
+        document.getElementById('legal-processes-container').classList.remove('active');
         const wrapper = selectedTab.closest(SELECTORS.tabsWrapper);
         if (!wrapper) return;
 
@@ -138,15 +139,15 @@ class QuickSearchManager {
     }
 
     initializeSearch() {
-        const processNumberForm = document.querySelector('#process-number-form form');
-        const classAndSubjectForm = document.querySelector('#class-and-subject form');
+        this.processNumberForm = document.querySelector('#process-number-form form');
+        this.classAndSubjectForm = document.querySelector('#class-and-subject form');
 
-        processNumberForm.addEventListener('submit', (e) => {
+        this.processNumberForm.addEventListener('submit', (e) => {
             e.preventDefault();
             this.searchAndRender(e);
         });
 
-        classAndSubjectForm.addEventListener('submit', (e) => {
+        this.classAndSubjectForm.addEventListener('submit', (e) => {
             e.preventDefault();
             this.searchAndRender(e);
         });
@@ -164,7 +165,12 @@ class QuickSearchManager {
 
     searchAndRender(e) {
         const searchResults = this.searchByFormData(e.currentTarget);
-        this.renderSearchResults(searchResults);
+        
+        if (e.target === this.processNumberForm) {
+            this.renderAnalysis(searchResults);
+        } else if (e.target === this.classAndSubjectForm) {
+            this.renderDataTable(searchResults);
+        }
     }
 
     searchByFormData(form) {
@@ -190,7 +196,7 @@ class QuickSearchManager {
         return MOCK_DATA.filter(item => item.class == classValue || item.subject == subjectValue);
     }
 
-    renderSearchResults(results) {
+    renderAnalysis(results) {
         this.modal = this.quickConsult.querySelector('dialog');
 
         let nextSteps = '';
@@ -280,6 +286,58 @@ class QuickSearchManager {
             this.modal.close();
         else
             this.modal.showModal();
+    }
+
+    renderDataTable() {
+        const legalProcessesContainer = document.getElementById('legal-processes-container');
+        
+        legalProcessesContainer.innerHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número do Processo</th>
+                        <th>Classe</th>
+                        <th>Data Distribuição</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0000000-45.2024.8.26.0000</td>
+                        <td>Procedimento Comum</td>
+                        <td>15/01/2024</td>
+                        <td><span class="status-badge status-active">Em andamento</span></td>
+                        <td>
+                            <button class="analyze-btn">Analisar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0000000-45.2024.8.26.0001</td>
+                        <td>Execução Fiscal</td>
+                        <td>20/02/2024</td>
+                        <td><span class="status-badge status-concluded">Concluído</span></td>
+                        <td>
+                            <button class="analyze-btn">Analisar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0000000-45.2024.8.26.0002</td>
+                        <td>Mandado de Segurança</td>
+                        <td>05/03/2024</td>
+                        <td><span class="status-badge status-suspended">Suspenso</span></td>
+                        <td>
+                            <button class="analyze-btn">Analisar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        `
+
+        document.getElementById('class-and-subject').classList.remove('active');
+        document.querySelector('[data-tab="class-and-subject"]').classList.remove('active')
+
+        legalProcessesContainer.classList.add('active');
     }
 
     updateProgress(value) {

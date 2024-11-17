@@ -234,6 +234,68 @@ section h2{
     }
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: clamp(.7rem, 3vw, 1rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+
+thead {
+    background-color: var(--color-first-background-layer);
+    color: white;
+    text-align: left;
+}
+
+thead th {
+    padding: .7rem 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(.7rem, 3vw, .9rem);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .02);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, .08);
+    transition: background-color .3s;
+}
+
+tbody td {
+    padding: .8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    color: white;
+}
+
+tbody tr td:first-child {
+    color: var(--color-text);
+}
+
+tbody button {
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: #007bff;
+}
+
+@media (max-width: 768px) {
+
+    thead th, 
+    tbody td {
+        padding: .5rem;
+    }
+}
+
+
 .dialog-header {
     position: relative;
 }
