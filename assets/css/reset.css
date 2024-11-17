@@ -46,6 +46,9 @@
 
     --color-config-li-background: #98999b49;
 
+    --success-color: #4ade80;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
 }
 
 [data-theme="light"]{

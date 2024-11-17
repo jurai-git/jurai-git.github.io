@@ -44,7 +44,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/RpC7sv8_LIg?si=6-DW7OasJxkkpVWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
-                <div class="download-container">
+                <div class="download-container tabs-wrapper download-tabs">
                     <h1>Download</h1>
                     <p>Descubra a próxima geração de soluções com desempenho e simplicidade aprimorados.</p>
                     
@@ -92,7 +92,67 @@
                 </div>
             </section>
 
-            <section id="quick-consult"> <h2>Quick Consult Section</h2> </section>
+            <section id="quick-consult"> 
+                <h1>Consulta Rápida</h1>
+                <p>Consulte e analise processos judiciais de forma rápida e eficiente.</p>
+
+                <div class="tabs-wrapper">                    
+                    <div class="tabs">
+                        <button class="tab" data-tab="process-number-form">Número Processual</button>
+                        <button class="tab" data-tab="class-and-subject">Classe/Assunto</button>
+                    </div>
+                    
+                    <div id="process-number-form" class="tab-content">
+                        <form>
+                            <div>
+                                <label for="process-number">Número do Processo</label>
+                                <input 
+                                type="text" 
+                                id="process-number" 
+                                name="process-number"
+                                placeholder="NNNNNNN-DD.AAAA.J.TR.OOOO" 
+                                maxlength="25" 
+                                pattern="^\d{7}-\d{2}\.\d{4}\.\w{1}\.\w{2}\.\d{4}$"
+                                >
+                                <span>Exemplo: 0000123-45.2024.8.26.0000</span>
+                            </div>
+
+                            <input type="submit" value="Buscar Processo">
+                        </form>
+                    </div>
+
+                    <div id="class-and-subject" class="tab-content">
+                        <form>
+                            <div>
+                                <label for="class">Classe Judicial</label>
+                                <select id="class" name="class" required>
+                                    <option value="" disabled selected>Selecione a classe</option>
+                                    <option value="1">Ação Civil Pública</option>
+                                    <option value="2">Procedimento Comum</option>
+                                    <option value="3">Mandado de Segurança</option>
+                                    <option value="4">Execução Fiscal</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="subject">Assunto</label>
+                                <select id="subject" name="subject" required>
+                                    <option value=""  disabled selected>Selecione o assunto</option>
+                                    <option value="1">Dano Moral</option>
+                                    <option value="2">Contratos Bancários</option>
+                                    <option value="3">Obrigações</option>
+                                    <option value="4">Responsabilidade Civil</option>
+                                </select>
+                            </div>
+
+                            <input type="submit" value="Buscar Processos">
+                        </form>
+                    </div>
+                    <div id="legal-processes-container" class="table-container tab-content"></div>
+                </div>
+                <dialog class="analysis-container"></dialog>
+            </section>
+
             <section id="plans">
                 <h1>Planos</h1>
                 <div class="card-container">
