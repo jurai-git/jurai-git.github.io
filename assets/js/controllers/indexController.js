@@ -288,7 +288,7 @@ class QuickSearchManager {
             this.modal.showModal();
     }
 
-    renderDataTable() {
+    renderDataTable(results) {
         const legalProcessesContainer = document.getElementById('legal-processes-container');
         
         legalProcessesContainer.innerHTML = `
@@ -303,36 +303,24 @@ class QuickSearchManager {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>0000000-45.2024.8.26.0000</td>
-                        <td>Procedimento Comum</td>
-                        <td>15/01/2024</td>
-                        <td><span class="status-badge status-active">Em andamento</span></td>
-                        <td>
-                            <button class="analyze-btn">Analisar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0000000-45.2024.8.26.0001</td>
-                        <td>Execução Fiscal</td>
-                        <td>20/02/2024</td>
-                        <td><span class="status-badge status-concluded">Concluído</span></td>
-                        <td>
-                            <button class="analyze-btn">Analisar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0000000-45.2024.8.26.0002</td>
-                        <td>Mandado de Segurança</td>
-                        <td>05/03/2024</td>
-                        <td><span class="status-badge status-suspended">Suspenso</span></td>
-                        <td>
-                            <button class="analyze-btn">Analisar</button>
-                        </td>
-                    </tr>
+                    ${results.map(process => `
+                        <tr>
+                            <td>${process.number}</td>
+                            <td>${CLASS_SUBJECT_MAP.class[process.class] || "Não especificado"}</td>
+                            <td>${process.distributionDate}</td>
+                            <td>
+                                <span class="status-badge status-${process.status}">
+                                    ${process.statusText}
+                                </span>
+                            </td>
+                            <td>
+                                <button class="analyze-btn">Analisar</button>
+                            </td>
+                        </tr>
+                    `).join('')}
                 </tbody>
             </table>
-        `
+        `;
 
         document.getElementById('class-and-subject').classList.remove('active');
         document.querySelector('[data-tab="class-and-subject"]').classList.remove('active')
