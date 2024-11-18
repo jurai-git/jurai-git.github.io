@@ -74,8 +74,21 @@ h2,
   list-style-type: none;
 }
 
+.plan-card input[type="submit"]{
+  width: 100%;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: var(--color-text);
+  background: var(--color-inputs-lists-background);
+  padding: 8px 12px;
+  border: 1px solid var(--color-text);
+  border-radius: 6px;
+  outline: none;
+  transition: 0.5s;
+}
+
 .plan-card input[type="submit"]:hover,
-.plan-choosed:active, .plan-choosed input[type="submit"] {
+.plan-choosed:active, .plan-choosed input[type="submit"]{
     color: var(--color-plan-choosed-text);
     background: var(--color-plan-choosed-background);
     border: 1px solid var(--color-text);
@@ -90,32 +103,19 @@ h2,
 
 .plan-card li:before{
   margin-right: 10px;
-  content: url(/assets/icons/include-in-plan-choosed.png);
+  content: var(--color-plan-included);
 }
 
 #free-plan li:nth-child(n+3):before, #advanced-plan li:nth-child(n+4):before{
-  content: url(/assets/icons/not-include-in-plan-choosed.png);
+  content: var(--color-plan-not-included);
 }
 
 .plan-choosed li:before{
-  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAzMCI+CjxwYXRoIGQ9Ik0gMjYuOTgwNDY5IDUuOTkwMjM0NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuMjkyOTY5IDYuMjkyOTY4OCBMIDExIDIxLjU4NTkzOCBMIDQuNzA3MDMxMiAxNS4yOTI5NjkgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDMuMjkyOTY4OCAxNi43MDcwMzEgTCAxMC4yOTI5NjkgMjMuNzA3MDMxIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxMS43MDcwMzEgMjMuNzA3MDMxIEwgMjcuNzA3MDMxIDcuNzA3MDMxMiBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuOTgwNDY5IDUuOTkwMjM0NCB6Ij48L3BhdGg+Cjwvc3ZnPg==");
+  content: var(--color-plan-choosed-included);
 }
 
 .plan-choosed#free-plan li:nth-child(n+3):before, .plan-choosed#advanced-plan li:nth-child(n+4):before{
-  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA1MCA1MCI+CjxwYXRoIGQ9Ik0gOS4xNTYyNSA2LjMxMjUgTCA2LjMxMjUgOS4xNTYyNSBMIDIyLjE1NjI1IDI1IEwgNi4yMTg3NSA0MC45Njg3NSBMIDkuMDMxMjUgNDMuNzgxMjUgTCAyNSAyNy44NDM3NSBMIDQwLjkzNzUgNDMuNzgxMjUgTCA0My43ODEyNSA0MC45Mzc1IEwgMjcuODQzNzUgMjUgTCA0My42ODc1IDkuMTU2MjUgTCA0MC44NDM3NSA2LjMxMjUgTCAyNSAyMi4xNTYyNSBaIj48L3BhdGg+Cjwvc3ZnPg==");
-}
-
-.plan-card input[type="submit"]{
-  width: 100%;
-  font-size: 1.1em;
-  cursor: pointer;
-  color: var(--color-text);
-  background: var(--color-inputs-lists-background);
-  padding: 8px 12px;
-  border: 1px solid var(--color-text);
-  border-radius: 6px;
-  outline: none;
-  transition: 0.5s;
+  content: var(--color-plan-choosed-not-included);
 }
 
 table {
@@ -141,6 +141,10 @@ th,
 td {
   padding: 12px;
   border: 1px solid var(--color-table-row-aside-background);
+}
+
+td button{
+  margin: 0 1em;
 }
 
 th {
@@ -330,7 +334,7 @@ dialog {
 }
 
 #btn-general-info,
-#btn-adress-info {
+#btn-adress-info, #btn-resumo-info {
   color: var(--color-dialog-header-buttons-not-visited);
 }
 
@@ -348,6 +352,10 @@ dialog {
 
 #client-documents-form{
   width: 100%;
+}
+
+#client-documents-form input:disabled, #process-information-form input:disabled{
+  color: var(--color-dialog-header-buttons-not-visited);
 }
 
 .client-information {
@@ -374,10 +382,6 @@ dialog {
   border-bottom: 2px solid var(--color-form-list-text);
   width: 100%;
   font-size: 1em;
-
-  &:focus{
-    border-color: var(--color-dialog-header-buttons);
-  }
 }
 
 .adress-details {
@@ -418,15 +422,15 @@ dialog {
   align-items: center;
 }
 
-#btn-exit {
+#btn-exit, #btn-exit-2 {
   color: crimson;
 }
 
-#btn-previous {
+#btn-previous, #btn-previous-2 {
   display: none;
 }
 
-#btn-next{
+#btn-next, #btn-next-2{
   color: white;
 }
 
@@ -437,6 +441,11 @@ dialog {
 #step-general {
   display: none;
 }
+
+#step-ementa{
+  display: none;
+}
+
 
 .client-isOlder {
   display: flex;
@@ -451,7 +460,7 @@ dialog {
   margin-right: inherit;
 }
 
-#btn-next {
+#btn-next, #btn-next-2 {
   border: 1.5px solid var(--color-dialog-button-next);
   background-color: var(--color-dialog-button-next);
 }
@@ -544,6 +553,7 @@ dialog {
   background-color: green;
   transform: initial;
   margin: 0.6em 0;
+  color: white;
 }
 
 #btn-change-accountpsw {
@@ -651,6 +661,14 @@ dialog {
 
 #dark-mode-theme:hover hr{
   border-color: initial;
+}
+
+.apresentacao{
+  appearance: none;
+  position: absolute;
+  right: 0;
+  transform: scale(1.2);
+  margin: .2em 1.5em 0 0;
 }
 
 /* fazer isso em media query de cell
