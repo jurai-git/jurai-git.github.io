@@ -50,6 +50,10 @@
     --color-plan-not-included: url(/assets/icons/not-include-in-plan-choosed.png);
     --color-plan-choosed-included: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAzMCI+CjxwYXRoIGQ9Ik0gMjYuOTgwNDY5IDUuOTkwMjM0NCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuMjkyOTY5IDYuMjkyOTY4OCBMIDExIDIxLjU4NTkzOCBMIDQuNzA3MDMxMiAxNS4yOTI5NjkgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDMuMjkyOTY4OCAxNi43MDcwMzEgTCAxMC4yOTI5NjkgMjMuNzA3MDMxIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxMS43MDcwMzEgMjMuNzA3MDMxIEwgMjcuNzA3MDMxIDcuNzA3MDMxMiBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjYuOTgwNDY5IDUuOTkwMjM0NCB6Ij48L3BhdGg+Cjwvc3ZnPg==");
     --color-plan-choosed-not-included: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA1MCA1MCI+CjxwYXRoIGQ9Ik0gOS4xNTYyNSA2LjMxMjUgTCA2LjMxMjUgOS4xNTYyNSBMIDIyLjE1NjI1IDI1IEwgNi4yMTg3NSA0MC45Njg3NSBMIDkuMDMxMjUgNDMuNzgxMjUgTCAyNSAyNy44NDM3NSBMIDQwLjkzNzUgNDMuNzgxMjUgTCA0My43ODEyNSA0MC45Mzc1IEwgMjcuODQzNzUgMjUgTCA0My42ODc1IDkuMTU2MjUgTCA0MC44NDM3NSA2LjMxMjUgTCAyNSAyMi4xNTYyNSBaIj48L3BhdGg+Cjwvc3ZnPg==");
+
+    --success-color: #4ade80;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
 }
 
 [data-theme="light"]{
