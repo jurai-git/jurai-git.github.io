@@ -132,9 +132,9 @@
                 <div class="details-content">
                     <div class="info-buttons">
                         <label id="edit-information-label"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg" id="edit-information-client-icon"><input type="checkbox" id="edit-information-client-state" name="edit-information-client-state"></label>
-                        <button id="btn-personal-info" onclick="changeStep(0)">Infos. Pessoais</button>
-                        <button id="btn-general-info" onclick="changeStep(1)">Infos. Gerais</button>
-                        <button id="btn-adress-info" onclick="changeStep(2)">Endereço</button>
+                        <button id="btn-personal-info" onclick="changeClientStep(0)">Infos. Pessoais</button>
+                        <button id="btn-general-info" onclick="changeClientStep(1)">Infos. Gerais</button>
+                        <button id="btn-adress-info" onclick="changeClientStep(2)">Endereço</button>
                     </div>
                     <form id="client-documents-form">
                         <div class="client-information" id="step-personal">
@@ -231,9 +231,9 @@
                             </div>
                         </div>
                         <div class="details-buttons">
-                            <button class="btn-dialog" type="button" id="btn-exit" onclick="closeModal()">Sair</button>
-                            <button class="btn-dialog" type="button" id="btn-previous" onclick="nextStep(-1)">Anterior</button>
-                            <button class="btn-dialog" type="button" id="btn-next" onclick="nextStep(1)">Próximo</button>
+                            <button class="btn-dialog" type="button" id="btn-client-exit" onclick="closeClientModal()">Sair</button>
+                            <button class="btn-dialog" type="button" id="btn-client-previous" onclick="nextClientStep(-1)">Anterior</button>
+                            <button class="btn-dialog" type="button" id="btn-client-next" onclick="nextClientStep(1)">Próximo</button>
                         </div>
                     </form>
                 </div>
@@ -243,11 +243,11 @@
                 <div class="details-content">
                     <div class="info-buttons">
                         <label id="edit-information-label"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg" id="edit-information-process-icon"><input type="checkbox" id="edit-information-process-state" name="edit-information-process-state"></label>
-                        <button id="btn-geral-info" onclick="changeStep2(0)">Parte 01</button>
-                        <button id="btn-resumo-info" onclick="changeStep2(1)">Parte 02</button>
+                        <button id="btn-geral-info" onclick="changeProcessStep(0)">Parte 01</button>
+                        <button id="btn-resumo-info" onclick="changeProcessStep(1)">Parte 02</button>
                     </div>
                     <form id="process-information-form">
-                        <div class="client-information" id="step-process">
+                        <div class="process-information" id="step-process">
                             <div class="field foro-field">
                                 <label for="foro">Foro</label>
                                 <input type="text" id="foro" placeholder="Foro" value="São Paulo" disabled >
@@ -272,7 +272,7 @@
                                 <input type="text" id="assu" placeholder="Assunto Principal" value="Afastamento do Cargo" disabled >
                             </div>
                         </div>
-                        <div class="client-information process-information" id="step-ementa">
+                        <div class="process-information" id="step-ementa">
                             <div class="field price-field">
                                 <label for="price">Valor da Ação</label>
                                 <input type="text" id="price" placeholder="Valor da Ação" value="1850,00" disabled >
@@ -308,9 +308,9 @@
                             
                         </div>
                         <div class="details-buttons">
-                            <button class="btn-dialog" type="button" id="btn-exit-2" onclick="closeModal2()">Sair</button>
-                            <button class="btn-dialog" type="button" id="btn-previous-2" onclick="nextStep2(-1)">Anterior</button>
-                            <button class="btn-dialog" type="button" id="btn-next-2" onclick="nextStep2(1)">Próximo</button>
+                            <button class="btn-dialog" type="button" id="btn-process-exit" onclick="closeProcessModal()">Sair</button>
+                            <button class="btn-dialog" type="button" id="btn-process-previous" onclick="nextProcessStep(-1)">Anterior</button>
+                            <button class="btn-dialog" type="button" id="btn-process-next" onclick="nextProcessStep(1)">Próximo</button>
                         </div>
                     </form>
             </dialog>

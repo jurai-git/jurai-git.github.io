@@ -358,7 +358,7 @@ dialog {
   color: var(--color-dialog-header-buttons-not-visited);
 }
 
-.client-information {
+.client-information, .process-information{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -366,17 +366,19 @@ dialog {
 }
 
 .client-information input,
-.client-information label {
+.client-information label,
+.process-information input,
+.process-information label {
   color: var(--color-form-input-text);
   margin: 0.3em;
 }
 
-.client-information label{
+.client-information label, .process-information label{
   font-size: 1.2em;
   font-weight: 500;
 }
 
-.client-information input {
+.client-information input, .process-information input{
   border: none;
   background: none;
   border-bottom: 2px solid var(--color-form-list-text);
@@ -422,16 +424,12 @@ dialog {
   align-items: center;
 }
 
-#btn-exit, #btn-exit-2 {
+#btn-client-exit, #btn-process-exit {
   color: crimson;
 }
 
-#btn-previous, #btn-previous-2 {
+#btn-client-previous, #btn-process-previous {
   display: none;
-}
-
-#btn-next, #btn-next-2{
-  color: white;
 }
 
 #step-adress {
@@ -446,7 +444,6 @@ dialog {
   display: none;
 }
 
-
 .client-isOlder {
   display: flex;
   flex-direction: row;
@@ -460,7 +457,8 @@ dialog {
   margin-right: inherit;
 }
 
-#btn-next, #btn-next-2 {
+#btn-client-next, #btn-process-next {
+  color: white;
   border: 1.5px solid var(--color-dialog-button-next);
   background-color: var(--color-dialog-button-next);
 }
