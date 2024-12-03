@@ -1,35 +1,50 @@
+var clientInputs = document.getElementById("client-documents-form").querySelectorAll('input')
+document.querySelector("input[name=edit-information-client-state]").addEventListener('change', () => {
+  var isChecked = !document.querySelector("input[name=edit-information-client-state]").checked
+  clientInputs.forEach(input => {
+    if (input !== document.querySelector("input[name=edit-information-client-state]")) {
+      input.disabled = isChecked
+    }
+    if (isChecked) {
+      document.getElementById("edit-information-client-icon").src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg"
+    }
+    else {
+      document.getElementById("edit-information-client-icon").src = "/assets/icons/not-include-in-plan-choosed.png"
+    }
+  })
+})
+
+var processInputs = document.getElementById("process-information-form").querySelectorAll('input')
+document.querySelector("input[name=edit-information-process-state]").addEventListener('change', () => {
+  var isChecked = !document.querySelector("input[name=edit-information-process-state]").checked
+  processInputs.forEach(input => {
+    if (input !== document.querySelector("input[name=edit-information-process-state]")) {
+      input.disabled = isChecked
+    }
+    if (isChecked) {
+      document.getElementById("edit-information-process-icon").src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg"
+    }
+    else {
+      document.getElementById("edit-information-process-icon").src = "/assets/icons/not-include-in-plan-choosed.png"
+    }
+  })
+})
+
+
+var colorVisited = "#";
+var colorNotVisited = "#";
+
+if (localStorage.getItem("theme") === "dark") {
+  var colorVisited = "white";
+  var colorNotVisited = "#737373";
+}
+else {
+  var colorVisited = "#161616";
+  var colorNotVisited = "#7a7a7a";
+}
+
 var currentTab2 = 0;
-        var inputs = document.querySelectorAll('input')
-        document.querySelector("input[name=testando12]").addEventListener('change', ()=> {
-            var isChecked = document.querySelector("input[name=testando12]").checked
-            inputs.forEach(input => {
-                if(input !== document.querySelector("input[name=testando12]")){
-                    input.disabled = isChecked
-                    if(isChecked){
-                        document.getElementById("lblimagem").src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg"
-                    }
-                    else{
-                    document.getElementById("lblimagem").src = "/assets/icons/not-include-in-plan-choosed.png"
-                    }
-                }
-                
-        })
-    })
-
-
-    var colorVisited = "#";
-    var colorNotVisited = "#";
-    
-    if(localStorage.getItem("theme") === "dark"){
-      var colorVisited = "white";
-      var colorNotVisited = "#737373";
-    }
-    else{
-      var colorVisited = "#161616";
-      var colorNotVisited = "#7a7a7a";
-    }
-
-    function changeStep2(i) {
+function changeStep2(i) {
   currentTab2 = i;
   switch (i) {
     case 0:
@@ -62,7 +77,7 @@ function nextStep2(n) {
   var x = document.getElementsByClassName("process-information");
   x[currentTab2].style.display = "none";
   currentTab2 = currentTab2 + n;
-  if(x[currentTab2]===undefined){
+  if (x[currentTab2] === undefined) {
     document.getElementById("process-information-form").submit();
   }
   changeStep2(currentTab2);

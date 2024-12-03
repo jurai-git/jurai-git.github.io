@@ -350,7 +350,7 @@ dialog {
   width: 40%;
 }
 
-#client-documents-form{
+#client-documents-form, #process-information-form{
   width: 100%;
 }
 
@@ -663,12 +663,17 @@ dialog {
   border-color: initial;
 }
 
-.apresentacao{
+#edit-information-label{
   appearance: none;
   position: absolute;
   right: 0;
   transform: scale(1.2);
   margin: .2em 1.5em 0 0;
+}
+
+#edit-information-client-state, #edit-information-process-state{
+  position: absolute;
+  appearance: none;
 }
 
 /* fazer isso em media query de cell
