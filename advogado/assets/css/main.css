@@ -88,7 +88,7 @@ h2,
 }
 
 .plan-card input[type="submit"]:hover,
-.plan-choosed:active, .plan-choosed input[type="submit"]{
+.plan-choosed input[type="submit"]{
     color: var(--color-plan-choosed-text);
     background: var(--color-plan-choosed-background);
     border: 1px solid var(--color-text);
@@ -273,14 +273,26 @@ form select {
   width: 100%;
   background-color: var(--color-main-background);
   color: var(--color-form-input-text);
-  padding: 6px;
   margin-bottom: 15px;
   border: 1.5px solid var(--color-form-list-text);
-  border-radius: 10px;
+  border-radius: 9px;
   box-sizing: border-box;
   font-size: 1em;
   outline: none;
+  padding: 7px 12px;
+  transition: 80ms;
 }
+
+.form-section input[type="text"]:focus,
+.form-section input[type="email"]:focus,
+.form-section input[type="date"]:focus,
+.form-section input[type="number"]:focus,
+.form-section textarea:focus,
+form select:focus {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-text);
+}
+
 
 form input[type="radio"],
 form input[type="checkbox"] {
@@ -472,6 +484,7 @@ dialog {
   flex: initial;
   width: 100%;
 }
+
 
 .account-fields{
   display: flex;
@@ -672,6 +685,14 @@ dialog {
 #edit-information-client-state, #edit-information-process-state{
   position: absolute;
   appearance: none;
+}
+
+.emphasis-text{
+  color: var(--color-emphasis-text);
+}
+
+.not-emphasis-text {
+  color: var(--color-form-list-text);
 }
 
 /* fazer isso em media query de cell
