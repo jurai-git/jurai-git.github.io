@@ -29,6 +29,7 @@
     --color-table-row-important-hover: #29282c55;
 
     --color-form-list-text: #98999b;
+    --color-form-list-text2: #98999b30;
     --color-select-li-theme-card: #696969;
     --color-form-input-text: #eee;
 
@@ -85,6 +86,7 @@
   --color-table-row-important-hover: #e0e0e055;
 
   --color-form-list-text: #4e4e4e;
+  --color-form-list-text2: #4e4e4e30;
   --color-select-li-theme-card: #333333;
   --color-form-input-text: #333333;
 
@@ -138,6 +140,7 @@
     --color-table-row-important-hover: #e0e0e055;
 
     --color-form-list-text: #4e4e4e;
+    --color-form-list-text2: #4e4e4e30;
     --color-select-li-theme-card: #333333;
     --color-form-input-text: #333333;
 

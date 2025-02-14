@@ -532,11 +532,14 @@ tbody button {
     flex-direction: column;
     border: 3px solid var(--color-config-li-background);
     background-color: var(--color-background);
-    width: 35%;
+    width: 50%;
+    max-width: 800px;
     border-radius: 15px;
     padding: 1em;
     color: var(--color-form-input-text);
     margin-top: 5%;
+    box-shadow: 0 0 36px rgba(0, 0, 0, 0.4);
+    min-width: 350px;
 }
 
 .login-container h2{
@@ -551,15 +554,48 @@ tbody button {
     width: 100%;
     font-size: 1em;
     padding: .5em;
+    transition: .3s;
     margin: .5em 0;
-    background-color: var(--color-main-background);
-    border: 1px solid var(--color-form-list-text);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-form-list-text2);
     color: var(--color-form-input-text);
+    outline: none;
+}
+
+.login-container input:not(input[type="submit"]){
+    padding: .8em;
+}
+
+.login-group{
+    position: relative;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.login-group label{
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transition: .5s;
+    margin: 0 .5em;
+    padding: 0 .4em;
+    color: var(--color-form-list-text);
+}
+
+.login-group input:focus~label, .login-group input:valid~label, .login-group input:not(:placeholder-shown)~label{
+    top: -12.5%;
+    margin: 0 .8em;
+    background-color: var(--color-background);
+    color: var(--color-dialog-button-text);
+}
+
+.login-group input:focus, .login-group input:valid{
+    border-color: var(--color-form-list-text);
 }
 
 .login-container input[type="submit"]{
     background-color: var(--color-plan-choosed-background);
-    border: 1px solid var(--color-text);
+    border: none;
     cursor: pointer;
     color: var(--color-plan-choosed-text);
 }
