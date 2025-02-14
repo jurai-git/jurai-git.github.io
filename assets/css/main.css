@@ -6,13 +6,13 @@ main {
     width: 100%;
 }
 
-section{
+section {
     flex-direction: column;
     gap: 60px;
 }
 
 section h1,
-section h2{
+section h2 {
     text-wrap: wrap;
     text-align: center;
     max-width: 50vw;
@@ -52,7 +52,7 @@ section h2{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.download-container{
+.download-container {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -84,7 +84,7 @@ section h2{
     display: none;
 }
 
-.tab-content > * {
+.tab-content>* {
     margin-bottom: 8px;
 }
 
@@ -100,7 +100,7 @@ section h2{
     text-align: center;
 }
 
-.download-btn-container{
+.download-btn-container {
     display: flex;
     align-items: center;
 }
@@ -158,7 +158,7 @@ section h2{
         justify-content: start;
         padding: 15vh 0;
     }
-    
+
     p {
         text-align: center;
     }
@@ -178,6 +178,7 @@ section h2{
     .tab.active {
         position: relative;
     }
+
     .tab.active::after {
         content: '';
         display: block;
@@ -195,7 +196,7 @@ section h2{
         gap: 12px;
         width: 100%;
     }
-    
+
     form * {
         width: 100%;
     }
@@ -225,6 +226,27 @@ section h2{
         border-radius: 6px;
         border: none;
         outline: none;
+    }
+
+    input[type="submit"]:active{
+        background: linear-gradient(rgb(0 0 0 /40%)0 0);
+    }
+
+    input[type="text"], select{
+        background-color: var(--color-main-background);
+        color: var(--color-form-input-text);
+        margin-bottom: 15px;
+        border: 1.5px solid var(--color-form-list-text);
+        border-radius: 9px;
+        box-sizing: border-box;
+        font-size: 1em;
+        outline: none;
+        transition: 80ms;
+    }
+    
+    input[type="text"]:focus, select:focus{
+        border-color: var(--color-text);
+        box-shadow: 0 0 0 1px var(--color-text);
     }
 
     button,
@@ -289,7 +311,7 @@ tbody button {
 
 @media (max-width: 768px) {
 
-    thead th, 
+    thead th,
     tbody td {
         padding: .5rem;
     }
@@ -343,11 +365,13 @@ tbody button {
     overflow-y: auto;
     z-index: 1;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translate(-50%, -48%);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, -50%);
@@ -525,7 +549,7 @@ tbody button {
     }
 }
 
-.login-container{
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -542,15 +566,15 @@ tbody button {
     min-width: 350px;
 }
 
-.login-container h2{
+.login-container h2 {
     color: var(--color-text);
 }
 
-.login-container form{
+.login-container form {
     width: 100%;
 }
 
-.login-container input{
+.login-container input {
     width: 100%;
     font-size: 1em;
     padding: .5em;
@@ -593,35 +617,35 @@ tbody button {
     border-color: var(--color-form-list-text);
 }
 
-.login-container input[type="submit"]{
+.login-container input[type="submit"] {
     background-color: var(--color-plan-choosed-background);
     border: none;
     cursor: pointer;
     color: var(--color-plan-choosed-text);
 }
 
-.login-container input[type="submit"]:active{
+.login-container input[type="submit"]:active {
     opacity: 0.6;
 }
 
-.login-container span{
+.login-container span {
     color: var(--color-text);
 }
 
-.login-container input[type="checkbox"]{
+.login-container input[type="checkbox"] {
     width: initial;
 }
 
-.login-container div:last-child span{
+.login-container div:last-child span {
     cursor: pointer;
     font-weight: bold;
 }
 
-.login-container div:last-child span:active{
+.login-container div:last-child span:active {
     opacity: 0.7;
 }
 
-.login-container .alternative-login{
+.login-container .alternative-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -631,19 +655,19 @@ tbody button {
     margin: .6em;
 }
 
-.division{
+.division {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.division hr{
+.division hr {
     width: 50%;
     border-color: var(--color-form-list-text);
 }
 
-.division span{
+.division span {
     margin: 0 .7em;
     color: var(--color-form-list-text);
 }
@@ -656,7 +680,7 @@ tbody button {
     flex-direction: row;
     margin: 0 auto;
 }
-  
+
 .card {
     display: flex;
     flex-direction: column;
@@ -672,17 +696,17 @@ tbody button {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--color-config-li-background);
 }
-  
+
 .card h2 {
     flex: 0 0 auto;
 }
-  
+
 .card canvas {
     flex: 1 1 auto;
     height: 100% !important;
     margin: auto;
 }
-  
+
 .plan-card {
     min-width: 330px;
     min-height: 550px;
@@ -692,34 +716,36 @@ tbody button {
     overflow-y: hidden;
     transition: .7s;
 }
-  
+
 .plan-card:hover {
     border: 1px solid var(--color-text);
 }
-  
-  .plan-card ul li {
+
+.plan-card ul li {
     margin: 10px;
     font-size: 1.2em;
-  }
+}
 
-  .plan-card li:before{
+.plan-card li:before {
     margin-right: 10px;
     content: var(--color-plan-included);
-  }
-  
-  #free-plan li:nth-child(n+3):before, #advanced-plan li:nth-child(n+4):before{
-    content: var(--color-plan-not-included);
-  }
-  
-  .plan-choosed li:before{
-    content: var(--color-plan-choosed-included);
-  }
-  
-  .plan-choosed#free-plan li:nth-child(n+3):before, .plan-choosed#advanced-plan li:nth-child(n+4):before{
-    content: var(--color-plan-choosed-not-included);
-  }
+}
 
-.plan-card input[type="submit"]{
+#free-plan li:nth-child(n+3):before,
+#advanced-plan li:nth-child(n+4):before {
+    content: var(--color-plan-not-included);
+}
+
+.plan-choosed li:before {
+    content: var(--color-plan-choosed-included);
+}
+
+.plan-choosed#free-plan li:nth-child(n+3):before,
+.plan-choosed#advanced-plan li:nth-child(n+4):before {
+    content: var(--color-plan-choosed-not-included);
+}
+
+.plan-card input[type="submit"] {
     width: 100%;
     font-size: 1.1em;
     cursor: pointer;
@@ -732,16 +758,24 @@ tbody button {
     transition: 0.5s;
 }
 
-  .plan-card input[type="submit"]:hover,
-  .plan-choosed:active, .plan-choosed input[type="submit"] {
+.plan-card input[type="submit"]:hover,
+.plan-choosed input[type="submit"] {
     color: var(--color-plan-choosed-text);
     background: var(--color-plan-choosed-background);
     border: 1px solid var(--color-text);
-  }
-  
-  .plan-choosed {
+}
+
+.plan-choosed {
     background-color: var(--color-text);
     color: var(--color-plan-choosed-text);
     border: 1px solid black;
     flex-grow: 1.5;
-  }
+}
+
+.emphasis-text{
+    color: var(--color-emphasis-text);
+}
+
+.not-emphasis-text {
+    color: var(--color-form-list-text);
+}

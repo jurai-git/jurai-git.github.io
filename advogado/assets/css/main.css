@@ -88,7 +88,7 @@ h2,
 }
 
 .plan-card input[type="submit"]:hover,
-.plan-choosed:active, .plan-choosed input[type="submit"]{
+.plan-choosed input[type="submit"]{
     color: var(--color-plan-choosed-text);
     background: var(--color-plan-choosed-background);
     border: 1px solid var(--color-text);
@@ -273,14 +273,26 @@ form select {
   width: 100%;
   background-color: var(--color-main-background);
   color: var(--color-form-input-text);
-  padding: 6px;
   margin-bottom: 15px;
   border: 1.5px solid var(--color-form-list-text);
-  border-radius: 10px;
+  border-radius: 9px;
   box-sizing: border-box;
   font-size: 1em;
   outline: none;
+  padding: 7px 12px;
+  transition: 80ms;
 }
+
+.form-section input[type="text"]:focus,
+.form-section input[type="email"]:focus,
+.form-section input[type="date"]:focus,
+.form-section input[type="number"]:focus,
+.form-section textarea:focus,
+form select:focus {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-text);
+}
+
 
 form input[type="radio"],
 form input[type="checkbox"] {
@@ -350,7 +362,7 @@ dialog {
   width: 40%;
 }
 
-#client-documents-form{
+#client-documents-form, #process-information-form{
   width: 100%;
 }
 
@@ -358,7 +370,7 @@ dialog {
   color: var(--color-dialog-header-buttons-not-visited);
 }
 
-.client-information {
+.client-information, .process-information{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -366,17 +378,19 @@ dialog {
 }
 
 .client-information input,
-.client-information label {
+.client-information label,
+.process-information input,
+.process-information label {
   color: var(--color-form-input-text);
   margin: 0.3em;
 }
 
-.client-information label{
+.client-information label, .process-information label{
   font-size: 1.2em;
   font-weight: 500;
 }
 
-.client-information input {
+.client-information input, .process-information input{
   border: none;
   background: none;
   border-bottom: 2px solid var(--color-form-list-text);
@@ -422,16 +436,12 @@ dialog {
   align-items: center;
 }
 
-#btn-exit, #btn-exit-2 {
+#btn-client-exit, #btn-process-exit {
   color: crimson;
 }
 
-#btn-previous, #btn-previous-2 {
+#btn-client-previous, #btn-process-previous {
   display: none;
-}
-
-#btn-next, #btn-next-2{
-  color: white;
 }
 
 #step-adress {
@@ -446,7 +456,6 @@ dialog {
   display: none;
 }
 
-
 .client-isOlder {
   display: flex;
   flex-direction: row;
@@ -460,7 +469,8 @@ dialog {
   margin-right: inherit;
 }
 
-#btn-next, #btn-next-2 {
+#btn-client-next, #btn-process-next {
+  color: white;
   border: 1.5px solid var(--color-dialog-button-next);
   background-color: var(--color-dialog-button-next);
 }
@@ -474,6 +484,7 @@ dialog {
   flex: initial;
   width: 100%;
 }
+
 
 .account-fields{
   display: flex;
@@ -663,12 +674,25 @@ dialog {
   border-color: initial;
 }
 
-.apresentacao{
+#edit-information-label{
   appearance: none;
   position: absolute;
   right: 0;
   transform: scale(1.2);
   margin: .2em 1.5em 0 0;
+}
+
+#edit-information-client-state, #edit-information-process-state{
+  position: absolute;
+  appearance: none;
+}
+
+.emphasis-text{
+  color: var(--color-emphasis-text);
+}
+
+.not-emphasis-text {
+  color: var(--color-form-list-text);
 }
 
 /* fazer isso em media query de cell
