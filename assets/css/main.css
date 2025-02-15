@@ -715,6 +715,11 @@ tbody button {
     align-items: center;
     overflow-y: hidden;
     transition: .7s;
+    color: var(--color-dialog-button-text);
+}
+
+.plan-card:not(.plan-choosed) h1, .plan-card:not(.plan-choosed) h2{
+    color: var(--color-text);
 }
 
 .plan-card:hover {
@@ -752,7 +757,7 @@ tbody button {
     color: var(--color-text);
     background: var(--color-inputs-lists-background);
     padding: 8px 12px;
-    border: 1px solid var(--color-text);
+    border: none;
     border-radius: 6px;
     outline: none;
     transition: 0.5s;
@@ -762,7 +767,10 @@ tbody button {
 .plan-choosed input[type="submit"] {
     color: var(--color-plan-choosed-text);
     background: var(--color-plan-choosed-background);
-    border: 1px solid var(--color-text);
+}
+
+.plan-card input[type="submit"]:active{
+    filter:brightness(50%);
 }
 
 .plan-choosed {
