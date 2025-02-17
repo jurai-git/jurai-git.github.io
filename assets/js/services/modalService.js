@@ -1,4 +1,4 @@
-class ModalController {
+class ModalService {
     constructor(options = {}) {
         this.options = {
             closeOnEscape: true,
