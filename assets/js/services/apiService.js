@@ -1,7 +1,7 @@
 import { CONFIG } from '../config.js';
 
 export default class ApiService {
-    static request(event, bearer_token=true) {
+    static request(event, bearer_token=true, method='POST') {
         event.preventDefault();
     
         const baseUrl = CONFIG.apiBaseUrl;
@@ -21,7 +21,7 @@ export default class ApiService {
         const data = Object.fromEntries(formData.entries());
     
         const options = {
-            method: 'POST',
+            method: method,
             headers: {
                 'Content-Type': 'application/json',
             },

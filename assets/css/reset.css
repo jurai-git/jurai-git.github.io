@@ -14,6 +14,7 @@
     --color-border-hover: #2e3f71;
 
     --color-text: #9dceff;
+    --color-emphasis-text: #9dceff;
 
     --color-header-aside-border: #202024;
 
@@ -29,6 +30,7 @@
     --color-table-row-important-hover: #29282c55;
 
     --color-form-list-text: #98999b;
+    --color-form-list-text2: #98999b30;
     --color-select-li-theme-card: #696969;
     --color-form-input-text: #eee;
 
@@ -70,6 +72,7 @@
   --color-border-hover: #b0b0b0; 
 
   --color-text: #3a3a3a;
+  --color-emphasis-text: #549DD4;
 
   --color-header-aside-border: #e0e0e0;
 
@@ -85,6 +88,7 @@
   --color-table-row-important-hover: #e0e0e055;
 
   --color-form-list-text: #4e4e4e;
+  --color-form-list-text2: #4e4e4e30;
   --color-select-li-theme-card: #333333;
   --color-form-input-text: #333333;
 
@@ -123,6 +127,7 @@
     --color-border-hover: #b0b0b0; 
 
     --color-text: #3a3a3a;
+    --color-emphasis-text: #549DD4;
 
     --color-header-aside-border: #e0e0e0;
 
@@ -138,6 +143,7 @@
     --color-table-row-important-hover: #e0e0e055;
 
     --color-form-list-text: #4e4e4e;
+    --color-form-list-text2: #4e4e4e30;
     --color-select-li-theme-card: #333333;
     --color-form-input-text: #333333;
 
