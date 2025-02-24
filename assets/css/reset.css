@@ -177,10 +177,8 @@
     font-weight: normal;
 }
 
-html, 
-body {
-    height: 100%;
-    overflow: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
