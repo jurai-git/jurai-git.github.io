@@ -197,7 +197,6 @@ body {
 
 section, 
 footer {
-    scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
     justify-content: center;
