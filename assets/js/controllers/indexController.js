@@ -1,46 +1,6 @@
 import { CLASSES, SELECTORS, MOCK_DATA, CLASS_SUBJECT_MAP } from "./config.js";
 
 
-class NavigationManager {
-    constructor() {
-        this.sections = document.querySelectorAll(SELECTORS.sections);
-        this.scrollContainer = document.querySelector(SELECTORS.scrollContainer);
-        this.navigationLinks = document.querySelectorAll(SELECTORS.navigationLinks);
-
-        this.initializeNavigation();
-    }
-
-    initializeNavigation() {
-        if (!this.scrollContainer) {
-            console.warn('Scroll container not found');
-            return;
-        }
-
-        this.navigationLinks.forEach(link => {
-            link.addEventListener('click', (e) => this.handleNavClick(e, link));
-        });
-    }
-
-    handleNavClick(e, link) {
-        e.preventDefault();
-        const targetId = link.getAttribute('href')?.slice(1);
-        if (!targetId) return;
-
-        const targetSection = document.getElementById(targetId);
-        if (!targetSection) return;
-
-        this.scrollToSection(targetSection);
-    }
-
-    scrollToSection(section) {
-        this.scrollContainer.scrollTo({
-            top: section.offsetTop,
-            behavior: 'smooth'
-        });
-    }
-}
-
-
 class TabManager {
     constructor() {
         this.tabsWrappers = document.querySelectorAll(SELECTORS.tabsWrapper);
@@ -381,7 +341,6 @@ class PlanSelector {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const navigationManager = new NavigationManager();
     const tabManager = new TabManager();
     const quickSearchManager = new QuickSearchManager();
     const planSelector = new PlanSelector();
