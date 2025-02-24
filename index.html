@@ -25,250 +25,248 @@
         </nav>
         <a href="./advogado/dashboard.html">Minha Conta</a>
     </header>
-    <div class="scroll-container">
-        <main>
-            <section id="home">
-                <div>
-                    <h1 class="emphasis-text">JurAI - A inteligência que facilita o processo</h1>
-                    <h2 class="not-emphasis-text">O JurAI transforma a rotina do advogado em eficiência, automatizando tarefas repetitivas e oferecendo insights jurídicos inteligentes.</h2>
-                </div>
-                <div class="img-stack">
-                    <img src="./assets/img/jurai-desktop-light.png">
-                    <img src="./assets/img/jurai-desktop-dark.png">
-                    <img src="./assets/img/jurai-web.png">
-                </div>
-            </section>
-
-            <section class="horizontal-center" id="download">
-                <div class="iframe-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eDq4FR3fQdo?si=Nyfr0-Tyc0WPp-u-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
-                <div class="download-container tabs-wrapper download-tabs">
-                    <h1 class="emphasis-text">Download</h1>
-                    <h3 class="not-emphasis-text">Descubra a próxima geração de soluções com desempenho e simplicidade aprimorados.</h3>
-                    
-                    <div class="tabs">
-                        <button class="tab" data-tab="windows">Windows</button>
-                        <button class="tab" data-tab="macos">MacOS</button>
-                        <button class="tab" data-tab="linux">Linux</button>
-                        <button class="tab" data-tab="mobile">Mobile</button>
-                    </div>
-                    
-                    <div id="windows" class="tab-content">
-                        <div class="download-btn-container">
-                            <a href="#" class="download-btn" data-os="Windows">Baixar para Windows</a>
-                            <select class="download-slc">
-                                <option value="windows">.exe (Windows)</option>
-                                <option value="windows-arm64">.exe (Windows ARM64)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div id="macos" class="tab-content">
-                        <div class="download-btn-container">
-                            <a href="#" class="download-btn" data-os="MacOS">Baixar para MacOS</a>
-                            <select class="download-slc">
-                                <option value="macos-intel">.dmg (Intel)</option>
-                                <option value="macos-apple-silicon">.dmg (Apple Silicon)</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div id="linux" class="tab-content">
-                        <div class="download-btn-container">
-                            <a href="#" class="download-btn" data-os="Linux">Baixar para Linux</a>
-                            <select class="download-slc">
-                                <option value="linux">.tar.gz (Linux)</option>
-                                <option value="linux-arm64">.tar.gz (Linux ARM64)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div id="mobile" class="tab-content">
-                        <p>Disponível na App Store e Google Play</p>
-                        <a href="#" class="download-btn" data-os="Mobile">Baixar para Celular &#x1F855;</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="quick-consult"> 
-                <h1 class="emphasis-text">Consulta Rápida</h1>
-                <h3 class="not-emphasis-text">Consulte e analise processos judiciais de forma rápida e eficiente.</h3>
-
-                <div class="tabs-wrapper">                    
-                    <div class="tabs">
-                        <button class="tab" data-tab="process-number-form">Número Processual</button>
-                        <button class="tab" data-tab="class-and-subject">Classe/Assunto</button>
-                    </div>
-                    
-                    <div id="process-number-form" class="tab-content">
-                        <form>
-                            <div>
-                                <label for="process-number">Número do Processo</label>
-                                <input 
-                                type="text" 
-                                id="process-number" 
-                                name="process-number"
-                                placeholder="NNNNNNN-DD.AAAA.J.TR.OOOO" 
-                                maxlength="25" 
-                                pattern="^\d{7}-\d{2}\.\d{4}\.\w{1}\.\w{2}\.\d{4}$"
-                                >
-                                <span>Exemplo: 0000123-45.2024.8.26.0000</span>
-                            </div>
-
-                            <input type="submit" value="Buscar Processo">
-                        </form>
-                    </div>
-
-                    <div id="class-and-subject" class="tab-content">
-                        <form>
-                            <div>
-                                <label for="class">Classe Judicial</label>
-                                <select id="class" name="class" required>
-                                    <option value="" disabled selected>Selecione a classe</option>
-                                    <option value="1">Ação Civil Pública</option>
-                                    <option value="2">Procedimento Comum</option>
-                                    <option value="3">Mandado de Segurança</option>
-                                    <option value="4">Execução Fiscal</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="subject">Assunto</label>
-                                <select id="subject" name="subject" required>
-                                    <option value=""  disabled selected>Selecione o assunto</option>
-                                    <option value="1">Dano Moral</option>
-                                    <option value="2">Contratos Bancários</option>
-                                    <option value="3">Obrigações</option>
-                                    <option value="4">Responsabilidade Civil</option>
-                                </select>
-                            </div>
-
-                            <input type="submit" value="Buscar Processos">
-                        </form>
-                    </div>
-                    <div id="legal-processes-container" class="table-container tab-content"></div>
-                </div>
-                <dialog class="analysis-container"></dialog>
-            </section>
-
-            <section id="plans">
-                <h1 class="emphasis-text">Planos</h1>
-                <div class="card-container">
-                    <div class="card plan-card" id="free-plan" onclick="changePlan(1)">
-                        Para usuários comuns
-                        <h1>Free</h1>
-                        <h2>R$0,00</h2>
-                        <ul>
-                            <li>Consulta Rápida (10 p/dia)</li>
-                            <li>Visualização de Resultados</li>
-                            <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                            <li>Análise dos Melhores Argumentos Utilizados</li>
-                            <li>Geração de Documentos como Base de acordo com os Resultados</li>
-                        </ul>
-                        <input type="submit" value="Escolher Plano">
-                    </div>
-
-                    <div class="card plan-card" id="advanced-plan" onclick="changePlan(3)">
-                        Novas ferramentas, preço justo
-                        <h1>Advanced</h1>
-                        <h2>R$24,99</h2>
-                        <ul>
-                            <li>Consulta Rápida (50 p/dia)</li>
-                            <li>Visualização de Resultados</li>
-                            <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                            <li>Análise dos Melhores Argumentos Utilizados</li>
-                            <li>Geração de Documentos como Base de acordo com os Resultados</li>
-                        </ul>
-                        <input type="submit" value="Escolher Plano">
-                    </div>
-
-                    <div class="card plan-card" id="premium-plan" onclick="changePlan(2)">
-                            Zero preocupações
-                            <h1>Premium</h1>
-                            <h2>R$49,99</h2>
-                        <ul>
-                            <li>Consulta Rápida (Ilimitado)</li>
-                            <li>Visualização de Resultados</li>
-                            <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                            <li>Análise dos Melhores Argumentos Utilizados</li>
-                            <li>Geração de Documentos como Base de acordo com os Resultados</li>
-                        </ul>
-                        <input type="submit" value="Escolher Plano">
-                    </div>
-                </div>
-            </section>
-
-        </main>
-        <footer id="contact">
-            <img src="./assets/img/jurai-icon.png" alt="JurAI - Icon">
-
-            <div class="footer-container">
-                <picture>
-                    <source srcset="./assets/img/jurai-name.png" media="(prefers-color-scheme: dark)">
-                    <source srcset="./assets/img/jurai-text-dark.png" media="(prefers-color-scheme: light)">
-                    <img src="./assets/img/jurai-name.png" alt="JurAI - Text">
-                </picture>
-                
-                <div class="footer-content">
-                    <div>
-                        <h2>Contato</h2>
-
-                        <div class="icons-container">
-                            <picture>
-                                <source srcset="./assets/icons/github-light-icon.png" media="(prefers-color-scheme: dark)">
-                                <source srcset="./assets/icons/github-dark-icon.svg" media="(prefers-color-scheme: light)">
-                                <img src="./assets/icons/github-dark-icon.svg" alt="GitHub">
-                            </picture>
-                              
-                            <a href="https://github.com/jurai-git" target="_blank"> JurAI-Git </a>
-                        </div>
-
-                        <div class="icons-container">
-                            <img src="./assets/icons/huggingface-icon.svg" alt="HuggingFace - Icon">
-                            <a href="https://huggingface.co/jurai-org" target="_blank"> HuggingFace </a>
-                        </div>
-
-                        <div class="icons-container">
-                            <img src="./assets/icons/email-icon.png" alt="E-Mail - Icon">
-                            <a href="mailto:contas.jurai@gmail.com" target="_blank">E-Mail</a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Outros</h2>
-                        <div class="icons-container">
-                            <picture>
-                                <source srcset="./assets/icons/team-light-icon.png" media="(prefers-color-scheme: dark)">
-                                <source srcset="./assets/icons/team-dark-icon.png" media="(prefers-color-scheme: light)">
-                                <img src="./assets/icons/team-light-icon.png" alt="Privacy Policy - Icon">
-                            </picture>
-                            
-                            <a href="">Time</a>
-                        </div>
-                        <div class="icons-container">
-                            <img src="./assets/icons/privacy-icon.png" alt="Privacy Policy - Icon">
-                            <a href="">Política de Privacidade</a>
-                        </div>
-                        <div class="icons-container">
-                            <img src="./assets/icons/license-icon.png" alt="Terms of Use - Icon">
-                            <a href="">Termos de Uso</a>
-                        </div>
-                        <div class="icons-container">
-                            <img src="./assets/icons/code_of_conduct-icon.png" alt="Code of Conduct - Icon">
-                            <a href="">Código de Conduta</a>
-                        </div>
-                    </div>
-                </div>
-
-                <span>
-                    <h3>Inovando o futuro da advocacia com inteligência artificial</h3>
-                    <p>© 2024 JurAI | Todos os direitos reservados</p>
-                </span>
+    <main>
+        <section id="home">
+            <div>
+                <h1 class="emphasis-text">JurAI - A inteligência que facilita o processo</h1>
+                <h2 class="not-emphasis-text">O JurAI transforma a rotina do advogado em eficiência, automatizando tarefas repetitivas e oferecendo insights jurídicos inteligentes.</h2>
             </div>
-        </footer>
-    </div>
+            <div class="img-stack">
+                <img src="./assets/img/jurai-desktop-light.png">
+                <img src="./assets/img/jurai-desktop-dark.png">
+                <img src="./assets/img/jurai-web.png">
+            </div>
+        </section>
+
+        <section class="horizontal-center" id="download">
+            <div class="iframe-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eDq4FR3fQdo?si=Nyfr0-Tyc0WPp-u-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="download-container tabs-wrapper download-tabs">
+                <h1 class="emphasis-text">Download</h1>
+                <h3 class="not-emphasis-text">Descubra a próxima geração de soluções com desempenho e simplicidade aprimorados.</h3>
+                
+                <div class="tabs">
+                    <button class="tab" data-tab="windows">Windows</button>
+                    <button class="tab" data-tab="macos">MacOS</button>
+                    <button class="tab" data-tab="linux">Linux</button>
+                    <button class="tab" data-tab="mobile">Mobile</button>
+                </div>
+                
+                <div id="windows" class="tab-content">
+                    <div class="download-btn-container">
+                        <a href="#" class="download-btn" data-os="Windows">Baixar para Windows</a>
+                        <select class="download-slc">
+                            <option value="windows">.exe (Windows)</option>
+                            <option value="windows-arm64">.exe (Windows ARM64)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="macos" class="tab-content">
+                    <div class="download-btn-container">
+                        <a href="#" class="download-btn" data-os="MacOS">Baixar para MacOS</a>
+                        <select class="download-slc">
+                            <option value="macos-intel">.dmg (Intel)</option>
+                            <option value="macos-apple-silicon">.dmg (Apple Silicon)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="linux" class="tab-content">
+                    <div class="download-btn-container">
+                        <a href="#" class="download-btn" data-os="Linux">Baixar para Linux</a>
+                        <select class="download-slc">
+                            <option value="linux">.tar.gz (Linux)</option>
+                            <option value="linux-arm64">.tar.gz (Linux ARM64)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="mobile" class="tab-content">
+                    <p>Disponível na App Store e Google Play</p>
+                    <a href="#" class="download-btn" data-os="Mobile">Baixar para Celular &#x1F855;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="quick-consult"> 
+            <h1 class="emphasis-text">Consulta Rápida</h1>
+            <h3 class="not-emphasis-text">Consulte e analise processos judiciais de forma rápida e eficiente.</h3>
+
+            <div class="tabs-wrapper">                    
+                <div class="tabs">
+                    <button class="tab" data-tab="process-number-form">Número Processual</button>
+                    <button class="tab" data-tab="class-and-subject">Classe/Assunto</button>
+                </div>
+                
+                <div id="process-number-form" class="tab-content">
+                    <form>
+                        <div>
+                            <label for="process-number">Número do Processo</label>
+                            <input 
+                            type="text" 
+                            id="process-number" 
+                            name="process-number"
+                            placeholder="NNNNNNN-DD.AAAA.J.TR.OOOO" 
+                            maxlength="25" 
+                            pattern="^\d{7}-\d{2}\.\d{4}\.\w{1}\.\w{2}\.\d{4}$"
+                            >
+                            <span>Exemplo: 0000123-45.2024.8.26.0000</span>
+                        </div>
+
+                        <input type="submit" value="Buscar Processo">
+                    </form>
+                </div>
+
+                <div id="class-and-subject" class="tab-content">
+                    <form>
+                        <div>
+                            <label for="class">Classe Judicial</label>
+                            <select id="class" name="class" required>
+                                <option value="" disabled selected>Selecione a classe</option>
+                                <option value="1">Ação Civil Pública</option>
+                                <option value="2">Procedimento Comum</option>
+                                <option value="3">Mandado de Segurança</option>
+                                <option value="4">Execução Fiscal</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject" required>
+                                <option value=""  disabled selected>Selecione o assunto</option>
+                                <option value="1">Dano Moral</option>
+                                <option value="2">Contratos Bancários</option>
+                                <option value="3">Obrigações</option>
+                                <option value="4">Responsabilidade Civil</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Buscar Processos">
+                    </form>
+                </div>
+                <div id="legal-processes-container" class="table-container tab-content"></div>
+            </div>
+            <dialog class="analysis-container"></dialog>
+        </section>
+
+        <section id="plans">
+            <h1 class="emphasis-text">Planos</h1>
+            <div class="card-container">
+                <div class="card plan-card" id="free-plan" onclick="changePlan(1)">
+                    Para usuários comuns
+                    <h1>Free</h1>
+                    <h2>R$0,00</h2>
+                    <ul>
+                        <li>Consulta Rápida (10 p/dia)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Escolher Plano">
+                </div>
+
+                <div class="card plan-card" id="advanced-plan" onclick="changePlan(3)">
+                    Novas ferramentas, preço justo
+                    <h1>Advanced</h1>
+                    <h2>R$24,99</h2>
+                    <ul>
+                        <li>Consulta Rápida (50 p/dia)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Escolher Plano">
+                </div>
+
+                <div class="card plan-card" id="premium-plan" onclick="changePlan(2)">
+                        Zero preocupações
+                        <h1>Premium</h1>
+                        <h2>R$49,99</h2>
+                    <ul>
+                        <li>Consulta Rápida (Ilimitado)</li>
+                        <li>Visualização de Resultados</li>
+                        <li>Geração de Porcentagem de Ganho ou Perda do Caso</li>
+                        <li>Análise dos Melhores Argumentos Utilizados</li>
+                        <li>Geração de Documentos como Base de acordo com os Resultados</li>
+                    </ul>
+                    <input type="submit" value="Escolher Plano">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer id="contact">
+        <img src="./assets/img/jurai-icon.png" alt="JurAI - Icon">
+
+        <div class="footer-container">
+            <picture>
+                <source srcset="./assets/img/jurai-name.png" media="(prefers-color-scheme: dark)">
+                <source srcset="./assets/img/jurai-text-dark.png" media="(prefers-color-scheme: light)">
+                <img src="./assets/img/jurai-name.png" alt="JurAI - Text">
+            </picture>
+            
+            <div class="footer-content">
+                <div>
+                    <h2>Contato</h2>
+
+                    <div class="icons-container">
+                        <picture>
+                            <source srcset="./assets/icons/github-light-icon.png" media="(prefers-color-scheme: dark)">
+                            <source srcset="./assets/icons/github-dark-icon.svg" media="(prefers-color-scheme: light)">
+                            <img src="./assets/icons/github-dark-icon.svg" alt="GitHub">
+                        </picture>
+                            
+                        <a href="https://github.com/jurai-git" target="_blank"> JurAI-Git </a>
+                    </div>
+
+                    <div class="icons-container">
+                        <img src="./assets/icons/huggingface-icon.svg" alt="HuggingFace - Icon">
+                        <a href="https://huggingface.co/jurai-org" target="_blank"> HuggingFace </a>
+                    </div>
+
+                    <div class="icons-container">
+                        <img src="./assets/icons/email-icon.png" alt="E-Mail - Icon">
+                        <a href="mailto:contas.jurai@gmail.com" target="_blank">E-Mail</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Outros</h2>
+                    <div class="icons-container">
+                        <picture>
+                            <source srcset="./assets/icons/team-light-icon.png" media="(prefers-color-scheme: dark)">
+                            <source srcset="./assets/icons/team-dark-icon.png" media="(prefers-color-scheme: light)">
+                            <img src="./assets/icons/team-light-icon.png" alt="Privacy Policy - Icon">
+                        </picture>
+                        
+                        <a href="">Time</a>
+                    </div>
+                    <div class="icons-container">
+                        <img src="./assets/icons/privacy-icon.png" alt="Privacy Policy - Icon">
+                        <a href="">Política de Privacidade</a>
+                    </div>
+                    <div class="icons-container">
+                        <img src="./assets/icons/license-icon.png" alt="Terms of Use - Icon">
+                        <a href="">Termos de Uso</a>
+                    </div>
+                    <div class="icons-container">
+                        <img src="./assets/icons/code_of_conduct-icon.png" alt="Code of Conduct - Icon">
+                        <a href="">Código de Conduta</a>
+                    </div>
+                </div>
+            </div>
+
+            <span>
+                <h3>Inovando o futuro da advocacia com inteligência artificial</h3>
+                <p>© 2024 JurAI | Todos os direitos reservados</p>
+            </span>
+        </div>
+    </footer>
 
     <script src="./assets/js/themeHandler.js"></script>
     <script type="module" src="./assets/js/controllers/indexController.js"></script>
