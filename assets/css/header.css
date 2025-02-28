@@ -6,7 +6,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2.4rem;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -80,4 +80,10 @@ nav button:hover {
     align-items: center;
     background-color: var(--color-main-background);
     padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
 }
