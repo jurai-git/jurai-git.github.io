@@ -9,13 +9,13 @@
     align-items: center;
 }
 
-.horizontal-center{
+.horizontal-center {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.vertical-center{
+.vertical-center {
     display: flex;
     align-items: center;
 }
