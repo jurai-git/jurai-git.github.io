@@ -1,5 +1,5 @@
 import { CLASSES, SELECTORS, MOCK_DATA, CLASS_SUBJECT_MAP } from "./config.js";
-
+import { initThemeToggle } from './themeController.js';
 
 class TabManager {
     constructor() {
@@ -344,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabManager = new TabManager();
     const quickSearchManager = new QuickSearchManager();
     const planSelector = new PlanSelector();
+    initThemeToggle('#theme-toggle');
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
 });
