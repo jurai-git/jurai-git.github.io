@@ -6,7 +6,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -27,12 +27,63 @@ nav ul{
     gap: 16px;
 }
 
-header a{
+header button {
+    cursor: pointer;
+    color: var(--color-dialog-button-text);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+header a,
+header button {
     font-size: 1.3em;
     display: block;
     transition: .3s;
 }
 
-nav a:hover{
+nav a:hover,
+nav button:hover {
     opacity: .6;
+}
+
+.menu {
+    background-image: url('../../advogado/assets/img/profile-photo.jfif');
+    border: 2px solid black;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .menu-content {
+    display: flex;
+}
+
+.menu-content {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 10%;
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--color-main-background);
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
 }
