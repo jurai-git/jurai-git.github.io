@@ -1,5 +1,6 @@
 import { CLASSES, SELECTORS, MOCK_DATA, CLASS_SUBJECT_MAP } from "./config.js";
 import { initThemeToggle } from './themeController.js';
+import ApiService from "../services/apiService.js";
 
 class TabManager {
     constructor() {
@@ -341,9 +342,24 @@ class PlanSelector {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    if(ApiService.getAccessToken()) {
+        document.getElementById('account-area').remove();
+
+        document.querySelector('header').insertAdjacentHTML('beforeend', 
+            `<div class="menu">
+                <input class="menu-toggle" type="checkbox">
+                <div class="menu-content">
+                    <a href="./advogado/dashboard.html">Minha Conta</a>
+                    <button id="theme-toggle"></button>
+                </div>
+            </div>`
+        );
+    }
+
     const tabManager = new TabManager();
     const quickSearchManager = new QuickSearchManager();
     const planSelector = new PlanSelector();
+    
     initThemeToggle('#theme-toggle');
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
