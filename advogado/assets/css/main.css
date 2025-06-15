@@ -772,6 +772,8 @@ dialog {
   overflow-y: auto;
   background-color: var(--color-inputs-lists-background);
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-message {
@@ -781,6 +783,18 @@ dialog {
   border-radius: 6px;
   max-width: 75%;
   word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: var(--color-main-container);
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-message.ai {
+  background-color: var(--color-inputs-lists-background);
+  align-self: flex-start;
+  text-align: left;
 }
 
 .chat-input {
