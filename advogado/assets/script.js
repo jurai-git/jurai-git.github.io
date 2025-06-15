@@ -44,12 +44,12 @@ function initGraphics() {
 }
 
 function addressAutocomplete() {
-  const url = "http://127.0.0.1:5000/cep/";
+  const url = "http://viacep.com.br/ws/";
   const value = document.getElementById("cep").value;
 
   if (value.length !== 8) return;
 
-  fetch(url + value)
+  fetch(url + value + "/json/")
     .then((res) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
