@@ -37,7 +37,7 @@
 
             <section class="main-container">
                 <form>
-                    <textarea maxlength="2048" placeholder="Digite sua ementa aqui, ou arraste e solte um documento PDF..." required></textarea>
+                    <textarea maxlength="2048" name="text" placeholder="Digite sua ementa aqui, ou arraste e solte um documento PDF..." required></textarea>
     
                     <div class="buttons-group">
                         <label> <input type="checkbox" checked> Probabilidade </label>
@@ -52,10 +52,370 @@
     <footer>
         <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
     </footer>
-    
+    <style>
+        .analysis-container {
+            flex-direction: column;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 968px;
+            width: 90%;
+            height: 75vh;
+            background-color: var(--color-first-background-layer);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
+            padding: 2rem;
+            border-radius: 12px;
+            border: none;
+            color: var(--color-text);
+            animation: fadeIn .4s ease-out;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -48%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .analysis-container h2 {
+            font-size: 1.8rem;
+            max-width: 100%;
+        }
+
+        .analysis-container hr {
+            margin: .4rem 0 1.5rem;
+            color: var(--color-text);
+        }
+
+        .analysis-container h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, .05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform .3s;
+        }
+
+        .info-section:hover {
+            transform: translateX(5px);
+        }
+
+        .info-item {
+            display: flex;
+            gap: .5rem;
+            font-size: 1rem;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .info-value {
+            color: var(--color-text);
+        }
+
+        .next-steps {
+            list-style-type: none;
+        }
+
+        .next-steps li {
+            color: var(--color-form-list-text);
+            margin-bottom: .5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .next-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-form-list-text);
+        }
+
+        .report {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .report-button {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-form-list-text);
+            padding: 1rem 2rem;
+            background-color: var(--color-inputs-lists-background);
+            border-radius: 6px;
+            text-align: center;
+            transition: all .3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .report-button:hover {
+            opacity: .95;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .analysis-container {
+                width: 95%;
+                height: 85vh;
+                padding: 1.5rem;
+            }
+
+            .report-button {
+                width: 100%;
+            }
+        }
+
+        .progress-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .circular-progress {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .circular-progress svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .circular-progress circle {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke: rgba(255, 255, 255, 0.1);
+        }
+
+        .progress {
+            stroke: var(--success-color);
+            transition: stroke-dasharray 1s ease-in-out;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-text);
+        }
+
+        .progress-details {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .progress-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .progress-description {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        @media (max-width: 768px) {
+            .progress-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .circular-progress {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+    <dialog class="analysis-container"></dialog>
     <script src="../assets/js/themeHandler.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="./assets/script/event.js"></script>
     <script src="./assets/script.js"></script>
+    <script>
+        const CLASS_SUBJECT_MAP = {
+            class: {
+                1: 'Ação Civil Pública',
+                2: 'Procedimento Comum',
+                3: 'Mandado de Segurança',
+                4: 'Execução Fiscal',
+            },
+            subject: {
+                1: 'Dano Moral',
+                2: 'Contratos Bancários',
+                3: 'Obrigações',
+                4: 'Responsabilidade Civil',
+            }
+        }
+
+        function transformApiResponseToResultsModel(apiResponse) {
+            const predictedClassMap = {
+                positive: 1,
+                negative: 2,
+                partial: 3
+            };
+
+            const classIndex = predictedClassMap[apiResponse.predicted_class] || 1;
+            const subjectIndex = 1;
+
+            return {
+                number: "0000000-00.0000.0.00.0000",
+                class: classIndex,
+                subject: subjectIndex,
+                distributionDate: new Date().toLocaleDateString("pt-BR"),
+                statusText: "Em análise",
+                status: "in-progress",
+                probability: Math.round(apiResponse.probabilities.positive * 100),
+                estimatedTime: "Indeterminado",
+                nextSteps: [
+                    "Aguardar manifestação da parte contrária",
+                    "Avaliar possibilidade de acordo",
+                    "Preparar recursos se necessário"
+                ]
+            };
+        }
+
+        document.querySelector("form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const textarea = document.querySelector("textarea");
+            const text = textarea.value.trim();
+            if (!text) return alert("Digite uma ementa!");
+
+            try {
+                const response = await fetch("http://localhost:5001/ai/probability", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ text })
+                });
+
+                if (!response.ok) throw new Error("Erro ao processar a ementa");
+
+                const data = await response.json();
+                const results = transformApiResponseToResultsModel(data);
+
+                renderAnalysis(results);
+
+            } catch (error) {
+                console.error(error);
+                alert("Erro ao conectar com o servidor.");
+            }
+        });
+
+        function renderAnalysis(results) {
+            const modal = document.querySelector('dialog.analysis-container');
+
+            let nextSteps = '';
+            for (let item of results.nextSteps) {
+                nextSteps += `<li>${item}</li>`;
+            }
+
+            modal.innerHTML = `
+                <div class="dialog-header">
+                    <h2>Análise do Processo</h2>
+                </div>
+
+                <hr>
+
+                <div class="info-section">
+                    <h3>Resultado da Análise</h3>
+                    <div class="progress-section">
+                        <div class="circular-progress">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" />
+                                <circle class="progress" cx="50" cy="50" r="45"
+                                    style="stroke-dasharray: calc(85 * 2 * 3.14159 * 45 / 100) 1000" />
+                            </svg>
+                            <div class="progress-text">${results.probability}</div>
+                        </div>
+
+                        <div class="progress-details">
+                            <span class="progress-label">Probabilidade de Êxito</span>
+                            <span class="progress-description">Análise baseada em Inteligência Artificial</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Tempo estimado:</span>
+                        <span class="info-value">${results.estimatedTime}</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Próximos passos recomendados</h3>
+                    <ul class="next-steps">
+                        ${nextSteps}
+                    </ul>
+                </div>
+
+                <div class="report">
+                    <button class="report-button">Baixar Relatório Completo</button>
+                </div>
+            `
+            toggleModal();
+            updateProgress(results.probability)
+        }
+
+        function toggleModal() {
+            const modal = document.querySelector('dialog.analysis-container');
+            if (modal.open)
+                modal.close();
+            else
+                modal.showModal();
+        }
+
+        function updateProgress(value) {
+            const modal = document.querySelector('dialog.analysis-container');
+
+            const circle = modal.querySelector('.progress');
+            const text = modal.querySelector('.progress-text');
+            const circumference = 2 * Math.PI * 45;
+            const offset = (circumference * value) / 100;
+
+            let color = getComputedStyle(document.documentElement).getPropertyValue('--danger-color');
+            if (value >= 70) {
+                color = getComputedStyle(document.documentElement).getPropertyValue('--success-color');
+            } else if (value >= 40) {
+                color = getComputedStyle(document.documentElement).getPropertyValue('--warning-color');
+            }
+
+            circle.style.stroke = color;
+            circle.style.strokeDasharray = `${offset} ${circumference}`;
+            text.textContent = `${value}%`;
+
+            circle.style.animation = 'none';
+            circle.offsetHeight;
+            circle.style.animation = null;
+        }
+    </script>
 </body>
 </html>
