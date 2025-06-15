@@ -1,6 +1,6 @@
 @import './reset.css';
 
-header{
+header {
     background-color: var(--color-table-row-aside-background);
     border-bottom: 2px solid var(--color-header-aside-border);
     display: flex;
@@ -13,16 +13,16 @@ header{
     z-index: 2;
 }
 
-.logo-container{
+.logo-container {
     width: 156px;
     padding: 6px;
 }
 
-.logo-container img{
+.logo-container img {
     width: 100%;
 }
 
-nav ul{
+nav ul {
     display: flex;
     gap: 16px;
 }
@@ -65,7 +65,7 @@ nav button:hover {
     opacity: 0;
 }
 
-.menu-toggle:checked ~ .menu-content {
+.menu-toggle:checked~.menu-content {
     display: flex;
 }
 

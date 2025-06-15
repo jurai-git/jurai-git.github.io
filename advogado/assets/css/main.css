@@ -74,7 +74,7 @@ h2,
   list-style-type: none;
 }
 
-.plan-card input[type="submit"]{
+.plan-card input[type="submit"] {
   width: 100%;
   font-size: 1.1em;
   cursor: pointer;
@@ -88,10 +88,10 @@ h2,
 }
 
 .plan-card input[type="submit"]:hover,
-.plan-choosed input[type="submit"]{
-    color: var(--color-plan-choosed-text);
-    background: var(--color-plan-choosed-background);
-    border: 1px solid var(--color-text);
+.plan-choosed input[type="submit"] {
+  color: var(--color-plan-choosed-text);
+  background: var(--color-plan-choosed-background);
+  border: 1px solid var(--color-text);
 }
 
 .plan-choosed {
@@ -101,20 +101,22 @@ h2,
   flex-grow: 1.5;
 }
 
-.plan-card li:before{
+.plan-card li:before {
   margin-right: 10px;
   content: var(--color-plan-included);
 }
 
-#free-plan li:nth-child(n+3):before, #advanced-plan li:nth-child(n+4):before{
+#free-plan li:nth-child(n+3):before,
+#advanced-plan li:nth-child(n+4):before {
   content: var(--color-plan-not-included);
 }
 
-.plan-choosed li:before{
+.plan-choosed li:before {
   content: var(--color-plan-choosed-included);
 }
 
-.plan-choosed#free-plan li:nth-child(n+3):before, .plan-choosed#advanced-plan li:nth-child(n+4):before{
+.plan-choosed#free-plan li:nth-child(n+3):before,
+.plan-choosed#advanced-plan li:nth-child(n+4):before {
   content: var(--color-plan-choosed-not-included);
 }
 
@@ -143,7 +145,7 @@ td {
   border: 1px solid var(--color-table-row-aside-background);
 }
 
-td button{
+td button {
   margin: 0 1em;
 }
 
@@ -212,7 +214,7 @@ form {
   flex: 1;
 }
 
-form > textarea {
+form>textarea {
   background: var(--color-inputs-lists-background);
 }
 
@@ -326,7 +328,7 @@ dialog {
   border: 2px solid var(--color-dialog-background-border);
 }
 
-.info-buttons{
+.info-buttons {
   margin-top: .5em;
 }
 
@@ -346,7 +348,8 @@ dialog {
 }
 
 #btn-general-info,
-#btn-adress-info, #btn-resumo-info {
+#btn-adress-info,
+#btn-resumo-info {
   color: var(--color-dialog-header-buttons-not-visited);
 }
 
@@ -362,15 +365,18 @@ dialog {
   width: 40%;
 }
 
-#client-documents-form, #process-information-form{
+#client-documents-form,
+#process-information-form {
   width: 100%;
 }
 
-#client-documents-form input:disabled, #process-information-form input:disabled{
+#client-documents-form input:disabled,
+#process-information-form input:disabled {
   color: var(--color-dialog-header-buttons-not-visited);
 }
 
-.client-information, .process-information{
+.client-information,
+.process-information {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -385,12 +391,14 @@ dialog {
   margin: 0.3em;
 }
 
-.client-information label, .process-information label{
+.client-information label,
+.process-information label {
   font-size: 1.2em;
   font-weight: 500;
 }
 
-.client-information input, .process-information input{
+.client-information input,
+.process-information input {
   border: none;
   background: none;
   border-bottom: 2px solid var(--color-form-list-text);
@@ -405,7 +413,7 @@ dialog {
   flex-direction: row;
 }
 
-.adress-details > div > input {
+.adress-details>div>input {
   width: 90%;
 }
 
@@ -436,11 +444,13 @@ dialog {
   align-items: center;
 }
 
-#btn-client-exit, #btn-process-exit {
+#btn-client-exit,
+#btn-process-exit {
   color: crimson;
 }
 
-#btn-client-previous, #btn-process-previous {
+#btn-client-previous,
+#btn-process-previous {
   display: none;
 }
 
@@ -452,7 +462,7 @@ dialog {
   display: none;
 }
 
-#step-ementa{
+#step-ementa {
   display: none;
 }
 
@@ -465,11 +475,12 @@ dialog {
   width: inherit;
 }
 
-.client-isOlder input[type="radio"]{
+.client-isOlder input[type="radio"] {
   margin-right: inherit;
 }
 
-#btn-client-next, #btn-process-next {
+#btn-client-next,
+#btn-process-next {
   color: white;
   border: 1.5px solid var(--color-dialog-button-next);
   background-color: var(--color-dialog-button-next);
@@ -480,13 +491,14 @@ dialog {
   flex-direction: row;
 }
 
-.account-general-information ,.account-fields>.form-section{
+.account-general-information,
+.account-fields>.form-section {
   flex: initial;
   width: 100%;
 }
 
 
-.account-fields{
+.account-fields {
   display: flex;
   flex-direction: row;
 }
@@ -514,12 +526,12 @@ dialog {
   opacity: 0.6;
 }
 
-.account-configs-options span{
+.account-configs-options span {
   font-weight: bold;
   color: var(--color-text);
 }
 
-#account-config-list{
+#account-config-list {
   display: block;
   min-width: 20%;
   flex: initial;
@@ -547,7 +559,8 @@ dialog {
   flex-direction: row;
 }
 
-.theme-images span, .theme-images h1{
+.theme-images span,
+.theme-images h1 {
   text-align: center;
 }
 
@@ -558,7 +571,7 @@ dialog {
   color: var(--color-form-list-text);
 }
 
-#btn-update-accountinfo{
+#btn-update-accountinfo {
   min-width: 200px;
   font-size: 1em;
   background-color: green;
@@ -576,7 +589,7 @@ dialog {
   margin: 0.6em 0;
 }
 
-#delete-account-field > h2 {
+#delete-account-field>h2 {
   color: crimson;
 }
 
@@ -590,7 +603,7 @@ dialog {
   margin: 0.6em 0;
 }
 
-.btn-fade:active{
+.btn-fade:active {
   transition: initial;
   background: linear-gradient(rgb(0 0 0/40%) 0 0);
 }
@@ -606,20 +619,20 @@ dialog {
   margin: 0.6em 0;
 }
 
-.account-image{
+.account-image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 1em;
 }
 
-.account-image img{
+.account-image img {
   border-radius: 400px;
   min-width: 200px;
   width: 50%;
 }
 
-.theme-card{
+.theme-card {
   border: 1px solid var(--color-form-list-text);
   display: flex;
   flex-direction: column;
@@ -629,52 +642,52 @@ dialog {
   border-radius: 15px;
 }
 
-.theme-card img{
+.theme-card img {
   margin: .6em .6em 1.2em .6em;
   border: 1px solid var(--color-form-list-text);
   border-radius: 13px;
 }
 
-.theme-card hr{
+.theme-card hr {
   margin: .3em;
   width: 90%;
 }
 
 #light-mode-theme,
-#dark-mode-theme{
+#dark-mode-theme {
   transition: 1s;
   cursor: pointer;
 }
 
-#light-mode-theme:hover{
+#light-mode-theme:hover {
   border-color: #4e4e4e;
   background-color: #e6e4e1;
 }
 
-#light-mode-theme:hover h1, 
-#light-mode-theme:hover span{
+#light-mode-theme:hover h1,
+#light-mode-theme:hover span {
   color: #4e4e4e;
 }
 
-#light-mode-theme:hover hr{
+#light-mode-theme:hover hr {
   border-color: initial;
 }
 
-#dark-mode-theme:hover{
+#dark-mode-theme:hover {
   border-color: #98999b;
   background-color: #1c1c1e;
 }
 
-#dark-mode-theme:hover h1, 
-#dark-mode-theme:hover span{
+#dark-mode-theme:hover h1,
+#dark-mode-theme:hover span {
   color: #98999b;
 }
 
-#dark-mode-theme:hover hr{
+#dark-mode-theme:hover hr {
   border-color: initial;
 }
 
-#edit-information-label{
+#edit-information-label {
   appearance: none;
   position: absolute;
   right: 0;
@@ -682,12 +695,13 @@ dialog {
   margin: .2em 1.5em 0 0;
 }
 
-#edit-information-client-state, #edit-information-process-state{
+#edit-information-client-state,
+#edit-information-process-state {
   position: absolute;
   appearance: none;
 }
 
-.emphasis-text{
+.emphasis-text {
   color: var(--color-emphasis-text);
 }
 
@@ -722,3 +736,93 @@ dialog {
   border-color: #98999b;
 }
   */
+
+.chatbot-container {
+  color: white;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-config-li-background);
+}
+
+.chatbot-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.chatbot-container img {
+  display: block;
+  margin: 20px auto 20px;
+  opacity: .6;
+  min-width: 200px;
+  width: 50%;
+  max-width: 500px;
+  height: auto;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: var(--color-inputs-lists-background);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: var(--color-main-container);
+  border-radius: 6px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: var(--color-main-container);
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-message.ai {
+  background-color: var(--color-inputs-lists-background);
+  align-self: flex-start;
+  text-align: left;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  background: var(--color-main-container);
+}
+
+.chat-input textarea {
+  color: white;
+  flex: 1;
+  border: none;
+  resize: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  outline: none;
+  max-height: 120px;
+  background: var(--color-inputs-lists-background);
+  line-height: 1.4;
+}
+
+.chat-input button {
+  cursor: pointer;
+  color: var(--color-form-list-text);
+  background: var(--color-inputs-lists-background);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}

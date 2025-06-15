@@ -228,11 +228,12 @@ section h2 {
         outline: none;
     }
 
-    input[type="submit"]:active{
+    input[type="submit"]:active {
         background: linear-gradient(rgb(0 0 0 /40%)0 0);
     }
 
-    input[type="text"], select{
+    input[type="text"],
+    select {
         background-color: var(--color-main-background);
         color: var(--color-form-input-text);
         margin-bottom: 15px;
@@ -243,8 +244,9 @@ section h2 {
         outline: none;
         transition: 80ms;
     }
-    
-    input[type="text"]:focus, select:focus{
+
+    input[type="text"]:focus,
+    select:focus {
         border-color: var(--color-text);
         box-shadow: 0 0 0 1px var(--color-text);
     }
@@ -586,17 +588,17 @@ tbody button {
     outline: none;
 }
 
-.login-container input:not(input[type="submit"]){
+.login-container input:not(input[type="submit"]) {
     padding: .8em;
 }
 
-.login-group{
+.login-group {
     position: relative;
     width: 100%;
     margin: 1em 0;
 }
 
-.login-group label{
+.login-group label {
     position: absolute;
     left: 0;
     top: 30%;
@@ -606,14 +608,17 @@ tbody button {
     color: var(--color-form-list-text);
 }
 
-.login-group input:focus~label, .login-group input:valid~label, .login-group input:not(:placeholder-shown)~label{
+.login-group input:focus~label,
+.login-group input:valid~label,
+.login-group input:not(:placeholder-shown)~label {
     top: -12.5%;
     margin: 0 .8em;
     background-color: var(--color-background);
     color: var(--color-dialog-button-text);
 }
 
-.login-group input:focus, .login-group input:valid{
+.login-group input:focus,
+.login-group input:valid {
     border-color: var(--color-form-list-text);
 }
 
@@ -718,7 +723,8 @@ tbody button {
     color: var(--color-dialog-button-text);
 }
 
-.plan-card:not(.plan-choosed) h1, .plan-card:not(.plan-choosed) h2{
+.plan-card:not(.plan-choosed) h1,
+.plan-card:not(.plan-choosed) h2 {
     color: var(--color-text);
 }
 
@@ -769,8 +775,8 @@ tbody button {
     background: var(--color-plan-choosed-background);
 }
 
-.plan-card input[type="submit"]:active{
-    filter:brightness(50%);
+.plan-card input[type="submit"]:active {
+    filter: brightness(50%);
 }
 
 .plan-choosed {
@@ -780,7 +786,7 @@ tbody button {
     flex-grow: 1.5;
 }
 
-.emphasis-text{
+.emphasis-text {
     color: var(--color-emphasis-text);
 }
 

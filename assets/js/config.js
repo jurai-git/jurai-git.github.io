@@ -3,11 +3,11 @@ export const CONFIG = {
     cookies: { 
         access: 'access_token'
     },
-    apiBaseUrl: 'https://cors-anywhere.herokuapp.com/https://jurai-server-production.up.railway.app',
+    apiBaseUrl: 'https://jurai-server.onrender.com',
     endpoints: {
-        registerLawyer: '/advogado/new',
-        loginLawyer: '/advogado/get',
-        registerPetitioner: '/requerente/new',
-        registerPetition: '/demanda/new'
+        registerLawyer: '/advogado',
+        loginLawyer: '/advogado/auth',
+        registerPetitioner: '/requerente',
+        registerPetition: '/requerente/${}/demanda',
     }
 };

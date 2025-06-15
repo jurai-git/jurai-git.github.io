@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurAI - Análise Processual</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <script type="module" src="./assets/script/controllers/authController.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/index.html">
+                <img src="../assets/img/jurai-light.png" id="jurai-logo" alt="JurAI - Logo">
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="./dashboard.html">Visão Geral</a></li>
+                    <li><a href="./r/cadastro.html">Cadastrar Cliente</a></li>
+                    <li><a href="./d/cadastro.html">Cadastrar Demanda</a></li>
+                    <li><a href="#">Assistente Virtual</a></li>
+                    <li><a href="./analise-processual.html">Análise Processual</a></li>
+                    <li><a href="./documentos.html">Documentos</a></li>
+                    <li><a href="./plano.html">Meu Plano</a></li>
+                    <li><a href="./conta.html">Minha Conta</a></li>
+                    <li><a href="#" id="logout">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Assistente Virtual</h1>
+
+            <section class="chatbot-container">
+                <div id="chatWindow" class="chat-window">
+                    <img src="../assets/img/jurai-name.png" alt="JurAI">
+                    <h2>Olá, como posso te ajudar hoje?</h2>
+                </div>
+
+                <div class="chat-input">
+                    <textarea id="messageInput" rows="1" placeholder="Digite sua mensagem..."></textarea>
+                    <button id="sendBtn">Enviar</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
+    </footer>
+
+    <script src="../assets/js/themeHandler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="./assets/script/event.js"></script>
+    <script src="./assets/script.js"></script>
+    <script>
+        const textarea = document.getElementById("messageInput");
+        const sendBtn = document.getElementById("sendBtn");
+        const chatWindow = document.getElementById("chatWindow");
+
+        textarea.addEventListener("input", () => {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+        });
+
+        textarea.addEventListener("keydown", e => {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        sendBtn.addEventListener("click", sendMessage);
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("chat-message", sender);
+            msgDiv.textContent = text;
+            chatWindow.appendChild(msgDiv);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function generateResponse(msg) {
+            const m = msg.toLowerCase();
+            const responses = [];
+
+            if (/(oi|olá|ola|bom dia|boa tarde|boa noite)/.test(m)) {
+                responses.push(
+                    "Olá! Seja muito bem-vindo(a). Como posso te ajudar hoje?",
+                    "Oi! Estou por aqui para te auxiliar com petições, prazos, contratos e mais. Como posso ajudar?"
+                );
+            }
+
+            if (/petição/.test(m)) {
+                responses.push(
+                    "Claro! Para redigirmos a petição inicial, preciso saber o objeto da ação, o tribunal competente e se há documentos relevantes. Podemos começar?",
+                    "Vamos lá! Qual é o tipo da ação, o juízo competente e há algum pedido liminar ou antecipação de tutela?"
+                );
+            }
+
+            if (/honorários/.test(m)) {
+                responses.push(
+                    "Você deseja calcular os honorários ou incluir uma cláusula contratual? Posso ajudar com ambos!",
+                    "Sobre honorários: informe se são contratuais, sucumbenciais ou arbitrados judicialmente, assim posso ser mais preciso."
+                );
+            }
+
+            if (/ação de cobrança/.test(m)) {
+                responses.push(
+                    "Ótimo. Para iniciar uma ação de cobrança, você precisa dos documentos que provam a dívida, como contrato, notas fiscais e comunicações. Posso ajudar com a petição inicial se quiser.",
+                    "Entendi. É essencial reunir provas da prestação de serviço ou da entrega de produto. Posso sugerir uma estrutura de petição se preferir."
+                );
+            }
+
+            if (/contestação/.test(m)) {
+                responses.push(
+                    "Você precisa de ajuda com uma contestação? Me diga os principais pontos da petição inicial ou se há documentos anexados.",
+                    "Para elaborar uma contestação eficaz, é ideal ter acesso à petição inicial, prazos e eventuais provas apresentadas. Quer que eu simule uma minuta?"
+                );
+            }
+
+            if (/recurso|apelação|embargos/.test(m)) {
+                responses.push(
+                    "Entendi! Qual tipo de recurso estamos lidando (apelação, embargos de declaração, etc.) e qual é o fundamento jurídico que deseja utilizar?",
+                    "Claro! Posso ajudar com estrutura, prazos e fundamentação para o recurso. Me diga mais sobre a decisão que deseja impugnar."
+                );
+            }
+
+            if (/jurisprudência|precedente/.test(m)) {
+                responses.push(
+                    "Sobre jurisprudência: me diga o tema, artigo ou tribunal desejado, e posso sugerir modelos ou resumos.",
+                    "Posso te ajudar a encontrar jurisprudência relevante. Qual o tema, área do direito ou dispositivo legal relacionado?"
+                );
+            }
+
+            if (/contrato/.test(m)) {
+                responses.push(
+                    "Legal. Qual o tipo de contrato? Posso sugerir cláusulas para prestação de serviço, compra e venda, locação, entre outros.",
+                    "Vamos elaborar um contrato sob medida. Me diga o tipo e os principais termos que deseja incluir."
+                );
+            }
+
+            if (/prazo/.test(m)) {
+                responses.push(
+                    "Você quer calcular um prazo processual ou contratual? Me informe a data inicial e se há suspensão por feriado ou fim de semana.",
+                    "Claro! Me diga a data de início do prazo, o tipo de ato (intimação, despacho, etc.) e o tribunal, para eu considerar as regras aplicáveis."
+                );
+            }
+
+            if (m.endsWith('?')) {
+                responses.push(
+                    "Boa pergunta! Vou buscar a melhor forma de te responder com base no que você precisa.",
+                    "Ótima dúvida! Me dê só um instante para te trazer uma resposta completa."
+                );
+            }
+
+            if (responses.length === 0) {
+                responses.push(
+                    "Entendi. Pode me dar mais detalhes para que eu possa te ajudar melhor?",
+                    "Interessante! Se puder explicar um pouco mais, consigo te dar uma resposta mais útil."
+                );
+            }
+
+            const response = responses[Math.floor(Math.random() * responses.length)];
+            return response;
+        }
+
+        function calcularDelay(resposta) {
+            const tempoBase = 400;
+            const tempoPorCaracter = 20;
+            return tempoBase + (resposta.length * tempoPorCaracter);
+        }
+
+        function sendMessage() {
+            const text = textarea.value.trim();
+            if (!text) return;
+
+            if (!chatWindow.querySelector('.chat-message')) {
+                chatWindow.innerHTML = "";
+            }
+
+            addMessage(text, "user");
+            textarea.value = "";
+            textarea.style.height = "auto";
+
+            const reply = generateResponse(text);
+            const delay = calcularDelay(reply);
+
+            setTimeout(() => {
+                addMessage(reply, "ai");
+            }, delay);
+        }
+    </script>
+</body>
+</html>
