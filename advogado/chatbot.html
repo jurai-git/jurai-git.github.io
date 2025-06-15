@@ -35,7 +35,17 @@
         <main>
             <h1>Assistente Virtual</h1>
 
-            <section class="main-container"></section>
+            <section class="chatbot-container">
+                <div id="chatWindow" class="chat-window">
+                    <img src="../assets/img/jurai-name.png" alt="JurAI">
+                    <h2>Olá, como posso te ajudar hoje?</h2>
+                </div>
+
+                <div class="chat-input">
+                    <textarea id="messageInput" rows="1" placeholder="Digite sua mensagem..."></textarea>
+                    <button id="sendBtn">Enviar</button>
+                </div>
+            </section>
         </main>
     </div>
     <footer>
@@ -46,5 +56,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="./assets/script/event.js"></script>
     <script src="./assets/script.js"></script>
+    <script>
+        const textarea = document.getElementById("messageInput");
+        const sendBtn = document.getElementById("sendBtn");
+        const chatWindow = document.getElementById("chatWindow");
+
+        textarea.addEventListener("input", () => {
+            textarea.style.height = "auto";
+            textarea.style.height = (textarea.scrollHeight) + "px";
+        });
+
+        textarea.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        sendBtn.addEventListener("click", sendMessage);
+
+        function sendMessage() {
+            const hasMessages = chatWindow.querySelectorAll('.chat-message').length > 0;
+            const message = textarea.value.trim();
+
+            if (message === "") return;
+
+            if (!hasMessages) {
+                chatWindow.innerHTML = "";
+            }
+
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("chat-message");
+            msgDiv.textContent = message;
+            chatWindow.appendChild(msgDiv);
+
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            textarea.value = "";
+            textarea.style.height = "auto";
+        }
+    </script>
 </body>
 </html>
