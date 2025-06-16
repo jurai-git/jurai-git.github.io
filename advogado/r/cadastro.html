@@ -38,29 +38,29 @@
             <h1>Cadastro de Requerente</h1>
 
             <section class="main-container">
-                <form>
+                <form id="registerPetitioner">
                     <div class="container">
                         <div class="form-section">
                             <h2>Informações Pessoais</h2>
                             <label for="name"> Nome </label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name"  name="nome" required>
                             <label for="social-name"> Nome Social (opcional) </label>
-                            <input type="text" id="social-name">
+                            <input type="text" id="social-name" name="nome_social">
                             <label for="email"> E-Mail </label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                             <label for="birth"> Data de Nascimento </label>
                             <input type="date" id="birth" required>
                             <div>
                                 <label> Gênero </label>
-                                <label for="male"> <input id="male" type="radio" name="gender" required> Masculino
+                                <label for="male"> <input id="male" type="radio" name="genero" value="M" required> Masculino
                                 </label>
-                                <label for="female"> <input id="female" type="radio" name="gender"> Feminino </label>
-                                <label for="other"> <input id="other" type="radio" name="gender"> Outro </label>
+                                <label for="female"> <input id="female" type="radio" name="genero" value="F"> Feminino </label>
+                                <label for="other"> <input id="other" type="radio" name="genero" value="N"> Outro </label>
                             </div>
 
 
                             <label for="civil-status"> Estado Civil </label>
-                            <select id="civil-status" required>
+                            <select id="civil-status" name="estado_civil" required>
                                 <option disabled selected></option>
                                 <option value="solteiro(a)"> Solteiro(a) </option>
                                 <option value="casado(a)"> Casado(a) </option>
@@ -69,7 +69,6 @@
                                 <option value="separado(a)"> Separado(a) </option>
                             </select>
 
-
                             <label> Pessoa </label>
                             <label for="natural-person"> <input id="natural-person" type="radio" name="person-type"
                                     required> Física </label>
@@ -77,39 +76,44 @@
                                 Jurídica </label>
 
                             <label for="cpf-cnpj"> CPF/CNPJ </label>
-                            <input type="text" id="cpf-cnpj">
+                            <input type="text" id="cpf-cnpj" name="cpf_cnpj">
                             <label><input type="checkbox"> Declaro que a parte não possui CPF</label>
 
                             <label for="rg"> RG </label>
-                            <input type="text" id="rg">
+                            <input type="text" id="rg" name="rg">
+
+                            <label for="orgao-emissor"> Órgão Emissor </label>
+                            <input type="text" id="orgao-emissor" name="orgao_emissor" required>
                             <label><input type="checkbox"> Declaro que a parte não possui RG</label>
 
                             <label for="nationality"> Nacionalidade </label>
-                            <input type="text" id="nationality">
+                            <input type="text" id="nationality" name="nacionalidade">
                             <label for="job"> Profissão </label>
-                            <input type="text" id="job">
+                            <input type="text" id="job" name="profissao">
+
+                            <label style="display: none;" for="idoso"><input type="checkbox" id="idoso" name="idoso"> Idoso</label>
                         </div>
 
                         <div class="form-section">
                             <h2>Endereço</h2>
                             <label for="cep"> CEP </label>
-                            <input type="number" id="cep" oninput="addressAutocomplete()" maxlength="8">
+                            <input type="number" id="cep" oninput="addressAutocomplete()" name="cep" maxlength="8">
                             <label for="street"> Rua </label>
-                            <input type="text" id="street">
+                            <input type="text" id="street" name="logradouro">
                             <label for="neighborhood"> Bairro </label>
-                            <input type="text" id="neighborhood">
+                            <input type="text" id="neighborhood" name="bairro">
                             <label for="city"> Cidade </label>
-                            <input type="text" id="city">
+                            <input type="text" id="city" name="cidade">
                             <label for="state"> Estado </label>
-                            <select id="state">
+                            <select id="state" name="estado">
                                 <option disabled selected></option>
                                 <option value="AC">AC</option>
                                 <option value="SP">SP</option>
                             </select>
                             <label for="home-number"> Nº </label>
-                            <input type="number" id="home-number">
+                            <input type="number" name="num_imovel" id="home-number">
                             <label for="complement"> Complemento </label>
-                            <input type="text" id="complement">
+                            <input type="text" id="complement" name="complemento">
                         </div>
                     </div>
 
@@ -121,7 +125,8 @@
     <footer>
         <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
     </footer>
-    <script src="../../assets/js/themeHandler.js"></script>
+    <!-- <script src="../../assets/js/themeHandler.js"></script> -->
     <script src="../assets/script.js"></script>
+    <script type="module" src="../assets/script/controllers/requerenteController.js"></script>
 </body>
 </html>
