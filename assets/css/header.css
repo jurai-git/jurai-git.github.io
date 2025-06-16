@@ -48,7 +48,7 @@ nav button:hover {
 }
 
 .menu {
-    background-image: url('../../advogado/assets/img/profile-photo.jfif');
+    background-image: url('../../advogado/assets/img/profile-photo.webp');
     border: 2px solid black;
     border-radius: 50%;
     background-size: cover;
