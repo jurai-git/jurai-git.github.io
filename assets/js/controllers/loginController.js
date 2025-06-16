@@ -57,10 +57,27 @@ function validateForm(actionType, formData) {
 }
 
 function handleSubmission(response, actionType) {
+    setCookiesFromObject(actionType === 'register' ? response : response.advogado);
     setCookie(actionType === 'register' ? response.access_token : response.advogado.access_token);
     showSuccessMessage(actionType, actionType === 'register' ? null : response.advogado.username);
 
     redirectToDashboard();
+}
+
+function setCookiesFromObject(data) {
+    const expirationDate = new Date();
+    const rememberMe = document.getElementById('rememberMe')?.checked || false;
+
+    if (rememberMe) {
+        expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+    } else {
+        expirationDate.setTime(expirationDate.getTime() + SESSION_DURATION);
+    }
+
+    for (const [key, value] of Object.entries(data)) {
+        const cookieValue = typeof value === 'object' ? JSON.stringify(value) : value;
+        CookieService.setCookie(key, cookieValue, expirationDate);
+    }
 }
 
 function setCookie(token) {
