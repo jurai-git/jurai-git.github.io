@@ -49,196 +49,265 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Juninho</td>
-                            <td>Tramitação</td>
-                            <td><button onclick="document.getElementById('client-modal').showModal(), document.getElementById('fade').style.display ='block'">Ver Cliente</button><button onclick="document.getElementById('process-modal').showModal(), document.getElementById('fade').style.display ='block'">Ver Processo</button>
-                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Maria</td>
-                            <td>Concluso</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                            
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Carlos</td>
-                            <td>Sentença</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Ana</td>
-                            <td>Arquivado</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Pedro</td>
-                            <td>Em Andamento</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Luciana</td>
-                            <td>Apelação</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>José</td>
-                            <td>Distribuído</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Clara</td>
-                            <td>Baixado</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Bruno</td>
-                            <td>Extinto</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Sofia</td>
-                            <td>Aguardando Despacho</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                        </tr>
-                        <tr>
-                            <td>Lucas</td>
-                            <td>Concluso ao Juiz</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                        </tr>
-                        <tr>
-                            <td>Fernanda</td>
-                            <td>Aguardando Sentença</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                        </tr>
-                        <tr>
-                            <td>Ricardo</td>
-                            <td>Remetido ao Tribunal</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                        </tr>
-                        <tr>
-                            <td>Gabriela</td>
-                            <td>Pronto para Julgamento</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
-                        </tr>
-                        <tr>
-                            <td>Vinícius</td>
-                            <td>Sobrestado</td>
-                            <td><button>Ver Cliente</button><button>Ver Processo</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
 
             </section>
-            <dialog id="client-modal">
-                <div class="details-content">
-                    <div class="info-buttons">
-                        <label id="edit-information-label"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO3UMUoDURDG8UVbBaOtjWBlo21qxajgmbyEBJKdSQghTc4REhRnNglpcwU9wj/MYpHCZvelEJKveUzz43sP5mVZYmTCaW5cZ7tIv+BOjB91UGOUhKnzoM6NOMMSdOjOuaqF9ZwXdabtJY3xmOMSNb7fV5zUxvIV5zG3lzTUuY3rV8bUed7G4lRnKsZ99WZftNSZDT64iLlfcKbGJDdeD9hev5kUPP5TzGj+tQG58VQZi4jTEccCSmqW/UacdXw/YnwmNYt0F1yWmLMumxrN2ljkDY4CTUK2sgGXEDNsaaQnHQAAAABJRU5ErkJggg" id="edit-information-client-icon"><input type="checkbox" id="edit-information-client-state" name="edit-information-client-state"></label>
-                        <button id="btn-personal-info" onclick="changeClientStep(0)">Infos. Pessoais</button>
-                        <button id="btn-general-info" onclick="changeClientStep(1)">Infos. Gerais</button>
-                        <button id="btn-adress-info" onclick="changeClientStep(2)">Endereço</button>
-                    </div>
-                    <form id="client-documents-form">
-                        <div class="client-information" id="step-personal">
-                            <div class="field name-field">
-                                <label for="name">Nome</label>
-                                <input type="text" id="name" placeholder="Nome" value="Juninho da Silva" disabled>
-                            </div>
+            <style>
+                #fade {
+                    display: none;
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(8, 22, 43, 0.85);
+                    backdrop-filter: blur(6px);
+                    z-index: 9999;
+                    cursor: pointer;
+                }
 
-                            <div class="field  social-name-field">
-                                <label for="social-name">Nome Social</label>
-                                <input type="text" id="social-name" placeholder="Nome Social" value="Juninhoinho" disabled>
-                            </div>
+                dialog {
+                    border: none;
+                    border-radius: 8px;
+                    padding: 20px 30px;
+                    box-shadow: 0 0 20px rgba(0, 0, 50, 0.7);
+                    background: #0a192f;
+                    color: #cbd5e1;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    width: 400px;
+                    max-width: 90vw;
+                    z-index: 10000;
+                    position: relative;
+                }
 
-                            <div class="field email-field">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" placeholder="Email" value="juninhopernas@gmail.com" disabled>
-                            </div>
+                dialog h2 {
+                    margin-top: 0;
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    border-bottom: 2px solid gray;
+                    padding-bottom: 8px;
+                }
 
-                            <div class="client-isOlder">
-                                <input type="checkbox" id="isOlder" disabled>
-                                <label for="isOlder">É idoso</label>
-                            </div>
-                            <div class="field gender-field">
-                                <label for="gender">Gênero</label>
-                                <input type="text" id="gender" placeholder="Gênero" value="Masculino" disabled>
-                            </div>
-                        </div>
+                dialog p {
+                    margin: 12px 0;
+                    font-size: 1rem;
+                    line-height: 1.4;
+                }
 
-                        <div class="client-information" id="step-general">
-                            <div class="field adress-details">
-                                <div class="field">
-                                    <label for="cpf/cnpj">CPF/CNPJ</label>
-                                    <input type="text" id="cpf/cnpj" placeholder="CPF/CNPJ" value="140.342.426-77" disabled>
-                                </div>
-                                <div class="field">
-                                    <label for="rg">RG</label>
-                                    <input type="text" id="rg" placeholder="RG" value="95.234.685-9" disabled>
-                                </div>
-                            </div>
-                            <div class="field issuing-agency-field">
-                                <label for="issuing-agency">Órgão Emissor</label>
-                                <input type="text" id="issuing-agency" placeholder="Orgão Emissor" value="SP" disabled>
-                            </div>
+                dialog p b {
+                    color: #a0aec0;
+                }
 
-                            <div class="field profession-field">
-                                <label for="profession">Profissão</label>
-                                <input type="text" id="profession" placeholder="Profissão" value="Adestrador de Suínos" disabled>
-                            </div>
-                            <div class="field adress-details">
-                                <div class="field">
-                                    <label for="estadocivil">Estado Civíl</label>
-                                    <input type="text" id="estadocivil" placeholder="Estado Civíl" value="Viúvo" disabled>
-                                </div>
-                                <div class="field">
-                                    <label for="nacionality">Nacionalidade</label>
-                                    <input type="text" id="nacionality" placeholder="Nacionalidade" value="Brasileiro" disabled>
-                                </div>
-                            </div>
-                        </div>
+                dialog button {
+                    margin-top: 20px;
+                    padding: 8px 18px;
+                    background-color: #112240;
+                    border: 1.5px solid #64ffda;
+                    color: #64ffda;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                }
 
-                        <div class="client-information" id="step-adress">
-                            <div class="field cep-field">
-                                <label for="cep">CEP</label>
-                                <input type="text" id="cep" placeholder="CEP" value="17480-970" disabled>
-                            </div>
+                dialog button:hover {
+                    background-color: #64ffda;
+                    color: #0a192f;
+                }
 
-                            <div class="field state-field">
-                                <label for="state">Estado</label>
-                                <input type="text" id="state" placeholder="Estado" value="SP" disabled>
-                            </div>
+                dialog:focus {
+                    outline: none;
+                    box-shadow: 0 0 12px #64ffda;
+                }
 
-                            <div class="field city-field">
-                                <label for="city">Cidade</label>
-                                <input type="text" id="city" placeholder="Cidade" value="Cabrália Paulista" disabled>
-                            </div>
+                dialog {
+                    position: absolute;
+                    width: inherit;
+                    height: inherit;
+                    border: none;
+                    background: none;
+                    z-index: 10000;
+                }
 
-                            <div class="field neighborhood-field">
-                                <label for="neighborhood">Bairro</label>
-                                <input type="text" id="neighborhood" placeholder="Bairro" value="Centro" disabled>
-                            </div>
-                            <div class="field adress-details">
-                                <div class="field">
-                                    <label for="logradouro">Logradouro</label>
-                                    <input type="text" id="logradouro" placeholder="Logradouro" value="Rua Seis de Agosto" disabled>
-                                </div>
-                                <div class="field">
-                                    <label for="numero">Número</label>
-                                    <input type="text" id="numero" placeholder="Número" value="675" disabled>
-                                </div>
-                            </div>
-                            <div class="field complement-field">
-                                <label for="complement">Complemento</label>
-                                <input type="text" id="complement" placeholder="Complemento" value="Atrás da Padaria" disabled>
-                            </div>
-                        </div>
-                        <div class="details-buttons">
-                            <button class="btn-dialog" type="button" id="btn-client-exit" onclick="closeClientModal()">Sair</button>
-                            <button class="btn-dialog" type="button" id="btn-client-previous" onclick="nextClientStep(-1)">Anterior</button>
-                            <button class="btn-dialog" type="button" id="btn-client-next" onclick="nextClientStep(1)">Próximo</button>
-                        </div>
-                    </form>
-                </div>
-            </dialog>
+                .details-content {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: var(--color-dialog-background);
+                    min-width: 300px;
+                    width: 40%;
+                    padding: 1.5em 2em;
+                    border-radius: 10px;
+                    text-align: center;
+                    border: 2px solid var(--color-dialog-background-border);
+                    box-shadow: 0 0 15px #030c14;
+                    color: var(--color-form-input-text);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+                .details-content h2 {
+                    margin: 0 0 0.8em 0;
+                    color: var(--color-dialog-header-buttons);
+                    font-weight: 700;
+                }
+
+                .info-buttons {
+                margin-top: 0.5em;
+                }
+
+                .info-buttons button {
+                    margin: 0 0.8em;
+                    padding: 0 0.4em;
+                    font-size: 1.2em;
+                    color: var(--color-dialog-header-button-visited);
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid var(--color-dialog-header-buttons);
+                    cursor: pointer;
+                    transition: border-color 0.3s ease;
+                }
+
+                .info-buttons button:hover {
+                border-bottom: 2px solid var(--color-dialog-header-buttons-hover);
+                }
+
+                #btn-general-info,
+                #btn-adress-info,
+                #btn-resumo-info {
+                    color: var(--color-dialog-header-buttons-not-visited);
+                }
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    margin: 0.6em 0;
+                    width: 100%;
+                }
+
+                .field .field {
+                width: 40%;
+                }
+
+                .client-information,
+                .process-information {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 1.5em 0 0 0;
+                }
+
+                .client-information label,
+                .process-information label {
+                    color: var(--color-form-input-text);
+                    margin: 0.3em 0 0.6em 0;
+                    font-size: 1.1em;
+                    font-weight: 600;
+                    text-align: left;
+                }
+
+                .client-information input,
+                .process-information input {
+                    border: none;
+                    background: none;
+                    border-bottom: 2px solid var(--color-form-list-text);
+                    width: 100%;
+                    font-size: 1em;
+                    color: var(--color-form-input-text);
+                    padding: 0.2em 0;
+                }
+
+                .client-information input:disabled,
+                .process-information input:disabled {
+                    color: var(--color-dialog-header-buttons-not-visited);
+                }
+
+                .adress-details {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-direction: row;
+                    width: 100%;
+                }
+
+                .adress-details > div > input {
+                width: 90%;
+                }
+
+                .btn-dialog {
+                    width: 100px;
+                    padding: 0.5em;
+                    font-size: 1.2em;
+                    border-radius: 0.5em;
+                    color: var(--color-dialog-button-text);
+                    background-color: var(--color-dialog-button);
+                    border: 1.5px solid var(--color-dialog-background-border);
+                    transition: background-color 0.5s ease, border-color 0.5s ease;
+                    cursor: pointer;
+                    margin-top: 1.2em;
+                    align-self: center;
+                }
+
+                .btn-dialog:focus {
+                    outline: none;
+                }
+            </style>
+
+            <div id="modals-container"></div>
+            <div id="fade" onclick="closeAllModals()"></div>
 
             <dialog id="process-modal">
                 <div class="details-content">
@@ -321,8 +390,9 @@
     <footer>
         <p>A inteligência que facilita o processo | <small>© 2024 JurAI</small></p>
     </footer>
-    <script src="./temporarys.js"></script>
-    <script src="../assets/js/themeHandler.js"></script>
+    <!-- <script src="./temporarys.js"></script> -->
+    <!-- <script src="../assets/js/themeHandler.js"></script> -->
     <script src="./assets/script.js"></script>
+    <script type="module" src="./assets/script/controllers/documentsController.js"></script>
 </body>
 </html>

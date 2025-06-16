@@ -22,7 +22,7 @@ async function handleSubmit(event) {
     
     try {
         const response = await ApiService.request(event, false);
-        handleSubmission(response, actionType);
+        handleSubmission(response, actionType, formData);
     } catch (error) {
         handleError(error);
     }
@@ -56,11 +56,32 @@ function validateForm(actionType, formData) {
     return true;
 }
 
-function handleSubmission(response, actionType) {
+function handleSubmission(response, actionType, formData) {
+    setCookiesFromObject(actionType === 'register' ? response : response.advogado);
     setCookie(actionType === 'register' ? response.access_token : response.advogado.access_token);
     showSuccessMessage(actionType, actionType === 'register' ? null : response.advogado.username);
 
+    if (actionType === 'register') {
+        setCookiesFromObject(formData);
+    }
+
     redirectToDashboard();
+}
+
+function setCookiesFromObject(data) {
+    const expirationDate = new Date();
+    const rememberMe = document.getElementById('rememberMe')?.checked || false;
+
+    if (rememberMe) {
+        expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+    } else {
+        expirationDate.setTime(expirationDate.getTime() + SESSION_DURATION);
+    }
+
+    for (const [key, value] of Object.entries(data)) {
+        const cookieValue = typeof value === 'object' ? JSON.stringify(value) : value;
+        CookieService.setCookie(key, cookieValue, expirationDate);
+    }
 }
 
 function setCookie(token) {
