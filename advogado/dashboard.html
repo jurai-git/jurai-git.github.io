@@ -143,6 +143,26 @@
         window.addEventListener('load', ()=>{
             initGraphics();
             // getNews();
+
+            function getCookieValue(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            function capitalizeName(name) {
+                return name
+                    .toLowerCase()
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+
+            const username = getCookieValue('username');
+            if (username) {
+                const formattedName = capitalizeName(username.replace('%20', ' '));
+                document.querySelector('h1').innerText = `Bem vindo, ${formattedName}`;
+            }
         });
     </script>
 </body>
