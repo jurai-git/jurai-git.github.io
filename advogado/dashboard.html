@@ -161,7 +161,7 @@
             const username = getCookieValue('username');
             if (username) {
                 const formattedName = capitalizeName(username.replace('%20', ' '));
-                document.querySelector('h1').innerText = `Bem vindo, ${formattedName}`;
+                document.querySelector('h1').innerText = `Bem vindo(a), ${formattedName}`;
             }
         });
     </script>
