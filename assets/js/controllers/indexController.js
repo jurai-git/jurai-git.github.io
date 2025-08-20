@@ -364,3 +364,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
 });
+
+document.getElementById("hamburger-button").addEventListener('click', function(){
+        document.getElementById("hamburger-button").classList.toggle('is-active');
+        if(document.getElementById("hamburger-button").classList.contains('is-active')){
+            document.getElementById("navbar").classList.add('navbar-vertical');
+            document.getElementById("navbar").style.display = 'flex';
+            document.getElementById("navbar").style.flexDirection = 'column';
+            document.getElementById("navbar").style.position = 'absolute';
+            document.getElementById("navbar").style.right = '0';
+            document.getElementById("navbar").style.top = '0';
+            document.getElementById("navbar").style.height = '100dvh';
+        }
+        else{
+            document.getElementById("navbar").classList.remove('navbar-vertical');
+            document.getElementById("navbar").style.display = 'none';
+        }
+});
