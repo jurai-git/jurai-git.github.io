@@ -24,10 +24,13 @@ nav{
     background-color: var(--color-table-row-aside-background);
 }
 
-nav .navbar-vertical{
+.navbar-vertical{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100dvh;
 }
 
 nav ul {
