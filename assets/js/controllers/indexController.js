@@ -354,6 +354,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>`
         );
+
+        document.getElementsByClassName('nav-auth')[0].insertElementAdjacentHTML('afterbegin',
+            `<a href="#" id="nav-auth-remove">Sair</a>`
+        );
     }
 
     const tabManager = new TabManager();
@@ -363,14 +367,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle('#theme-toggle');
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
-});
 
-document.getElementById("hamburger-button").addEventListener('click', function(){
-        document.getElementById("hamburger-button").classList.toggle('is-active');
-        if(document.getElementById("hamburger-button").classList.contains('is-active')){
-            document.getElementById("navbar").classList.add('navbar-vertical');
-        }
-        else{
-            document.getElementById("navbar").classList.remove('navbar-vertical');
-        }
+    // ...existing code...
+
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburger-button');
+    const navbar = document.getElementById('navbar');
+    const overlay = document.querySelector('.nav-overlay');
+    const closeBtn = navbar.querySelector('.close-btn');
+
+    function openMenu() {
+        navbar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        hamburgerBtn.classList.add('is-active');
+    }
+
+    function closeMenu() {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        hamburgerBtn.classList.remove('is-active');
+    }
+
+    // Event listeners
+    hamburgerBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when clicking a nav link
+    navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Remove the old hamburger event listener at the bottom of the file
 });
