@@ -24,13 +24,10 @@ nav{
     background-color: var(--color-table-row-aside-background);
 }
 
-.navbar-vertical{
+nav .navbar-vertical{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100dvh;
+    background-color: red;
 }
 
 nav ul {
@@ -150,20 +147,117 @@ nav button:hover {
   margin-left: 0;
 }
 
+/* Overlay styles */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Navigation base styles */
+nav {
+    background-color: var(--color-table-row-aside-background);
+}
+
+nav ul {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-auth{
+    display: none;
+}
+
+#nav-auth-logout{
+    background-color: red;
+    padding: 3px 50px;
+    border-radius: 5px;
+    color: var(--color-table-row-aside-background);
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
     nav, #account-area {
         display: none;
     }
 
-    #hamburger-button{
+    #hamburger-button {
         display: block;
+        z-index: 1000;
+    }
+
+    nav#navbar {
+        display: block; /* Override the display: none from above */
+        position: fixed;
+        top: 0;
+        right: -280px; /* Start outside the viewport */
+        height: 100vh;
+        width: 220px;
+        background-color: var(--color-table-row-aside-background);
+        padding: 2rem;
+        transition: transform 0.3s ease;    
+        z-index: 999;
+    }
+
+    nav#navbar.active {
+        transform: translateX(-280px);
+    }
+
+    nav#navbar ul {
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+
+    nav#navbar li {
+        margin: 1rem 0;
     }
 
     nav ul{
-        flex-direction: column;
+        gap: 0;
+        align-items: flex-end;
+        font-size: larger;
     }
-    
-    nav{
-        padding: 1.5rem;
+
+    .nav-auth{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+
+    .nav-auth *{
+        text-align: center;
+    }
+
+    .nav-auth a:first-child{
+        background-color: var(--color-text);
+        padding: 3px 50px;
+        border-radius: 5px;
+        color: var(--color-table-row-aside-background);
+    }
+
+    .nav-auth a:last-child{
+        margin-top: 15px;
+        color: var(--color-text);
+        border: 1px solid var(--color-text);
+        padding: 3px 50px;
+        border-radius: 5px;
+    }
+
+    .menu{
+        display: none;
     }
 }
