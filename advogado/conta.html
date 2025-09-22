@@ -66,15 +66,15 @@
                         <div class="form-section">
                             <div class="field">
                                 <label for="acc-name">Nome:</label>
-                                <input type="text" id="acc-name" placeholder="Nome" value="Mateus Daroz">
+                                <input type="text" id="acc-name" placeholder="Nome" value="">
                             </div>
                             <div class="field">
                                 <label for="acc-email">Email:</label>
-                                <input type="text" id="acc-email" placeholder="Email" value="matlicoop@gmail.com">
+                                <input type="text" id="acc-email" placeholder="Email" value="">
                             </div>
                             <div class="field">
                                 <label for="acc-oab">Nº OAB:</label>
-                                <input type="text" id="acc-oab" placeholder="Nº OAB" value="434681">
+                                <input type="text" id="acc-oab" placeholder="Nº OAB" value="">
                             </div>
                             <button class="btn-dialog btn-fade" id="btn-update-accountinfo">Atualizar Informações</button>
                         </div>
@@ -132,5 +132,20 @@
     
     <script src="../assets/js/themeHandler.js"></script>
     <script src="./assets/script.js"></script>
+    <script>
+        function getCookieValue(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        const username = getCookieValue('username');
+        const email = getCookieValue('email');
+        const oab = getCookieValue('oab');
+
+        document.getElementById('acc-name').value = username;
+        document.getElementById('acc-email').value = email;
+        document.getElementById('acc-oab').value = oab;
+    </script>
 </body>
 </html>
