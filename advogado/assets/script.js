@@ -85,7 +85,7 @@ function getNews() {
   newsSection.appendChild(cardDiv);
   main.appendChild(newsSection);
 
-  fetch("http://127.0.0.1:5000/news")
+  fetch("http://127.0.0.1:5001/news")
     .then((response) => response.json())
     .then((data) => {
       if (Array.isArray(data)) {

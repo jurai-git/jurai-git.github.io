@@ -25,7 +25,7 @@ document.getElementById('registerPetitioner').addEventListener('submit', async (
     data.idoso = form.querySelector('#idoso')?.checked || false;
 
     try {
-        const response = await fetch('https://jurai-server.onrender.com/requerente', {
+        const response = await fetch('http://127.0.0.1:5001/requerente', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ import ApiService from '../../../../assets/js/services/apiService.js';
 
 async function fetchRequerentes() {
     try {
-        const response = await fetch('https://jurai-server.onrender.com/advogado/requerentes', {
+        const response = await fetch('http://127.0.0.1:5001/advogado/requerentes', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${ApiService.getAccessToken()}`

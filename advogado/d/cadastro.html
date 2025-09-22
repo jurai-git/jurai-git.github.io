@@ -38,61 +38,64 @@
             <h1>Cadastro de Demanda</h1>
 
             <section class="main-container">
-                <form>
+                <form id="registerDemanda">
                     <div class="container">
                         <div class="form-section">
                             <h2>Informações da Petição</h2>
+
+                            <label for="select-petitioner"> Requerente </label>
+                            <select name="petitioner" id="select-petitioner"></select>
                             
-                            <label for="forum"> Foro </label>
-                            <input type="text" id="forum">
+                            <label for="identificacao"> Identificação </label>
+                            <input type="text" id="identificacao" name="identificacao">
 
-                            <label for="competence"> Competência </label>
-                            <input type="text" id="competence">
+                            <label for="foro"> Foro </label>
+                            <input type="text" id="foro" name="foro">
 
-                            <label for="class"> Classe </label>
-                            <input type="text" id="class">
+                            <label for="competencia"> Competência </label>
+                            <input type="text" id="competencia" name="competencia">
 
-                            <label for="subject"> Assunto Principal </label>
-                            <input type="text" id="subject">
+                            <label for="classe"> Classe </label>
+                            <input type="text" id="classe" name="classe">
 
-                            <label for="judicial-summary"> Ementa </label>
-                            <textarea id="judicial-summary" placeholder="Resumo do processo..."></textarea>
+                            <label for="assunto_principal"> Assunto Principal </label>
+                            <input type="text" id="assunto_principal" name="assunto_principal">
+
+                            <label for="resumo"> Resumo </label>
+                            <textarea id="resumo" name="resumo" placeholder="Resumo do processo..."></textarea>
                         </div>
                         
                         <div class="form-section">
-                            <h2>Informações Opcionais</h2>
-                            
-                            <label for="other-subjects"> Outros Assuntos </label>
-                            <input type="text" id="other-subjects">
+                            <h2>Informações Adicionais</h2>
 
-                            <label for="protection">
-                                <input type="checkbox" id="protection">
+                            <label for="valor_acao"> Valor da ação (R$) </label>
+                            <input type="number" id="valor_acao" name="valor_acao" step="0.01">
+
+                            <label for="status"> Status </label>
+                            <input type="text" id="status" name="status">
+
+                            <label>
+                                <input type="checkbox" id="pedido_liminar" name="pedido_liminar">
                                 Pedido de Liminar/Tutela Antecipada
                             </label>
 
-                            <label for="judicial-secrecy"> 
-                                <input type="checkbox" id="judicial-secrecy">
-                                Segredo de Justiça 
+                            <label>
+                                <input type="checkbox" id="segredo_justica" name="segredo_justica">
+                                Segredo de Justiça
                             </label>
 
-                            <label for="share-value"> Valor da ação (em R$) </label>
-                            <input type="number" id="share-value">
-
-                            <label for="expenses"> Despesas Processuais </label>
-                            <input type="number" id="expenses">
-
-                            <label for="dismissal"> 
-                                <input type="checkbox" id="dismissal">
-                                Não há recolhimento/Dispensa Legal  
+                            <label>
+                                <input type="checkbox" id="dispensa_legal" name="dispensa_legal">
+                                Não há recolhimento/Dispensa Legal
                             </label>
 
-                            <label for="free-justice"> 
-                                <input type="checkbox" id="free-justice">
-                                Pedido de Justiça Gratuita  
+                            <label>
+                                <input type="checkbox" id="justica_gratuita" name="justica_gratuita">
+                                Pedido de Justiça Gratuita
                             </label>
-                            
-                            <label for="cost-guide"> Guia de Custas  </label>
-                            <input type="file" id="cost-guide">
+
+                            <label for="guia_custas"> Guia de Custas </label>
+                            <input type="checkbox" id="guia_custas" name="guia_custas">
                         </div>
                     </div>
                     <input type="submit" value="Cadastrar" class="btn-fade">
@@ -105,5 +108,6 @@
     </footer>
     <script src="../../assets/js/themeHandler.js"></script>
     <script src="../assets/script.js"></script>
+    <script type="module" src="../assets/script/controllers/cadastroDemandaController.js"></script>
 </body>
 </html>
