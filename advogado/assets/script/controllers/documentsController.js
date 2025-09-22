@@ -1,5 +1,29 @@
 import ApiService from '../../../../assets/js/services/apiService.js';
 
+async function fetchDemandas(requerenteId) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5001/advogado/requerente/${requerenteId}/demandas`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            }
+        })
+
+        const resJson = await response.json();
+        
+        if (response.ok) {
+            return resJson.demanda_list || [];
+        } else {
+            console.error('Erro no servidor:', resJson);
+            return [];
+        }
+
+    } catch (error) {
+        console.error('Erro na requisição de demandas:', error);
+        return [];
+    }
+}
+
 async function fetchRequerentes() {
     try {
         const response = await fetch('http://127.0.0.1:5001/advogado/requerentes', {
@@ -10,14 +34,18 @@ async function fetchRequerentes() {
         })
 
         const resJson = await response.json();
+        const requerentes = resJson.requerentes_list;
 
-        if (response.ok) {
-            console.log('Requerentes:', resJson.requerentes_list);
-            renderRequerentes(resJson.requerentes_list);
-        } else {
-            alert(`Erro: ${resJson.message}`);
-            console.error(resJson);
+        for (const requerente of requerentes) {
+            try {
+                requerente.demandas = await fetchDemandas(requerente.id_requerente);
+            } catch (err) {
+                console.error(`Erro ao buscar demandas do requerente ${requerente.id_requerente}:`, err);
+                requerente.demandas = [];
+            }
         }
+
+        renderRequerentes(requerentes);
 
     } catch (error) {
         console.error('Erro na requisição:', error);
@@ -44,12 +72,11 @@ function renderRequerentes(requerentes) {
         tr.appendChild(nomeTd);
 
         const estadoTd = document.createElement('td');
-        estadoTd.textContent = requerente.estado_processo || '---';
+        estadoTd.textContent = requerente.demandas[0]?.status || '---';
         tr.appendChild(estadoTd);
 
         const acoesTd = document.createElement('td');
 
-        // Botão Ver Cliente
         const btnCliente = document.createElement('button');
         btnCliente.textContent = 'Ver Cliente';
         btnCliente.onclick = () => {
@@ -58,7 +85,6 @@ function renderRequerentes(requerentes) {
             document.getElementById('fade').style.display = 'block';
         };
 
-        // Botão Ver Processo (você pode personalizar isso depois)
         const btnProcesso = document.createElement('button');
         btnProcesso.textContent = 'Ver Processo';
         btnProcesso.onclick = () => {
