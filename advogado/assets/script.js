@@ -1,3 +1,5 @@
+import ApiService from '../../../assets/js/services/apiService.js';
+
 function initGraphics() {
   const ctx = document.getElementById("winRate").getContext("2d");
 
@@ -175,4 +177,41 @@ function changeConfig(n) {
       document.getElementById("list-theme").style.backgroundColor = "var(--color-config-li-background)";
       break;
   }
+}
+
+function getCookieValue(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+async function loadLawyerPicture() {
+  const advogadoId = getCookieValue('id');
+  const imgElement = document.getElementById('advogado-pfp');
+
+  try {
+    const response = await fetch(`http://127.0.0.1:5001/advogado/${advogadoId}/pfp`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${ApiService.getAccessToken()}`
+      }
+    });
+
+    if (!response.ok) {
+      console.error('Erro ao buscar foto:', await response.text());
+      return;
+    }
+
+    const blob = await response.blob();
+    const imageUrl = URL.createObjectURL(blob);
+
+    imgElement.src = imageUrl;
+
+  } catch (error) {
+    console.error('Erro na requisição da foto:', error);
+  }
+}
+
+window.onload = function() {
+  loadLawyerPicture();
 }

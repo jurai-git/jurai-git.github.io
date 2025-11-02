@@ -79,7 +79,7 @@
                             <button class="btn-dialog btn-fade" id="btn-update-accountinfo">Atualizar Informações</button>
                         </div>
                         <div class="account-image">
-                            <img src="./assets/img/profile-photo.webp">
+                            <img src="./assets/img/profile-photo.webp" id="advogado-pfp">
                         </div>
                     </div>
                 </div>
@@ -131,8 +131,45 @@
     </footer>
     
     <script src="../assets/js/themeHandler.js"></script>
-    <script src="./assets/script.js"></script>
+    <script type="module" src="./assets/script.js"></script>
     <script>
+        function changeConfig(n) {
+            switch (n) {
+                case "information":
+                document.getElementById("account-general-information").style.display =
+                    "flex";
+                document.getElementById("account-config").style.display = "none";
+                document.getElementById("account-theme").style.display = "none";
+                document.getElementById(
+                    "list-general-information"
+                ).style.backgroundColor = "var(--color-config-li-background)";
+                document.getElementById("list-config").style.background = "none";
+                document.getElementById("list-theme").style.background = "none";
+                break;
+                case "config":
+                document.getElementById("account-general-information").style.display =
+                    "none";
+                document.getElementById("account-config").style.display = "flex";
+                document.getElementById("account-theme").style.display = "none";
+                document.getElementById("list-general-information").style.background =
+                    "none";
+                document.getElementById("list-config").style.backgroundColor =
+                    "var(--color-config-li-background)";
+                document.getElementById("list-theme").style.background = "none";
+                break;
+                case "theme":
+                document.getElementById("account-general-information").style.display =
+                    "none";
+                document.getElementById("account-config").style.display = "none";
+                document.getElementById("account-theme").style.display = "flex";
+                document.getElementById("list-general-information").style.background =
+                    "none";
+                document.getElementById("list-config").style.background = "none";
+                document.getElementById("list-theme").style.backgroundColor = "var(--color-config-li-background)";
+                break;
+            }
+        }
+
         function getCookieValue(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);

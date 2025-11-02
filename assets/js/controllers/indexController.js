@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('account-area').remove();
 
         document.querySelector('header').insertAdjacentHTML('beforeend', 
-            `<div class="menu">
+            `<div class="menu" id="advogado-pfp">
                 <input class="menu-toggle" type="checkbox">
                 <div class="menu-content">
                     <a href="./advogado/dashboard.html">Minha Conta</a>
