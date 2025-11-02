@@ -2,7 +2,7 @@ import ApiService from '../../../../assets/js/services/apiService.js';
 
 async function fetchDemandas(requerenteId) {
     try {
-        const response = await fetch(`http://127.0.0.1:5001/advogado/requerente/${requerenteId}/demandas`, {
+        const response = await fetch(`http://127.0.0.1:5000/advogado/requerente/${requerenteId}/demandas`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${ApiService.getAccessToken()}`
@@ -26,7 +26,7 @@ async function fetchDemandas(requerenteId) {
 
 async function fetchRequerentes() {
     try {
-        const response = await fetch('http://127.0.0.1:5001/advogado/requerentes', {
+        const response = await fetch('http://127.0.0.1:5000/advogado/requerentes', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${ApiService.getAccessToken()}`

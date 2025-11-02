@@ -87,7 +87,7 @@ function getNews() {
   newsSection.appendChild(cardDiv);
   main.appendChild(newsSection);
 
-  fetch("http://127.0.0.1:5001/news")
+  fetch("http://127.0.0.1:5000/news")
     .then((response) => response.json())
     .then((data) => {
       if (Array.isArray(data)) {
@@ -190,7 +190,7 @@ async function loadLawyerPicture() {
   const imgElement = document.getElementById('advogado-pfp');
 
   try {
-    const response = await fetch(`http://127.0.0.1:5001/advogado/${advogadoId}/pfp`, {
+    const response = await fetch(`http://127.0.0.1:5000/advogado/${advogadoId}/pfp`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${ApiService.getAccessToken()}`
