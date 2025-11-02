@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,327 @@
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <script type="module" src="./assets/script/controllers/authController.js"></script>
+    <style>
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: var(--color-main-container);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--color-config-li-background);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-card h2 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-form-list-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 12px 0;
+        }
+
+        .stat-value {
+            font-size: 2.75rem;
+            font-weight: 900;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-form-list-text);
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .quick-action-card {
+            background: var(--color-main-container);
+            border: 1px solid var(--color-config-li-background);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--color-text);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .quick-action-card:hover {
+            border-color: var(--color-text);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: var(--color-inputs-lists-background);
+        }
+
+        .quick-action-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            filter: grayscale(0.3);
+        }
+
+        .quick-action-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--color-text);
+        }
+
+        .petitions-section {
+            background: var(--color-main-container);
+            border-radius: 8px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--color-config-li-background);
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 350px;
+            min-width: 200px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            background-color: var(--color-main-background);
+            color: var(--color-form-input-text);
+            border: 1.5px solid var(--color-form-list-text);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--color-text);
+            box-shadow: 0 0 0 1px var(--color-text);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        .petitions-table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+
+        .petitions-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .petitions-table thead {
+            background-color: var(--color-table-row-important);
+        }
+
+        .petitions-table th {
+            padding: 14px 12px;
+            text-align: left;
+            font-size: 0.8125rem;
+            font-weight: 900;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--color-table-row-aside-background);
+        }
+
+        .petitions-table td {
+            padding: 12px;
+            border: 1px solid var(--color-table-row-aside-background);
+            font-size: 0.9375rem;
+            color: var(--color-text);
+        }
+
+        .petitions-table tbody tr {
+            transition: background-color 0.2s;
+            text-align: left;
+        }
+
+        .petitions-table tbody tr:nth-child(even) {
+            background-color: var(--color-table-row-aside-background);
+        }
+
+        .petitions-table tbody tr:hover {
+            background-color: var(--color-table-row-important-hover);
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: var(--color-emphasis-text);
+        }
+
+        .petition-type {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--color-inputs-lists-background);
+            color: var(--color-text);
+            border-radius: 12px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border: 1px solid var(--color-config-li-background);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+
+        .status-pending {
+            background: var(--warning-color);
+            color: #000;
+        }
+
+        .status-archived {
+            background: var(--danger-color);
+            color: #fff;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--color-form-list-text);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .empty-state p {
+            font-size: 1.125rem;
+            margin: 8px 0;
+        }
+
+        .empty-state p:first-of-type {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .action-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            background: var(--color-inputs-lists-background);
+            color: var(--color-text);
+            border: 1px solid var(--color-text);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background: var(--color-text);
+            color: var(--color-plan-choosed-text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .petitions-table {
+                font-size: 0.875rem;
+            }
+
+            .petitions-table th,
+            .petitions-table td {
+                padding: 10px 8px;
+                font-size: 0.8125rem;
+            }
+
+            .stat-value {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .petitions-table th:nth-child(3),
+            .petitions-table td:nth-child(3) {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="logo-container">
@@ -35,75 +356,75 @@
         <main>
             <h1>Bem vindo</h1>
 
-            <section class="card-container">
-                <div class="card">
-                    <h2>Clientes</h2>
-                    <h3 id="petitioners-length">0</h3>
-                    <small>Requerentes</small>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h2>Total de Clientes</h2>
+                    <p class="stat-value" id="petitioners-length">0</p>
+                    <p class="stat-label">Requerentes cadastrados</p>
                 </div>
-                <div class="card">
-                    <h2>Petições</h2>
-                    <h3 id="petitions-length">0</h3>
-                    <small>Demandas</small>
+                <div class="stat-card">
+                    <h2>Petições Ativas</h2>
+                    <p class="stat-value" id="petitions-length">0</p>
+                    <p class="stat-label">Demandas em andamento</p>
                 </div>
-                <div class="card">
+                <div class="stat-card">
                     <h2>Arquivados</h2>
-                    <h3>0</h3>
-                    <small>Ações</small>
+                    <p class="stat-value" id="archived-count">0</p>
+                    <p class="stat-label">Processos concluídos</p>
                 </div>
-                <div class="card">
-                    <h2>Processos</h2>
-                    <canvas id="winRate"></canvas>
+                <div class="stat-card">
+                    <h2>Pendentes</h2>
+                    <p class="stat-value" id="pending-count">0</p>
+                    <p class="stat-label">Aguardando ação</p>
                 </div>
-                <div class="card">
-                    <h2>Tabela de Clientes</h2>
-                    <br>
+            </div>
 
-                    <table>              
-                        <thead>
-                            <tr>
-                                <th>Requerente</th>
-                                <th>Estado do Processo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr><tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="quick-actions">
+                <a href="./r/cadastro.html" class="quick-action-card">
+                    <div class="quick-action-icon">👤</div>
+                    <h3>Novo Cliente</h3>
+                </a>
+                <a href="./d/cadastro.html" class="quick-action-card">
+                    <div class="quick-action-icon">📋</div>
+                    <h3>Nova Demanda</h3>
+                </a>
+                <a href="./chatbot.html" class="quick-action-card">
+                    <div class="quick-action-icon">💬</div>
+                    <h3>Assistente</h3>
+                </a>
+                <a href="./documentos.html" class="quick-action-card">
+                    <div class="quick-action-icon">📄</div>
+                    <h3>Documentos</h3>
+                </a>
+            </div>
+
+            <section class="petitions-section">
+                <div class="section-header">
+                    <h2>Últimas Petições</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-petitions" placeholder="Buscar por cliente ou tipo...">
+                    </div>
+                </div>
+
+                <div id="petitions-container">
+                    <div class="petitions-table-wrapper">
+                        <table class="petitions-table">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="petitions-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="empty-state" class="empty-state" style="display: none;">
+                        <div class="empty-state-icon">📋</div>
+                        <p>Nenhuma petição encontrada</p>
+                        <p>Comece cadastrando um novo cliente e criando sua primeira demanda.</p>
+                        <a href="./d/cadastro.html" class="action-btn">Cadastrar Nova Demanda</a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -111,81 +432,174 @@
     <footer>
         <p>A inteligência que facilita o processo | <small>© 2025 JurAI</small></p>
     </footer>
-    <script src="../assets/js/themeHandler.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script type="module" src="./assets/script/controllers/dashboardController.js"></script>
     <script src="./assets/script.js"></script>
-    <script> 
+    <script type="module">
+        import ApiService from '../../../../assets/js/services/apiService.js';
 
-function initGraphics() {
-  const ctx = document.getElementById("winRate").getContext("2d");
+        function formatDate(dateString) {
+            if (!dateString) return 'Data não informada';
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) return 'Data inválida';
+            return date.toLocaleDateString('pt-BR');
+        }
 
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro"],
-      datasets: [
-        {
-          label: "Casos Ganhos",
-          data: [4, 6, 5, 6, 4, 3],
-          borderColor: "#4caf50",
-          backgroundColor: "rgba(76, 175, 80, 0.4)",
-          fill: true,
-          tension: 0.1,
-        },
-        {
-          label: "Casos Perdidos",
-          data: [2, 1, 2, 2, 2, 1],
-          borderColor: "#f44336",
-          backgroundColor: "rgba(244, 67, 54, 0.4)",
-          fill: true,
-          tension: 0.1,
-        },
-        {
-          label: "Casos em Andamento",
-          data: [0, 0, 1, 3, 6, 7],
-          borderColor: "rgba(127, 166, 204)",
-          backgroundColor: "rgba(127, 166, 204, 0.4)",
-          fill: true,
-          tension: 0.1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
-}
+        function determineStatus(petition) {
+            if (petition.status) return petition.status.toLowerCase();
+            if (petition.concluida || petition.arquivada) return 'archived';
+            if (petition.pendente) return 'pending';
+            return 'active';
+        }
 
-        window.addEventListener('load', ()=>{
-            initGraphics();
-            // getNews();
+        function getStatusLabel(status) {
+            const map = {
+                'active': { label: 'Em Andamento', class: 'status-active' },
+                'pending': { label: 'Pendente', class: 'status-pending' },
+                'archived': { label: 'Arquivado', class: 'status-archived' },
+                'completed': { label: 'Concluído', class: 'status-archived' }
+            };
+            return map[status] || map['active'];
+        }
 
-            function getCookieValue(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(';').shift();
+        async function fetchDemandas(requerenteId) {
+            try {
+                const response = await fetch(`http://127.0.0.1:5000/advogado/requerente/${requerenteId}/demandas`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${ApiService.getAccessToken()}`
+                    }
+                });
+                const resJson = await response.json();
+                if (response.ok) return resJson.demanda_list || [];
+                console.error('Erro no servidor:', resJson);
+                return [];
+            } catch (error) {
+                console.error('Erro ao buscar demandas:', error);
+                return [];
+            }
+        }
+
+        async function fetchRequerentesComDemandas() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/advogado/requerentes', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${ApiService.getAccessToken()}`
+                    }
+                });
+                const resJson = await response.json();
+                const requerentes = resJson.requerentes_list || [];
+
+                for (const req of requerentes) {
+                    req.demandas = await fetchDemandas(req.id_requerente);
+                }
+
+                return requerentes;
+            } catch (error) {
+                console.error('Erro ao buscar requerentes:', error);
+                alert('Erro ao buscar dados. Veja o console.');
+                return [];
+            }
+        }
+
+        function populateTable(petitions, petitioners) {
+            const tbody = document.getElementById('petitions-tbody');
+            const emptyState = document.getElementById('empty-state');
+            const tableWrapper = document.querySelector('.petitions-table-wrapper');
+
+            if (!petitions || petitions.length === 0) {
+                tableWrapper.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
             }
 
-            function capitalizeName(name) {
-                return name
-                    .toLowerCase()
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-            }
+            tableWrapper.style.display = 'block';
+            emptyState.style.display = 'none';
+            tbody.innerHTML = '';
 
-            const username = getCookieValue('username');
+            const map = {};
+            petitioners.forEach(p => (map[p.id_requerente] = p.nome));
+
+            const sorted = [...petitions].sort((a, b) => new Date(b.data_criacao) - new Date(a.data_criacao));
+
+            sorted.slice(0, 20).forEach(pet => {
+                const statusInfo = getStatusLabel(determineStatus(pet));
+                const clientName = map[pet.id_requerente] || pet.nome_requerente || 'Cliente não identificado';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                <td><span class="client-name">${clientName}</span></td>
+                <td><span class="status-badge ${statusInfo.class}">${statusInfo.label}</span></td>
+            `;
+                tbody.appendChild(tr);
+            });
+        }
+        function updateCounters(petitions) {
+            const active = petitions.filter(p => determineStatus(p) === 'active').length;
+            const archived = petitions.filter(p => ['archived', 'completed'].includes(determineStatus(p))).length;
+            const pending = petitions.filter(p => determineStatus(p) === 'pending').length;
+
+            document.getElementById('petitions-length').textContent = active;
+            document.getElementById('archived-count').textContent = archived;
+            document.getElementById('pending-count').textContent = pending;
+        }
+
+        function setupSearch() {
+            const input = document.getElementById('search-petitions');
+            const tbody = document.getElementById('petitions-tbody');
+            const emptyState = document.getElementById('empty-state');
+            const tableWrapper = document.querySelector('.petitions-table-wrapper');
+
+            input.addEventListener('input', e => {
+                const term = e.target.value.toLowerCase();
+                const rows = tbody.querySelectorAll('tr');
+                let visible = 0;
+
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    const match = text.includes(term);
+                    row.style.display = match ? '' : 'none';
+                    if (match) visible++;
+                });
+
+                if (visible === 0 && term) {
+                    tableWrapper.style.display = 'none';
+                    emptyState.style.display = 'block';
+                    emptyState.querySelector('p:first-of-type').textContent = 'Nenhum resultado encontrado';
+                    emptyState.querySelector('p:nth-of-type(2)').textContent = `Não foram encontradas petições com "${term}"`;
+                } else {
+                    tableWrapper.style.display = 'block';
+                    emptyState.style.display = 'none';
+                }
+            });
+        }
+
+        async function loadDashboardData() {
+
+            const requerentes = await fetchRequerentesComDemandas();
+
+            const allDemandas = requerentes.flatMap(r =>
+                r.demandas.map(d => ({ ...d, id_requerente: r.id_requerente }))
+            );
+
+            document.getElementById('petitioners-length').textContent = requerentes.length;
+            await new Promise(resolve => setTimeout(resolve, 50));
+            setupSearch();
+        }
+        window.addEventListener('load', () => {
+            const username = (document.cookie.match(/username=([^;]+)/) || [])[1];
             if (username) {
-                const formattedName = capitalizeName(username.replace('%20', ' '));
-                document.querySelector('h1').innerText = `Bem vindo(a), ${formattedName}`;
+                const name = decodeURIComponent(username)
+                    .toLowerCase()
+                    .replace(/\b\w/g, c => c.toUpperCase());
+                document.querySelector('h1').textContent = `Bem vindo(a), ${name}`;
             }
+
+            loadDashboardData();
         });
     </script>
+
 </body>
+
 </html>
