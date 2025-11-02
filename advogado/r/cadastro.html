@@ -128,5 +128,28 @@
     <!-- <script src="../../assets/js/themeHandler.js"></script> -->
     <script src="../assets/script.js"></script>
     <script type="module" src="../assets/script/controllers/requerenteController.js"></script>
+        <script>
+        function addressAutocomplete() {
+            const url = "http://viacep.com.br/ws/";
+            const value = document.getElementById("cep").value;
+
+            if (value.length !== 8) return;
+
+            fetch(url + value + "/json/")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    document.getElementById("street").value = data.logradouro || "";
+                    document.getElementById("neighborhood").value = data.bairro || "";
+                    document.getElementById("city").value = data.localidade || "";
+                    document.getElementById("state").value = data.uf || "";
+                })
+                .catch((err) => console.error("Fetch error:", err));
+        }
+    </script>
 </body>
 </html>
