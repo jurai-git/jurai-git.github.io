@@ -61,7 +61,7 @@
             transform: translate(-50%, -50%);
             max-width: 968px;
             width: 90%;
-            height: 85vh;
+            height: fit-content;
             background-color: var(--color-first-background-layer);
             box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
             padding: 2rem;
@@ -312,7 +312,7 @@
             if (!text) return alert("Digite uma ementa!");
 
             try {
-                const response = await fetch("http://localhost:5001/ai/probability", {
+                const response = await fetch("http://127.0.0.1:5000/ai/probability", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ text })
