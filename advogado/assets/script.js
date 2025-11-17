@@ -212,6 +212,64 @@ async function loadLawyerPicture() {
   }
 }
 
+async function changePassword() {
+  const newPassword = prompt('Digite a nova senha:');
+  if (!newPassword) return;
+
+  try {
+    const response = await fetch('http://127.0.0.1:5000/advogado', {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${ApiService.getAccessToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ password: newPassword })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('Senha alterada com sucesso!');
+      document.cookie = 'access_token=' + data.access_token + '; path=/';
+    } else {
+      alert('Erro ao alterar senha: ' + (data.message || 'Erro desconhecido'));
+    }
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('Erro ao alterar senha.');
+  }
+}
+
+async function deleteAccount() {
+  if (!confirm('Tem certeza que deseja deletar sua conta? Esta ação é irreversível e excluirá todos os dados associados.')) return;
+
+  try {
+    const response = await fetch('http://127.0.0.1:5000/advogado', {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${ApiService.getAccessToken()}`
+      }
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('Conta deletada com sucesso!');
+      document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie = 'id=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      window.location.href = '/index.html';
+    } else {
+      alert('Erro ao deletar conta: ' + (data.message || 'Erro desconhecido'));
+    }
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('Erro ao deletar conta.');
+  }
+}
+
 window.onload = function() {
   loadLawyerPicture();
+
+  document.getElementById('btn-change-accountpsw').addEventListener('click', changePassword);
+  document.getElementById('btn-delete-account').addEventListener('click', deleteAccount);
 }
