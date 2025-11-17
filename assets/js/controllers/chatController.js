@@ -115,7 +115,7 @@ function updateModeIndicator() {
         indicator.textContent = 'Modo: Chat Geral';
         indicator.classList.add('mode-general');
     } else if (state.useRAG) {
-        indicator.textContent = 'Modo: Demanda com RAG ✓';
+        indicator.textContent = 'Modo: Demanda com RAG';
         indicator.classList.add('mode-rag-active');
     } else {
         indicator.textContent = 'Modo: Demanda sem RAG';
