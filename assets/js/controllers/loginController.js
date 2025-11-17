@@ -131,3 +131,92 @@ class AuthModeSwitcher {
 
 const authModeSwitcher = new AuthModeSwitcher();
 window.changeLoginRegister = () => authModeSwitcher.toggle();
+
+// Forgot Password Modal Functions
+window.showForgotPasswordModal = () => {
+    const modal = document.getElementById('forgot-password-modal');
+    
+    // Reset modal state
+    document.getElementById('reset-email').value = '';
+    
+    modal.showModal();
+};
+
+window.closeForgotPasswordModal = () => {
+    const modal = document.getElementById('forgotPasswordModal');
+    modal.close();
+};
+
+window.requestPasswordReset = async () => {
+    const email = document.getElementById('reset-email').value.trim();
+    
+    if (!email) {
+        alert('Por favor, digite seu e-mail.');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        alert('Por favor, digite um e-mail válido.');
+        return;
+    }
+    
+window.requestPasswordReset = async () => {
+    const email = document.getElementById('reset-email').value.trim();
+    
+    if (!email) {
+        alert('Por favor, digite seu e-mail.');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        alert('Por favor, digite um e-mail válido.');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`http://localhost:5000/advogado/request-reset/${email}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            
+            alert('Código de recuperação enviado para seu e-mail!');
+            closeForgotPasswordModal();
+        } else {
+            let errorMessage = 'Erro ao enviar código de recuperação.';
+            try {
+                const errorData = await response.json();
+                errorMessage = errorData.message || errorMessage;
+            } catch (parseError) {
+                console.error('Error parsing error response:', parseError);
+                errorMessage = `Erro ${response.status}: ${response.statusText}`;
+            }
+            alert(errorMessage);
+        }
+    } catch (error) {
+        console.error('Error requesting password reset:', error);
+        alert('Erro ao conectar com o servidor. Verifique sua conexão e tente novamente.');
+    }
+};
+};
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Add event listeners for forgot password forms
+document.addEventListener('DOMContentLoaded', () => {
+    const requestResetForm = document.getElementById('request-reset-form');
+    
+    if (requestResetForm) {
+        requestResetForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            requestPasswordReset();
+        });
+    }
+});

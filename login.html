@@ -44,6 +44,9 @@
                         <input type="checkbox">
                         <label for="">Lembrar de mim</label>
                     </div>
+                    <div class="forgot-password">
+                        <a href="#" onclick="showForgotPasswordModal()">Esqueci minha senha</a>
+                    </div>
                         <input type="submit" value="Entrar">
                 </form>
                 <div>
@@ -96,7 +99,31 @@
             </div>
         </section>
     </main>
-    <script src="./assets/js/themeHandler.js"></script>
+
+    <!-- Modal para reset de senha -->
+    <dialog id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <div class="dialog-header">
+                <h2>Recuperar Senha</h2>
+                <button class="close-button" onclick="closeForgotPasswordModal()">×</button>
+            </div>
+            <hr>
+            <div id="reset-step-1" class="reset-step">
+                <p>Digite seu email para receber um link de recuperação:</p>
+                <form id="request-reset-form">
+                    <div class="field">
+                        <label for="reset-email">Email:</label>
+                        <input type="email" id="reset-email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" class="btn-secondary" onclick="closeForgotPasswordModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">Enviar Código</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
     <script type="module" src="./assets/js/controllers/loginController.js"></script>
 </body>
 </html>

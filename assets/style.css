@@ -19,3 +19,183 @@
     display: flex;
     align-items: center;
 }
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.forgot-password a {
+    color: var(--color-primary, #2196f3);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: var(--color-background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dialog-header {
+    position: relative;
+    padding: 1.5rem 2rem;
+    background: var(--color-first-background-layer);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.dialog-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close-button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-form-list-text);
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    transform: translateY(-50%);
+}
+
+.close-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--color-text);
+}
+
+.reset-step {
+    padding: 2rem;
+}
+
+.reset-step p {
+    margin-bottom: 1.5rem;
+    color: var(--color-form-list-text);
+    line-height: 1.5;
+}
+
+.field {
+    margin-bottom: 1.25rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-form-list-text2);
+    border-radius: 4px;
+    font-size: 1rem;
+    background: var(--color-background);
+    color: var(--color-form-input-text);
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--color-text);
+}
+
+.field input::placeholder {
+    color: var(--color-form-list-text);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-secondary, .btn-primary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 100px;
+}
+
+.btn-secondary {
+    background: var(--color-inputs-lists-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-config-li-background);
+}
+
+.btn-secondary:hover {
+    background: var(--color-main-background);
+}
+
+.btn-primary {
+    background: var(--color-text);
+    color: var(--color-main-background);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .dialog-header {
+        padding: 1.25rem;
+    }
+
+    .reset-step {
+        padding: 1.5rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .btn-secondary, .btn-primary {
+        width: 100%;
+    }
+}
