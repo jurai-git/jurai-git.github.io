@@ -387,6 +387,7 @@ async function loadLawyerPicture() {
 
         if (!response.ok) {
             console.error('Erro ao buscar foto:', await response.text());
+            menuElement.style.backgroundImage = `url('./advogado/assets/img/profile-photo.webp')`;
             return;
         }
 
@@ -397,5 +398,6 @@ async function loadLawyerPicture() {
 
     } catch (error) {
         console.error('Erro na requisição da foto:', error);
+        menuElement.style.backgroundImage = `url('./advogado/assets/img/profile-photo.webp')`;
     }
 }
