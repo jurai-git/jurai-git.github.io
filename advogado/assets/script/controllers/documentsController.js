@@ -115,43 +115,65 @@ function renderRequerentes(requerentes) {
                     
                     <div class="client-fields-grid">
                         <div class="field">
+                            <label>Nome</label>
+                            <input type="text" id="nome-${requerente.id_requerente}" value="${requerente.nome}" disabled>
+                        </div>
+                        <div class="field">
                             <label>CPF/CNPJ</label>
-                            <input type="text" value="${requerente.cpf_cnpj}" disabled>
+                            <input type="text" id="cpf_cnpj-${requerente.id_requerente}" value="${requerente.cpf_cnpj}" disabled>
                         </div>
                         
                         <div class="field">
                             <label>RG</label>
-                            <input type="text" value="${requerente.rg}" disabled>
+                            <input type="text" id="rg-${requerente.id_requerente}" value="${requerente.rg}" disabled>
                         </div>
                         
                         <div class="field">
                             <label>Estado Civil</label>
-                            <input type="text" value="${requerente.estado_civil}" disabled>
+                            <input type="text" id="estado_civil-${requerente.id_requerente}" value="${requerente.estado_civil}" disabled>
                         </div>
                         
                         <div class="field">
                             <label>Gênero</label>
-                            <input type="text" value="${requerente.genero}" disabled>
+                            <input type="text" id="genero-${requerente.id_requerente}" value="${requerente.genero}" disabled>
                         </div>
                         
                         <div class="field field-full">
                             <label>Profissão</label>
-                            <input type="text" value="${requerente.profissao}" disabled>
+                            <input type="text" id="profissao-${requerente.id_requerente}" value="${requerente.profissao}" disabled>
                         </div>
                         
                         <div class="field field-full">
                             <label>Email</label>
-                            <input type="text" value="${requerente.email}" disabled>
+                            <input type="text" id="email-${requerente.id_requerente}" value="${requerente.email}" disabled>
                         </div>
                         
-                        <div class="field field-full">
-                            <label>Endereço</label>
-                            <input type="text" value="${requerente.logradouro}, ${requerente.num_imovel}, ${requerente.bairro} - ${requerente.cidade}/${requerente.estado}" disabled>
+                        <div class="field">
+                            <label>Logradouro</label>
+                            <input type="text" id="logradouro-${requerente.id_requerente}" value="${requerente.logradouro}" disabled>
+                        </div>
+                        <div class="field">
+                            <label>Número</label>
+                            <input type="text" id="num_imovel-${requerente.id_requerente}" value="${requerente.num_imovel}" disabled>
+                        </div>
+                        <div class="field">
+                            <label>Bairro</label>
+                            <input type="text" id="bairro-${requerente.id_requerente}" value="${requerente.bairro}" disabled>
+                        </div>
+                        <div class="field">
+                            <label>Cidade</label>
+                            <input type="text" id="cidade-${requerente.id_requerente}" value="${requerente.cidade}" disabled>
+                        </div>
+                        <div class="field">
+                            <label>Estado</label>
+                            <input type="text" id="estado-${requerente.id_requerente}" value="${requerente.estado}" disabled>
                         </div>
                     </div>
                     
                     <div class="modal-actions">
-                        <button class="btn-dialog" onclick="document.getElementById('${modalCliente.id}').close(); document.getElementById('fade').style.display = 'none';">
+                        <button class="btn-fade" id="edit-requerente-${requerente.id_requerente}" onclick="editRequerente(${requerente.id_requerente})">Editar</button>
+                        <button class="btn-fade btn-delete" onclick="deleteRequerente(${requerente.id_requerente})">Deletar</button>
+                        <button class="btn-fade" onclick="document.getElementById('${modalCliente.id}').close(); document.getElementById('fade').style.display = 'none';">
                             Fechar
                         </button>
                     </div>
@@ -221,16 +243,7 @@ function renderDemandas(requerente) {
 
             <div class="modal-demandas-content">
                 <div id="demanda-content-${requerente.id_requerente}">
-                    ${renderDemandaContent(requerente.demandas[0], 0)}
-                </div>
-
-                <div class="modal-actions">
-                    <button 
-                        class="btn-dialog" 
-                        onclick="document.getElementById('modal-processo-${requerente.id_requerente}').close(); document.getElementById('fade').style.display = 'none';"
-                    >
-                        Fechar
-                    </button>
+                    ${renderDemandaContent(requerente.demandas[0], 0, requerente.id_requerente)}
                 </div>
             </div>
         </div>
@@ -240,7 +253,7 @@ function renderDemandas(requerente) {
     return modalDemanda;
 }
 
-function renderDemandaContent(demanda, index) {
+function renderDemandaContent(demanda, index, requerenteId) {
     return `
         <h2 class="demanda-content-title">
             ${demanda.identificacao || `Processo ${index + 1}`}
@@ -249,61 +262,67 @@ function renderDemandaContent(demanda, index) {
         <div class="process-fields-grid">
             <div class="field">
                 <label>Foro</label>
-                <input type="text" value="${demanda.foro}" disabled>
+                <input type="text" id="foro-${demanda.id}" value="${demanda.foro}" disabled>
             </div>
 
             <div class="field">
                 <label>Status</label>
-                <input type="text" value="${demanda.status}" disabled>
+                <input type="text" id="status-${demanda.id}" value="${demanda.status}" disabled>
             </div>
 
             <div class="field">
                 <label>Competência</label>
-                <input type="text" value="${demanda.competencia}" disabled>
+                <input type="text" id="competencia-${demanda.id}" value="${demanda.competencia}" disabled>
             </div>
 
             <div class="field">
                 <label>Classe</label>
-                <input type="text" value="${demanda.classe}" disabled>
+                <input type="text" id="classe-${demanda.id}" value="${demanda.classe}" disabled>
             </div>
 
             <div class="field field-full">
                 <label>Assunto Principal</label>
-                <input type="text" value="${demanda.assunto_principal}" disabled>
+                <input type="text" id="assunto_principal-${demanda.id}" value="${demanda.assunto_principal}" disabled>
             </div>
 
             <div class="field">
                 <label>Valor da Ação</label>
-                <input type="text" value="R$ ${demanda.valor_acao.toLocaleString('pt-BR', {minimumFractionDigits: 2})}" disabled>
+                <input type="text" id="valor_acao-${demanda.id}" value="R$ ${demanda.valor_acao.toLocaleString('pt-BR', {minimumFractionDigits: 2})}" disabled>
             </div>
         </div>
 
         <div class="checkboxes-container">
             <label class="checkbox-label">
-                <input type="checkbox" ${demanda.pedido_liminar ? 'checked' : ''} disabled>
+                <input type="checkbox" id="pedido_liminar-${demanda.id}" ${demanda.pedido_liminar ? 'checked' : ''} disabled>
                 Pedido Liminar
             </label>
             <label class="checkbox-label">
-                <input type="checkbox" ${demanda.segredo_justica ? 'checked' : ''} disabled>
+                <input type="checkbox" id="segredo_justica-${demanda.id}" ${demanda.segredo_justica ? 'checked' : ''} disabled>
                 Segredo de Justiça
             </label>
             <label class="checkbox-label">
-                <input type="checkbox" ${demanda.dispensa_legal ? 'checked' : ''} disabled>
+                <input type="checkbox" id="dispensa_legal-${demanda.id}" ${demanda.dispensa_legal ? 'checked' : ''} disabled>
                 Dispensa Legal
             </label>
             <label class="checkbox-label">
-                <input type="checkbox" ${demanda.justica_gratuita ? 'checked' : ''} disabled>
+                <input type="checkbox" id="justica_gratuita-${demanda.id}" ${demanda.justica_gratuita ? 'checked' : ''} disabled>
                 Justiça Gratuita
             </label>
             <label class="checkbox-label">
-                <input type="checkbox" ${demanda.guia_custas ? 'checked' : ''} disabled>
+                <input type="checkbox" id="guia_custas-${demanda.id}" ${demanda.guia_custas ? 'checked' : ''} disabled>
                 Guia de Custas
             </label>
         </div>
 
         <div class="field">
             <label>Resumo</label>
-            <textarea disabled class="resumo-textarea">${demanda.resumo}</textarea>
+            <textarea id="resumo-${demanda.id}" disabled class="resumo-textarea">${demanda.resumo}</textarea>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-fade" id="edit-demanda-${demanda.id}" onclick="editDemanda(${demanda.id})">Editar</button>
+            <button class="btn-fade btn-delete" onclick="deleteDemanda(${demanda.id})">Deletar</button>
+            <button class="btn-fade" onclick="document.getElementById('modal-processo-${requerenteId}').close(); document.getElementById('fade').style.display = 'none';">Fechar</button>
         </div>
     `;
 }
@@ -314,7 +333,7 @@ function showDemanda(requerenteId, demandaIndex) {
     if (!requerente || !requerente.demandas[demandaIndex]) return;
 
     const contentDiv = document.getElementById(`demanda-content-${requerenteId}`);
-    contentDiv.innerHTML = renderDemandaContent(requerente.demandas[demandaIndex], demandaIndex);
+    contentDiv.innerHTML = renderDemandaContent(requerente.demandas[demandaIndex], demandaIndex, requerenteId);
 
     const listContainer = document.getElementById(`demandas-list-${requerenteId}`);
     const buttons = listContainer.querySelectorAll('.demanda-item-btn');
@@ -503,6 +522,8 @@ style.textContent = `
         border-radius: 8px;
         overflow: hidden;
         padding: 30px;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
     .cliente-content-title {
@@ -585,14 +606,182 @@ style.textContent = `
         margin-top: 25px;
         text-align: center;
     }
-
-    .modal-actions .btn-dialog {
-        font-size: 1.1rem;
-    }
 `;
 document.head.appendChild(style);
 
 // Expõe a função showDemanda globalmente
 window.showDemanda = showDemanda;
+
+function editRequerente(id) {
+    const button = document.getElementById(`edit-requerente-${id}`);
+    const isEditing = button.textContent === 'Salvar';
+    
+    if (isEditing) {
+        // Salvar
+        saveRequerente(id);
+    } else {
+        // Entrar em modo edição
+        const fields = ['nome', 'cpf_cnpj', 'rg', 'estado_civil', 'genero', 'profissao', 'email', 'logradouro', 'num_imovel', 'bairro', 'cidade', 'estado'];
+        fields.forEach(field => {
+            const input = document.getElementById(`${field}-${id}`);
+            input.disabled = false;
+        });
+        button.textContent = 'Salvar';
+    }
+}
+
+async function saveRequerente(id) {
+    const data = {};
+    const fields = ['nome', 'cpf_cnpj', 'rg', 'estado_civil', 'genero', 'profissao', 'email', 'logradouro', 'num_imovel', 'bairro', 'cidade', 'estado'];
+    fields.forEach(field => {
+        const input = document.getElementById(`${field}-${id}`);
+        data[field] = input.value;
+        input.disabled = true;
+    });
+    
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/requerente/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            alert('Requerente atualizado com sucesso!');
+            document.getElementById(`edit-requerente-${id}`).textContent = 'Editar';
+        } else {
+            alert('Erro ao atualizar requerente.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+    }
+}
+
+async function deleteRequerente(id) {
+    if (!confirm('Tem certeza que deseja deletar este requerente e todas as suas demandas?')) return;
+    
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/requerente/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            }
+        });
+        
+        if (response.ok) {
+            alert('Requerente deletado com sucesso!');
+            document.getElementById(`modal-cliente-${id}`).close();
+            document.getElementById('fade').style.display = 'none';
+            fetchRequerentes(); // Recarregar dados
+        } else {
+            alert('Erro ao deletar requerente.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+    }
+}
+
+function editDemanda(id) {
+    const button = document.getElementById(`edit-demanda-${id}`);
+    const isEditing = button.textContent === 'Salvar';
+    
+    if (isEditing) {
+        // Salvar
+        saveDemanda(id);
+    } else {
+        // Entrar em modo edição
+        const fields = ['foro', 'status', 'competencia', 'classe', 'assunto_principal', 'valor_acao', 'resumo'];
+        fields.forEach(field => {
+            const input = document.getElementById(`${field}-${id}`);
+            input.disabled = false;
+        });
+        const checkboxes = ['pedido_liminar', 'segredo_justica', 'dispensa_legal', 'justica_gratuita', 'guia_custas'];
+        checkboxes.forEach(cb => {
+            const checkbox = document.getElementById(`${cb}-${id}`);
+            checkbox.disabled = false;
+        });
+        button.textContent = 'Salvar';
+    }
+}
+
+async function saveDemanda(id) {
+    const data = {};
+    const fields = ['foro', 'status', 'competencia', 'classe', 'assunto_principal', 'resumo'];
+    fields.forEach(field => {
+        const input = document.getElementById(`${field}-${id}`);
+        data[field] = input.value;
+        input.disabled = true;
+    });
+    
+    const valorInput = document.getElementById(`valor_acao-${id}`);
+    const valorStr = valorInput.value.replace('R$ ', '').replace(/\./g, '').replace(',', '.');
+    data.valor_acao = parseFloat(valorStr);
+    valorInput.disabled = true;
+    
+    const checkboxes = ['pedido_liminar', 'segredo_justica', 'dispensa_legal', 'justica_gratuita', 'guia_custas'];
+    checkboxes.forEach(cb => {
+        const checkbox = document.getElementById(`${cb}-${id}`);
+        data[cb] = checkbox.checked;
+        checkbox.disabled = true;
+    });
+    
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/demanda/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            alert('Demanda atualizada com sucesso!');
+            document.getElementById(`edit-demanda-${id}`).textContent = 'Editar';
+        } else {
+            alert('Erro ao atualizar demanda.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+    }
+}
+
+async function deleteDemanda(id) {
+    if (!confirm('Tem certeza que deseja deletar esta demanda?')) return;
+    
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/demanda/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            }
+        });
+        
+        if (response.ok) {
+            alert('Demanda deletada com sucesso!');
+            // Fechar modal e recarregar
+            document.querySelectorAll('dialog').forEach(modal => modal.close());
+            document.getElementById('fade').style.display = 'none';
+            fetchRequerentes();
+        } else {
+            alert('Erro ao deletar demanda.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+    }
+}
+
+// Expor funções globalmente
+window.editRequerente = editRequerente;
+window.deleteRequerente = deleteRequerente;
+window.editDemanda = editDemanda;
+window.deleteDemanda = deleteDemanda;
 
 window.addEventListener('DOMContentLoaded', fetchRequerentes);

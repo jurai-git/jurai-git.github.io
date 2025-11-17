@@ -251,22 +251,29 @@
                     width: 90%;
                 }
 
-                .btn-dialog {
-                    width: 100px;
-                    padding: 0.5em;
-                    font-size: 1.2em;
-                    border-radius: 0.5em;
-                    color: var(--color-dialog-button-text);
-                    background-color: var(--color-dialog-button);
-                    border: 1.5px solid var(--color-dialog-background-border);
-                    transition: background-color 0.5s ease, border-color 0.5s ease;
+                .btn-fade {
+                    font-size: 1.1em;
                     cursor: pointer;
-                    margin-top: 1.2em;
-                    align-self: center;
+                    color: var(--color-form-list-text);
+                    background: var(--color-inputs-lists-background);
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    border: none;
+                    outline: none;
+                    transition: 0.2s;
                 }
 
-                .btn-dialog:focus {
-                    outline: none;
+                .btn-fade:hover {
+                    background: var(--color-main-background);
+                }
+
+                .btn-delete {
+                    background-color: #dc3545 !important;
+                    color: white !important;
+                }
+
+                .btn-delete:hover {
+                    background-color: #c82333 !important;
                 }
             </style>
 
@@ -342,9 +349,9 @@
                             
                         </div>
                         <div class="details-buttons">
-                            <button class="btn-dialog" type="button" id="btn-process-exit" onclick="closeProcessModal()">Sair</button>
-                            <button class="btn-dialog" type="button" id="btn-process-previous" onclick="nextProcessStep(-1)">Anterior</button>
-                            <button class="btn-dialog" type="button" id="btn-process-next" onclick="nextProcessStep(1)">Próximo</button>
+                            <button class="btn-fade" type="button" id="btn-process-exit" onclick="closeProcessModal()">Sair</button>
+                            <button class="btn-fade" type="button" id="btn-process-previous" onclick="nextProcessStep(-1)">Anterior</button>
+                            <button class="btn-fade" type="button" id="btn-process-next" onclick="nextProcessStep(1)">Próximo</button>
                         </div>
                     </form>
             </dialog>
