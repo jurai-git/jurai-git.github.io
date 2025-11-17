@@ -37,47 +37,73 @@
         <main>
             <h1>Meu Plano</h1>
 
-            <section class="card-container">
-                <div class="card plan-card" id="free-plan" onclick="changePlan(1)">
-                    Para usuários comuns
-                    <h1>Free</h1>
-                    <h2>R$0,00</h2>
-                    <ul>
-                        <li class="include-in-plan">Consulta Rápida (10 p/dia)</li>
-                        <li class="include-in-plan">Visualização de Resultados</li>
-                        <li class="not-include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                        <li class="not-include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
-                        <li class="not-include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
-                    </ul>
-                    <input type="submit" value="Escolher Plano" class="temp-css">
-                </div>
+            <section class="plans-section">
+                <div class="plans-container">
+                    <div class="plan-card" id="free-plan">
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Essencial</h3>
+                                <p class="plan-description">Para iniciantes</p>
+                            </div>
+                            <div class="plan-pricing">
+                                <span class="plan-price">Gratuito</span>
+                                <span class="plan-period"></span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Até 6 clientes cadastrado</li>
+                                <li>Até 15 demandas ativas</li>
+                                <li>Análise Processual</li>
+                                <li>Assistente Virtual</li>
+                                <li>Geração de Documentos</li>
+                                <li>Suporte prioritário</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="plan-button">Escolher Plano</a>
+                    </div>
 
-                <div class="card plan-card plan-choosed" id="premium-plan" onclick="changePlan(2)">
-                        Seu plano atual é o
-                        <h1>Premium</h1>
-                        <h2>R$49,99</h2>
-                    <ul>
-                        <li class="include-in-plan">Consulta Rápida (Ilimitado)</li>
-                        <li class="include-in-plan">Visualização de Resultados</li>
-                        <li class="include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                        <li class="include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
-                        <li class="include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
-                    </ul>
-                    <input type="submit" value="Já Escolhido" class="temp-css" readonly>
-                </div>
+                    <div class="plan-card featured" id="professional-plan">
+                        <div class="popular-badge">Seu Plano</div>
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Profissional</h3>
+                                <p class="plan-description">Para advogados ativos</p>
+                            </div>
+                            <div class="plan-pricing">
+                                <span class="plan-price">R$79,90</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Clientes ilimitados</li>
+                                <li>Demandas ilimitadas</li>
+                                <li>Análise Processual</li>
+                                <li>Assistente Virtual com IA</li>
+                                <li>Geração de Documentos</li>
+                                <li>Suporte prioritário</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="plan-button featured" disabled>Plano Atual</a>
+                    </div>
 
-                <div class="card plan-card" id="advanced-plan" onclick="changePlan(3)">
-                    Novas ferramentas, preço justo
-                    <h1>Advanced</h1>
-                    <h2>R$24,99</h2>
-                    <ul>
-                        <li class="include-in-plan">Consulta Rápida (50 p/dia)</li>
-                        <li class="include-in-plan">Visualização de Resultados</li>
-                        <li class="include-in-plan">Geração de Porcentagem de Ganho ou Perda do Caso</li>
-                        <li class="not-include-in-plan">Análise dos Melhores Argumentos Utilizados</li>
-                        <li class="not-include-in-plan">Geração de Documentos como Base de acordo com os Resultados</li>
-                    </ul>
-                    <input type="submit" value="Escolher Plano" class="temp-css">
+                    <div class="plan-card" id="enterprise-plan">
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Enterprise</h3>
+                                <p class="plan-description">Para grandes escritórios</p>
+                            </div>
+                            <div class="plan-pricing">
+                                <span class="plan-price">Customizado</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Tudo do Profissional</li>
+                                <li>Múltiplos usuários/escritório</li>
+                                <li>Integração com sistemas legais</li>
+                                <li>Análises avançadas e relatórios</li>
+                                <li>Gestor de conta dedicado</li>
+                                <li>SLA garantido 24/7</li>
+                            </ul>
+                        </div>
+                        <a href="mailto:contas.jurai@gmail.com" class="plan-button">Solicitar Demo</a>
+                    </div>
                 </div>
             </section>
         </main>
