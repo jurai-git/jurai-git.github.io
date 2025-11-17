@@ -48,8 +48,6 @@ nav button:hover {
 }
 
 .menu {
-    background-image: url('../../advogado/assets/img/profile-photo.webp');
-    border: 2px solid black;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
@@ -80,6 +78,29 @@ nav button:hover {
     align-items: center;
     background-color: var(--color-main-background);
     padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 1px solid var(--color-header-aside-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.menu-content a,
+.menu-content button {
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.menu-content a:hover,
+.menu-content button:hover {
+    background-color: var(--color-table-row-aside-background);
 }
 
 @media (max-width: 768px) {

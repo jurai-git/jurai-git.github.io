@@ -354,6 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>`
         );
+
+        loadLawyerPicture();
     }
 
     const tabManager = new TabManager();
@@ -364,3 +366,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.changePlan = (planNumber) => planSelector.selectPlan(planNumber);
 });
+
+function getCookieValue(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+async function loadLawyerPicture() {
+    const advogadoId = getCookieValue('id');
+    const menuElement = document.getElementById('advogado-pfp');
+
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/advogado/${advogadoId}/pfp`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${ApiService.getAccessToken()}`
+            }
+        });
+
+        if (!response.ok) {
+            console.error('Erro ao buscar foto:', await response.text());
+            return;
+        }
+
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+
+        menuElement.style.backgroundImage = `url(${imageUrl})`;
+
+    } catch (error) {
+        console.error('Erro na requisição da foto:', error);
+    }
+}
